@@ -1,10 +1,25 @@
-# Sketch Rally — Playable Prototype v0.1
+# Sketch Rally — Playable Prototype v0.2
 
-A self-contained 2D car sketch and automated racing prototype. No server, login, packages or external libraries are needed.
+A self-contained 2D car sketch and automated racing prototype with an in-game drawing studio and animated setup preview. No server, login, packages or external libraries are needed.
 
 ## Open the game
 
 Open `index.html` in a current Chrome, Edge or other modern browser, or upload the contents of this folder to a static web host such as GitHub Pages. Phone users can use the image picker/camera capture to add their car drawings.
+
+
+## New in v0.2: Draw cars inside the game
+
+1. Open **Cars**, select a racer, and tap **Draw car in game**.
+2. Draw a side-view car directly on the canvas with a mouse, stylus or finger. Include a body and two wheels.
+3. Use pen colours, brush size, eraser, undo or clear to edit the sketch.
+4. Tap **Use this car**. The game crops the drawing, estimates two wheel positions, and uses the sketch as the actual racer graphic.
+5. Drag the wheel markers and adjust their sizes if the estimation needs correcting. You can reopen your saved in-game drawing and make changes.
+
+**Alternative:** Capture a photo of a sketch on paper or upload an image as before.
+
+## New in v0.2: Animated setup preview
+
+While the host designs the course, the track editor shows animated demo cars using the current road. During car setup, the main game screen loops a cinematic side-view race on the host's track. Tap **Demo on / Demo off** to toggle these animations. The demo is **visual only** and is not the official physics race; the official race only starts when **Start race** is pressed.
 
 ## Play
 
