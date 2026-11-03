@@ -174,7 +174,7 @@ let previewEnabled=true,previewTime=0;
 // Ephemeral, room-code-based Realtime Broadcast: snapshots are not stored in a database.
 const SB_URL='https://qekcgsfeomjckctiubgm.supabase.co';
 const SB_KEY='sb_publishable_yJbCYOLDeMreuqM01g_oqA_eF5YEWwq';
-let realtimeClient=null,phoneChannel=null,phoneRoom='',pendingPhonePhoto=null,pendingPhoneName='',phonePreviewAt=0;
+let realtimeClient=null,phoneChannel=null,phoneRoom='',pendingPhonePhoto=null,pendingPhoneName='',pendingPhoneView='sheet',phonePreviewAt=0;
 
 const drawCanvas=$('drawCanvas'),dc=drawCanvas.getContext('2d',{willReadFrequently:true});
 let ink='#1a2e44',eraseInk=false,penDown=false,inkPointer=null,undoSteps=[],drawingRacerId=null;
@@ -381,7 +381,21 @@ function drawAll(){drawScene();if(page==='cars')drawCorrection()}
 function loop(ts){if(!lastTime)lastTime=ts;let delta=Math.min(.05,(ts-lastTime)/1000);lastTime=ts;if(page!=='race'&&previewEnabled&&!document.hidden&&$('drawStudio').classList.contains('hidden'))previewTime+=delta;if(simulation==='running'){stepCarry+=delta*($('speedMode').checked?2:1);let cycles=0;while(stepCarry>=1/120&&cycles<24){simulate(1/120);stepCarry-=1/120;cycles++}if(Math.floor(ts/115)!==Math.floor((ts-delta*1000)/115))refreshStandings()}drawScene();requestAnimationFrame(loop)}
 // Built-in sketch studio: transparent strokes, touch/mouse/stylus input, undo, and wheel detection.
 function copyCanvas(source){const canvas=document.createElement('canvas');canvas.width=source.width;canvas.height=source.height;canvas.getContext('2d').drawImage(source,0,0);return canvas}
-function openStudio(){const p=activePlayer();if(!p)return;drawingRacerId=p.id;dc.clearRect(0,0,drawCanvas.width,drawCanvas.height);if(p.sketch){dc.drawImage(p.sketch,0,0,drawCanvas.width,drawCanvas.height)}undoSteps=[];penDown=false;inkPointer=null;chooseInk('#1a2e44');$('drawingStatus').textContent='Use a dark outline for easy wheel detection. Draw the car in side view.';$('drawStudio').classList.remove('hidden');document.body.classList.add('studio-open');$('closeDrawing').focus()}
+let studioView='side',draftViews={side:null,top:null};
+function storeStudioView(){draftViews[studioView]=copyCanvas(drawCanvas)}
+function loadStudioView(view){
+ studioView=view;dc.clearRect(0,0,drawCanvas.width,drawCanvas.height);
+ if(draftViews[view])dc.drawImage(draftViews[view],0,0,drawCanvas.width,drawCanvas.height);
+ undoSteps=[];penDown=false;inkPointer=null;lastDrawPoint=null;
+ $('studioTitle').textContent=view==='side'?'Side-view car':'Top-view car';$('studioSubtitle').textContent=view==='side'?'Draw the body and wheels':'Draw the car from above';
+ $('studioSide').classList.toggle('selected',view==='side');$('studioTop').classList.toggle('selected',view==='top');$('drawingStatus').textContent=view==='side'?'Side view':'Top view';
+}
+function switchStudioView(view){if(studioView===view)return;storeStudioView();loadStudioView(view)}
+function openStudio(view='side'){
+ const p=activePlayer();if(!p)return;drawingRacerId=p.id;
+ draftViews={side:p.sketch?copyCanvas(p.sketch):null,top:p.topSketch?copyCanvas(p.topSketch):null};
+ loadStudioView(view);chooseInk('#1a2e44');$('drawStudio').classList.remove('hidden');document.body.classList.add('studio-open');
+}
 function closeStudio(){penDown=false;inkPointer=null;$('drawStudio').classList.add('hidden');document.body.classList.remove('studio-open');drawingRacerId=null}
 function chooseInk(hex){ink=hex;eraseInk=false;$('eraserBtn').classList.remove('selected');$('eraserBtn').setAttribute('aria-pressed','false');document.querySelectorAll('[data-ink]').forEach(b=>b.classList.toggle('selected',b.dataset.ink===hex))}
 function markUndo(){undoSteps.push(dc.getImageData(0,0,drawCanvas.width,drawCanvas.height));if(undoSteps.length>18)undoSteps.shift()}
@@ -392,11 +406,23 @@ drawCanvas.addEventListener('pointerdown',e=>{if(!$('drawStudio').classList.cont
 drawCanvas.addEventListener('pointermove',e=>{if(!penDown||e.pointerId!==inkPointer)return;e.preventDefault();const next=drawPoint(e);drawStroke(lastDrawPoint,next);lastDrawPoint=next});
 function endDrawingPointer(e){if(e.pointerId===inkPointer){penDown=false;inkPointer=null;lastDrawPoint=null}}
 drawCanvas.addEventListener('pointerup',endDrawingPointer);drawCanvas.addEventListener('pointercancel',endDrawingPointer);
-function useDrawing(){if(!drawingRacerId)return;const pixels=dc.getImageData(0,0,drawCanvas.width,drawCanvas.height).data,W=drawCanvas.width,H=drawCanvas.height;let minX=W,minY=H,maxX=-1,maxY=-1,inkCount=0;for(let y=0;y<H;y++)for(let x=0;x<W;x++){const a=pixels[(y*W+x)*4+3];if(a>34){inkCount++;minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y)}}if(inkCount<120){$('drawingStatus').textContent='Draw a car body and at least two wheels before saving.';return}
-const p=players.find(r=>r.id===drawingRacerId);if(!p){closeStudio();return}
-const pad=24,left=Math.max(0,minX-pad),top=Math.max(0,minY-pad),right=Math.min(W,maxX+pad+1),bottom=Math.min(H,maxY+pad+1);const crop=document.createElement('canvas');crop.width=Math.max(1,right-left);crop.height=Math.max(1,bottom-top);crop.getContext('2d').drawImage(drawCanvas,left,top,crop.width,crop.height,0,0,crop.width,crop.height);
-p.sketch=copyCanvas(drawCanvas);p.canvas=crop;p.rawScan=null;p.wheels=detectWheels(crop);p.source='drawn';p.confidence=.5;selected=players.indexOf(p);chosenWheel=1;closeStudio();$('scanStatus').textContent='Wheels estimated';$('carsStatus').textContent='Drawing saved! Correct the two wheel markers below, then race.';refreshPlayers();drawAll()}
-$('openDrawing').addEventListener('click',openStudio);
+function useDrawing(){
+ if(!drawingRacerId)return;storeStudioView();const p=players.find(r=>r.id===drawingRacerId);if(!p){closeStudio();return}
+ let saved=0;
+ for(const view of ['side','top']){
+  const raw=draftViews[view];if(!raw||!hasInk(raw))continue;
+  const crop=cropInk(raw);if(!crop)continue;const cleaned=thickenInk(crop,1);
+  if(view==='side'){p.sketch=copyCanvas(raw);p.canvas=cleaned;p.wheels=detectWheels(cleaned);p.source='drawn';p.sideSource='drawn';p.rawScan=null}
+  else{p.topSketch=copyCanvas(raw);p.topCanvas=cleaned;p.topSource='drawn'}
+  saved++;
+ }
+ if(!saved){$('drawingStatus').textContent='Draw at least one view';return}
+ selected=players.indexOf(p);chosenWheel=1;closeStudio();$('scanStatus').textContent='Drawing saved';$('carsStatus').textContent='Both views available when drawn';refreshPlayers();drawAll();
+}
+$('openDrawing').addEventListener('click',()=>openStudio('side'));
+$('openTopDrawing').addEventListener('click',()=>openStudio('top'));
+$('studioSide').addEventListener('click',()=>switchStudioView('side'));
+$('studioTop').addEventListener('click',()=>switchStudioView('top'));
 $('closeDrawing').addEventListener('click',closeStudio);
 $('cancelDrawing').addEventListener('click',closeStudio);
 $('saveDrawing').addEventListener('click',useDrawing);
@@ -426,7 +452,7 @@ async function pairPhone(){if(phoneChannel&&realtimeClient){await realtimeClient
  .on('broadcast',{event:'preview'},({payload})=>{if(typeof payload?.image!=='string'||!payload.image.startsWith('data:image/jpeg;base64,')||payload.image.length>60000)return;phonePreviewAt=Date.now();$('phoneLiveBox').classList.remove('hidden');$('phoneLiveImage').src=payload.image;phoneStatus('Camera live');})
  .on('broadcast',{event:'snapshot'},({payload})=>{
    if(typeof payload?.image!=='string'||!/^data:image\/(jpeg|png);base64,/.test(payload.image)||payload.image.length>240000)return;
-   pendingPhonePhoto=payload.image;pendingPhoneName=typeof payload.name==='string'?payload.name.trim().slice(0,24):'';$('phonePendingImage').src=payload.image;$('phonePendingBox').classList.remove('hidden');$('phonePendingBox').classList.add('pending');
+   pendingPhonePhoto=payload.image;pendingPhoneName=typeof payload.name==='string'?payload.name.trim().slice(0,24):'';pendingPhoneView=['sheet','side','top'].includes(payload.view)?payload.view:'sheet';$('phonePendingImage').src=payload.image;$('phonePendingBox').classList.remove('hidden');$('phonePendingBox').classList.add('pending');
    $('phonePendingLabel').textContent='New photo from '+String(payload?.name||'phone').slice(0,24)+' · review before adding';
    phoneStatus('Photo received');if(page!=='cars')setPage('cars');
  });
@@ -438,7 +464,7 @@ $('changePhoneCode').addEventListener('click',pairPhone);
 $('copyPhoneLink').addEventListener('click',async ()=>{const url=$('cameraLink').textContent;try{await navigator.clipboard.writeText(url);$('phoneTip').textContent='Phone link copied. Open it on your phone.'}catch{$('phoneTip').textContent='Clipboard unavailable. Open this link on the phone: '+url}});
 $('discardPhonePhoto').addEventListener('click',()=>{pendingPhonePhoto=null;$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Room ready')});
 $('acceptPhonePhoto').addEventListener('click',()=>{if(!pendingPhonePhoto)return;
- const image=new Image();image.onload=()=>{if(pendingPhoneName&&pendingPhoneName.toLowerCase()!=='phone')activePlayer().name=pendingPhoneName;scanImage(image);pendingPhonePhoto=null;pendingPhoneName='';$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Photo imported');};image.onerror=()=>{$('phoneTip').textContent='Image could not be decoded. Please retake it.'};image.src=pendingPhonePhoto;
+ const image=new Image();image.onload=()=>{if(pendingPhoneName&&pendingPhoneName.toLowerCase()!=='phone')activePlayer().name=pendingPhoneName;scanImage(image,{view:pendingPhoneView});pendingPhonePhoto=null;pendingPhoneName='';$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Photo imported');};image.onerror=()=>{$('phoneTip').textContent='Image could not be decoded. Please retake it.'};image.src=pendingPhonePhoto;
 });
 $('backgroundCleanup').addEventListener('input',()=>{$('cleanupValue').textContent=Number($('backgroundCleanup').value)<30?'Gentle':Number($('backgroundCleanup').value)>75?'Strong':'Balanced';const p=activePlayer();if(p?.rawScan)scanImage(p.rawScan,{view:p.rawView||scanView})});
 window.addEventListener('pagehide',()=>{if(phoneChannel&&realtimeClient)realtimeClient.removeChannel(phoneChannel)});
@@ -564,6 +590,13 @@ function downhillRoadPath(c,x0,x1){
 }
 function paintTopCar(c,p,heading=0){
   const ph=physical(p),length=clamp(ph.bodyW*.77,73,121),width=clamp(ph.bodyH*.62,36,66);
+  if(p.topCanvas){
+    c.save();c.rotate(heading);const img=p.topCanvas;c.fillStyle='rgba(13,31,43,.22)';
+    rounded(c,-length*.53+3,-width*.54+5,length*1.06,width*1.08,13);c.fill();
+    if(img.height>img.width*1.2){c.rotate(Math.PI/2);c.drawImage(img,-width*.52,-length*.53,width*1.04,length*1.06)}
+    else c.drawImage(img,-length*.53,-width*.52,length*1.06,width*1.04);
+    c.restore();return;
+  }
   c.save();c.rotate(heading);c.fillStyle='#12283e';
   for(let ax of [-length*.30,length*.30])for(let side of [-1,1]){rounded(c,ax-10,side*(width*.55)-6,20,12,3);c.fill()}
   c.fillStyle=p.color;c.strokeStyle='#20374a';c.lineWidth=4;rounded(c,-length/2,-width/2,length,width,14);c.fill();c.stroke();
