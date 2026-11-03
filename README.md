@@ -1,11 +1,21 @@
-# Sketch Rally — Playable Prototype v0.2
+# Sketch Rally — Playable Prototype v0.3
 
-A self-contained 2D car sketch and automated racing prototype with an in-game drawing studio and animated setup preview. No server, login, packages or external libraries are needed.
+A self-contained 2D car sketch and automated racing prototype with an in-game drawing studio and animated setup preview. Core racing needs no server or login. Phone pairing uses an internet-connected Supabase Realtime service; the two hosted pages load a client library from a CDN.
 
 ## Open the game
 
 Open `index.html` in a current Chrome, Edge or other modern browser, or upload the contents of this folder to a static web host such as GitHub Pages. Phone users can use the image picker/camera capture to add their car drawings.
 
+
+## New in v0.3: Phone as smartboard camera
+
+On the **smartboard**, open the game, choose **2 · Cars**, select the racer you want to replace and click **Create pairing code**. Scan the QR code on your phone (or open `phone.html` and enter the 8-character code). The smartboard shows a low-resolution preview while the phone camera is on. Captured photos appear for host review; click **Use for selected racer** or **Discard**.
+
+On the **phone**, open the camera page, connect, tap **Start camera**, allow permission, aim at a side-view car sketch and tap **Capture & send to smartboard**. A photo-upload fallback is available if camera permission is denied. The host may edit the car's wheel positions after importing.
+
+**Automatic background transparency:** Scans use adaptive local contrast and colour differences to remove paper and soft shadows; a **Background removal** strength slider lets the host tune the result. Built-in canvas drawings remain transparent. Results are approximate; detailed shadows and faint pencil marks may require adjustment.
+
+**Network and privacy:** This is a temporary Realtime Broadcast room, using your existing connected Supabase platform with a public publishable key. No database photo uploads or persistent online roster are involved. Both devices require internet access, and camera access needs HTTPS (GitHub Pages works). Room codes are not an authentication system, so keep codes private. The camera companion transmits only within the paired room, and snapshots require host approval. The race itself runs on the smartboard, not on the phone.
 
 ## New in v0.2: Draw cars inside the game
 
@@ -30,12 +40,12 @@ While the host designs the course, the track editor shows animated demo cars usi
 
 ## Current prototype scope
 
-- **Multiplayer:** Local, shared-device multiplayer with 1–4 car designs. Players take turns importing their drawings onto the same game device. No real-time phone-to-host sync or online lobby yet.
+- **Multiplayer:** 1–4 racers on the smartboard. A paired phone can send sketches in real time, but the track and race still run on the host device (no online lobby).
 - **Scanning:** Heuristic background removal and estimated round wheel detection, with manual adjustments. It is not an advanced machine-vision model and won't recognize every drawing correctly.
 - **Track:** Continuous 2D road profile and rocks. It does not yet support tunnels, overhangs, loop-the-loops or arbitrary 2D obstacle art.
 - **Race physics:** Experimental lightweight browser simulation; results are not realistic engineering measurements. Very difficult tracks may leave every racer stuck.
-- **Storage:** Runs locally without uploading images; drawings and tracks are not saved between reloads.
+- **Storage:** Phone photos and previews travel ephemerally through Supabase Broadcast; there is no saved photo archive. Drawings and tracks are not persisted between reloads.
 
 ## Suggested next development phase
 
-Phone-to-host code/QR joining, persistent car garages, improved wheel/background detection, more obstacle types, saved tracks and online shared racing sessions.
+Persistent garages, stronger wheel/background detection, more obstacle types, saved tracks and online shared racing sessions.
