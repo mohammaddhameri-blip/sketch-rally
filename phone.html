@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#0c1422" />
+<title>Sketch Rally · Phone Camera</title>
+<style>
+:root{--bg:#0c1422;--panel:#17283e;--muted:#a4b6ce;--line:#3c526d;--green:#c4f26b;--blue:#80d7ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px system-ui,-apple-system,sans-serif;color:#eef8ff}main{padding:19px 15px 35px;max-width:610px;margin:0 auto}header{display:flex;align-items:center;gap:10px;margin-bottom:17px}header .mark{font-size:28px;background:var(--green);border-radius:13px;display:grid;place-items:center;width:46px;height:46px}header h1{font-size:19px;line-height:1.14;letter-spacing:-.3px;margin:0}header p{margin:2px 0 0;color:var(--muted);font-size:12px}.panel{background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:16px;margin-bottom:14px}h2{font-size:17px;margin:0 0 9px}p{font-size:13px;line-height:1.55;color:var(--muted);margin:5px 0 13px}.field{background:#0d1b2b;color:white;font:700 18px system-ui;letter-spacing:.17em;text-align:center;padding:13px 8px;border:1px solid #667e99;border-radius:10px;width:100%;text-transform:uppercase}button,.file-button{padding:12px 13px;min-height:45px;border:1px solid var(--line);background:#263e58;border-radius:11px;color:white;font-weight:750;font-size:14px;cursor:pointer;text-align:center}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--green);color:#102332;border-color:var(--green)}.blue{background:#294b6e;border-color:#477391}.row{display:flex;gap:9px}.row>button,.row>.file-button{flex:1}.full{width:100%;margin-top:11px}.status{font-size:12px;margin:11px 0 0;color:#c4f26b;line-height:1.5;min-height:18px}.video-frame{background:#080f1d;border:1px solid #6b8298;border-radius:14px;overflow:hidden;aspect-ratio:3 / 4;position:relative;display:grid;place-items:center}.video-frame video{width:100%;height:100%;object-fit:cover}.video-frame .hint{position:absolute;inset:auto 12px 12px;border-radius:10px;background:#07111aaa;color:white;font-size:12px;padding:9px 10px;pointer-events:none;text-align:center}.video-frame:has(video:not([srcObject])){background:#0c1b2c}.cam-off{min-height:160px;aspect-ratio:auto}.cam-off video{display:none}.cam-off .hint{position:static;background:transparent;color:var(--muted)}.preview{max-width:100%;max-height:270px;display:block;margin:auto;border-radius:11px}.hidden{display:none!important}.file-button{display:flex;align-items:center;justify-content:center}.file-button input{display:none}.subtle{font-size:11px;color:#91a9c1;margin-top:12px}.chip{border-radius:20px;color:var(--green);background:#2d4436;font-size:11px;padding:6px 9px;display:inline-block;font-weight:850}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0"></script>
+</head>
+<body>
+<main>
+<header><div class="mark">📷</div><div><h1>Sketch Rally · Phone Camera</h1><p>Send paper car sketches to the smartboard</p></div></header>
+<section class="panel">
+<h2>1 · Pair with the smartboard</h2>
+<p>On the smartboard, open <strong>Cars → Create pairing code</strong>. Scan its QR code or enter its 8-character code below.</p>
+<div class="row"><input id="room" class="field" inputmode="text" autocapitalize="characters" placeholder="ROOM CODE" maxlength="8" aria-label="Smartboard pairing code"/><button class="primary" id="connect">Connect</button></div>
+<div id="connectionStatus" class="status" role="status">Not connected</div>
+</section>
+<section class="panel">
+<h2>2 · Take a photo of your drawing</h2>
+<p>Your phone camera looks at the paper, and the smartboard can see a low-resolution live preview while you scan. Only photos you send are imported into the game.</p>
+<div id="cameraFrame" class="video-frame cam-off"><video id="video" autoplay playsinline muted aria-label="Live phone camera view"></video><div class="hint" id="cameraHint">Connect first, then start the camera. Aim at a side-view car drawing on plain paper.</div></div>
+<div class="row" style="margin-top:11px"><button id="startCamera" class="blue" disabled>📷 Start camera</button><button id="switchCamera" disabled>↻ Flip</button><button id="stopCamera" disabled>Stop</button></div>
+<div style="margin-top:12px"><label for="racerName" style="font-size:12px;color:var(--muted)">Optional player name</label><input id="racerName" style="margin-top:5px;letter-spacing:normal;text-align:left;font-size:14px" class="field" maxlength="24" placeholder="Racer name (optional)" /></div>
+<button id="capture" class="primary full" disabled>Capture &amp; send to smartboard</button>
+<label class="file-button full">Or select a photo from your phone<input type="file" accept="image/*" capture="environment" id="filePhoto" disabled/></label>
+<div class="status" id="photoStatus" role="status">Choose a pairing code to begin.</div>
+</section>
+<section class="panel hidden" id="sentPanel"><h2>Photo submitted</h2><img id="sentImage" class="preview" alt="The photo sent to the smartboard"/><p>Your smartboard host can now review and accept this image for the selected racer. The game removes the paper background automatically and lets you correct the wheels.</p></section>
+<p class="subtle">Privacy: This camera companion broadcasts preview frames and selected photos only to devices in the same temporary room. No photos are saved to the site's database. Anyone with the code may join the room, so keep it within your group.</p>
+</main>
+<script>
+'use strict';
+(()=>{
+const $=id=>document.getElementById(id);
+const SB_URL='https://qekcgsfeomjckctiubgm.supabase.co';
+const SB_KEY='sb_publishable_yJbCYOLDeMreuqM01g_oqA_eF5YEWwq';
+let client=null,channel=null,connected=false,paired=false,stream=null,previewTimer=null,cameraFace='environment',sending=false;
+const params=new URLSearchParams(location.search);$('room').value=(params.get('room')||'').replace(/[^A-Z0-9]/gi,'').toUpperCase().slice(0,8);
+function status(text){$('connectionStatus').textContent=text}
+function photoStatus(text){$('photoStatus').textContent=text}
+function enable(){const yes=connected&&paired;$('startCamera').disabled=!yes;$('filePhoto').disabled=!yes;$('capture').disabled=!yes||!stream||sending;$('switchCamera').disabled=!yes||!stream;$('stopCamera').disabled=!stream}
+async function join(){const code=$('room').value.replace(/[^A-Z0-9]/gi,'').toUpperCase().slice(0,8);$('room').value=code;if(code.length!==8){status('Enter the full 8-character code displayed on the smartboard.');return}
+ if(!window.supabase?.createClient){status('Unable to load the connection library. Check internet and reload.');return}
+ await stop();if(channel&&client){await client.removeChannel(channel);channel=null}
+ connected=false;paired=false;status('Connecting to room…');enable();
+ try{
+ client=client||window.supabase.createClient(SB_URL,SB_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
+ const ch=client.channel('sketch-rally:camera:'+code,{config:{private:false,broadcast:{ack:true}}});channel=ch;
+ ch.on('broadcast',{event:'host-ready'},()=>{if(ch!==channel)return;paired=true;status('Connected to smartboard ✓');photoStatus('Ready to scan. Start the camera or select a photo.');enable()});
+ ch.subscribe(async state=>{if(ch!==channel)return;
+ if(state==='SUBSCRIBED'){connected=true;status('Connected to room. Looking for the smartboard…');enable();await ch.send({type:'broadcast',event:'phone-hello',payload:{connected:true}})}
+ else if(state==='CHANNEL_ERROR'||state==='CLOSED'||state==='TIMED_OUT'){connected=false;paired=false;status('Connection interrupted. Tap Connect again.');enable()}
+ });
+ }catch(err){status('Could not connect. Check your internet and try again.');console.error(err)}
+}
+async function stop(){if(previewTimer){clearInterval(previewTimer);previewTimer=null}if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('video').srcObject=null;$('cameraFrame').classList.add('cam-off');$('cameraHint').textContent='Camera off. You can also choose a photo from your gallery.';enable()}
+async function start(){if(!paired){photoStatus('Pair with the smartboard first.');return}await stop();
+ try{stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:cameraFace},width:{ideal:1280},height:{ideal:960}}});$('video').srcObject=stream;await $('video').play();$('cameraFrame').classList.remove('cam-off');$('cameraHint').textContent='Aim at your drawing · Tap Capture & send';enable();photoStatus('Camera is ready.');
+ previewTimer=setInterval(()=>{if(!paired||!connected||!stream||document.hidden||!channel||$('video').readyState<2)return;
+ const v=$('video'),c=document.createElement('canvas'),width=280;c.width=width;c.height=Math.max(100,Math.round(width*v.videoHeight/v.videoWidth));c.getContext('2d').drawImage(v,0,0,c.width,c.height);
+ const image=c.toDataURL('image/jpeg',.40);if(image.length<58000){channel.send({type:'broadcast',event:'preview',payload:{image}}).catch(()=>{})}},1100);
+ }catch(err){photoStatus('Camera permission unavailable. Select an existing photo instead.');console.error(err);stop()}
+}
+function compressImage(source){const w=source.videoWidth||source.naturalWidth||source.width,h=source.videoHeight||source.naturalHeight||source.height;
+ if(!w||!h)throw Error('No image captured');let data='';for(const [max,q] of [[1000,.70],[850,.63],[720,.55],[640,.50],[520,.45]]){
+ const s=Math.min(1,max/Math.max(w,h)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(w*s));c.height=Math.max(1,Math.round(h*s));const ctx=c.getContext('2d');ctx.fillStyle='white';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(source,0,0,c.width,c.height);
+ data=c.toDataURL('image/jpeg',q);if(data.length<210000)return data;
+ }if(data.length>234000)throw Error('Photo too large to send. Move closer to the paper.');return data;
+}
+async function transmit(source){if(!paired||!channel){photoStatus('Pair with the smartboard first.');return}if(sending)return;
+ sending=true;enable();try{const data=compressImage(source);photoStatus('Sending photo…');const response=await channel.send({type:'broadcast',event:'snapshot',payload:{image:data,name:$('racerName').value.trim().slice(0,24)||'phone'}});
+ if(response!=='ok'){throw Error('Send not confirmed: '+response)}
+ $('sentImage').src=data;$('sentPanel').classList.remove('hidden');photoStatus('Photo sent! Review and accept it on the smartboard.');
+ }catch(err){console.error(err);photoStatus('Could not send photo. Check that both devices are online, then retry.')}finally{sending=false;enable()}
+}
+$('connect').addEventListener('click',join);
+$('room').addEventListener('keydown',e=>{if(e.key==='Enter')join()});
+$('startCamera').addEventListener('click',start);
+$('stopCamera').addEventListener('click',stop);
+$('switchCamera').addEventListener('click',async()=>{cameraFace=cameraFace==='environment'?'user':'environment';await start()});
+$('capture').addEventListener('click',()=>{if(stream&&$('video').readyState>=2)transmit($('video'));else photoStatus('Start your camera first.')});
+$('filePhoto').addEventListener('change',e=>{const f=e.target.files?.[0];if(!f)return;if(!f.type.startsWith('image/')){photoStatus('Choose a photo.');return}const reader=new FileReader();reader.onload=()=>{const img=new Image();img.onload=()=>transmit(img);img.onerror=()=>photoStatus('Could not open the chosen photo.');img.src=reader.result};reader.readAsDataURL(f);e.target.value=''});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&stream)stop()});
+window.addEventListener('pagehide',()=>{stop();if(channel&&client)client.removeChannel(channel)});
+if($('room').value.length===8)join();
+})();
+</script>
+</body>
+</html>
