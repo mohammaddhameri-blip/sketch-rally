@@ -1,29 +1,26 @@
-# Sketch Rally — v0.6
+# Sketch Rally — v0.7
 
-Draw side-view and top-view cars, scan two-view paper sketches using a paired phone, and race automatically on hill-climb or downhill courses.
+## Host phone → Smartboard
 
-## What's new — timed car design
+1. On the smartboard open the game and choose **PAIR HOST PHONE** from the main menu (or **Cars → Pair host phone**).
+2. On your phone scan the QR link or open `phone.html`, enter the eight-character room code and connect.
+3. Choose **+ New racer**, type the player's name, and select **Top + Side sheet**, **Side view**, or **Top view**.
+4. Take a picture using the phone camera or select an existing photo, then tap **Capture & Register**. Wait for confirmation.
+5. Repeat to register up to **8 cars**. To add another view to an existing racer, select their name in the dropdown before scanning.
+6. Tap **START RACE** on the phone. The smartboard shows the selected fully automatic race mode and starts the animation.
 
-- Every racer gets **one 3-minute turn**, including side/top drawing, scanning, naming and wheel adjustments.
-- In **Cars → Garage**, choose a racer and tap **Start 3:00** to begin their turn. The countdown is visible in the Garage, drawing studio and smartboard header.
-- Only the active racer can edit. Each player has their own timer. The next racer is selected after a turn ends; their clock does **not** begin until the host presses Start.
-- Tap **Finish early** to submit a design before time runs out, or let the timer reach zero. **At zero, current drafts auto-save and editing locks.** An unfinished racer uses the last available artwork or a starter car.
-- The timer keeps counting if you close the drawing studio or change screens. A browser page reload resets the unsaved local session, including timers.
-- The race is available once all racers have finished or timed out. There is no steering during races.
-- You can choose the number of racers before starting the first design turn (1–4 racers). The roster locks once the first turn begins.
+The first remote registration replaces the two sample racers. The live roster updates on the smartboard. The game removes paper backgrounds, thickens sketch lines and estimates wheel positions. The host can preselect either Hill Climb (side view) or Downhill (top view) on the smartboard.
 
-## Run
+## Existing features
 
-Open `index.html` from the GitHub Pages site. `phone.html` is the optional camera companion. Both are plain HTML. The phone and smartboard need internet for Supabase Realtime camera pairing; the actual race and drawing run locally.
+- Two game modes, hand-drawn tracks, in-game drawing of side and top views, automatic photo cleanup, wheel detection and adjustments.
+- An individual **3-minute timer** for players drawing and adjusting manually on the smartboard. Cars registered on the host phone count as completed designs and can race immediately. Any active manual design turns must finish before a race.
+- All driving remains fully automatic. The main smartboard runs the simulation; the phone sends controls and images.
 
-## Other features
+## Technology and safety
 
-- Main menu with **Hill Climb** (side view) and **Downhill Race** (top view)
-- Host-drawn hills or winding downhill roads; demo cars animate during setup
-- In-game side and top sketch canvases, transparent background, thickened doodle outlines
-- A two-panel paper drawing can supply both views, with manual wheel correction
-- Four-racer local automatic racing
+This static GitHub Pages project uses the previously connected Supabase Realtime Broadcast service with a **publishable key**, and needs internet on both devices for pairing. Photo data is compressed and sent through a temporary room, not saved as a permanent online image gallery. Camera permission requires HTTPS; a photo-upload fallback is available. Pairing room codes aren't strong authentication: share them only with the intended host. Registration is blocked while racing. Session data resets on a reload.
 
-## Prototype limitations
+## Verification
 
-No persistent player data: refreshing the page resets racers, sketches, timing and tracks. The timer uses the host device's wall clock, so it continues while another tab is open, but a full page reload begins a fresh session. Phone scanning is hosted via a short-lived Realtime Broadcast room and requires the host's approval.
+Both browser scripts passed JavaScript syntax checks. An isolated two-screen browser simulation passed: pairing, two named registrations, replacing sample racers, adding a top view to an existing racer, roster sync and remote starting of Hill Climb. Live physical-device / Supabase production connection has not been tested.
