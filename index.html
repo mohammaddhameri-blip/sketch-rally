@@ -4,10 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#101827" />
-<title>Sketch Rally — Draw. Scan. Race.</title>
+<title>Sketch Rally v0.3 — Draw. Scan. Race.</title>
 <style>
 :root{--bg:#0c1422;--panel:#152237;--panel2:#1c2b43;--border:#30425c;--text:#f2f7ff;--muted:#a1b0c8;--lime:#c4f26b;--blue:#6fc8fa;--orange:#ffb478;--danger:#ff8191;--radius:15px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}.app{max-width:1530px;margin:auto;min-height:100vh;padding:22px 26px 30px}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:13px}.logo{width:44px;height:44px;display:grid;place-items:center;background:var(--lime);color:var(--bg);border-radius:13px;box-shadow:0 0 0 4px rgba(196,242,107,.08);font-size:24px}.brand h1{margin:0;font-size:21px;letter-spacing:-.8px;line-height:1.1}.brand small{color:var(--muted);font-size:12px;font-weight:500}.chip{border:1px solid #4a6647;background:#223c30;border-radius:100px;color:var(--lime);font-size:11px;font-weight:800;letter-spacing:.09em;padding:9px 12px;text-transform:uppercase}.layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:19px;align-items:stretch}.sidebar,.stage{border:1px solid var(--border);border-radius:20px;background:var(--panel);overflow:hidden}.sidebar{display:flex;flex-direction:column}.tabs{display:grid;grid-template-columns:repeat(3,1fr);padding:12px;gap:6px;border-bottom:1px solid var(--border)}.tab{border:0;border-radius:10px;background:transparent;color:var(--muted);padding:12px 6px;font-size:12px;font-weight:800;letter-spacing:.02em}.tab.on{color:var(--bg);background:var(--lime)}.content{padding:20px;overflow-y:auto;max-height:calc(100vh - 160px);min-height:565px}.pane{display:none}.pane.active{display:block}h2{font-size:21px;margin:0 0 6px;letter-spacing:-.5px}h3{font-size:13px;font-weight:800;margin:18px 0 9px}.sub{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 19px}.section-label{display:block;color:#afc0d7;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin:16px 0 8px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:10px;min-height:39px;padding:10px 12px;font-size:12px;font-weight:700;transition:background .1s,border-color .1s}.btn:hover{border-color:#7189a8}.btn.selected{border-color:var(--lime);color:var(--lime);background:#273c30}.btn.primary{color:#0b1920;background:var(--lime);border-color:var(--lime)}.btn.primary:hover{background:#ddffa8}.btn.secondary{background:#294861;color:#dff5ff}.btn.warn{color:var(--danger)}.btn.full{width:100%;margin-top:12px}.btn.large{min-height:47px;font-size:14px}.help{font-size:12px;line-height:1.55;color:var(--muted);margin:11px 0 0}.note{font-size:12px;line-height:1.45;border:1px solid #405676;border-radius:12px;padding:11px 12px;color:#cbd9eb;background:rgba(108,166,238,.06);margin-top:15px}.rule{height:1px;background:var(--border);margin:18px 0}.player-list{display:grid;gap:7px}.player-row{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--border);background:var(--panel2);border-radius:10px;padding:8px 9px;color:var(--text)}.player-row.active{border-color:var(--lime);background:#293c34}.player-icon{width:31px;height:28px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:#0e1b26;font-weight:900;font-size:13px}.player-info{min-width:0;flex:1}.player-info b{display:block;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.player-info small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.player-row .tick{color:var(--lime);font-weight:900}.field{width:100%;padding:11px 12px;background:#0f1a2b;border:1px solid #49607a;color:white;border-radius:10px;outline:0;font-size:13px}.field:focus{border-color:var(--lime)}.upload{border:1px dashed #7890a8;border-radius:12px;min-height:70px;display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;color:#e2efff;font-weight:700;font-size:12px;text-align:center;padding:12px;background:#1a2e45}.upload input{display:none}.upload:hover{border-color:var(--lime)}.correction{position:relative;border:1px solid #426077;background:linear-gradient(45deg,#ebedf1 25%,#ffffff 25% 50%,#ebedf1 50% 75%,#ffffff 75%);background-size:18px 18px;border-radius:12px;overflow:hidden;margin-top:9px}.correction canvas{display:block;width:100%;height:184px;touch-action:none;cursor:grab}.correction canvas:active{cursor:grabbing}.minirow{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:10px 0 0}.minirow span{font-size:11px;color:var(--muted)}.minirow b{font-size:11px;color:var(--lime)}.range{width:100%;accent-color:var(--lime)}.standings{display:grid;gap:8px;margin-top:15px}.result{display:flex;gap:8px;align-items:center;background:#1d2e46;border:1px solid var(--border);padding:10px;border-radius:10px}.result .rank{font-size:11px;width:18px;color:var(--muted);font-weight:900}.result-name{min-width:0;flex:1}.result-name b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.result-name small{color:var(--muted);font-size:10px}.result .progress{width:70px;background:#0d1a2b;border-radius:10px;height:5px;overflow:hidden}.result .fill{height:100%;background:var(--lime);width:0}.stage{min-height:630px;display:flex;flex-direction:column;background:#101e32}.stage-top{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 20px;border-bottom:1px solid var(--border)}.stage-title{font-weight:900;font-size:17px;letter-spacing:-.3px}.stage-description{font-size:12px;color:var(--muted);margin-top:4px}.stage-counter{font-weight:900;font-size:15px;color:var(--lime);font-variant-numeric:tabular-nums;white-space:nowrap}.canvas-wrap{height:min(65vh,608px);min-height:455px;position:relative;overflow:hidden;background:#a6d8eb}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.canvas-tooltip{position:absolute;top:17px;left:17px;border-radius:10px;background:rgba(13,29,46,.78);color:#f7fcff;font-size:12px;font-weight:700;padding:10px 12px;pointer-events:none;max-width:70%;backdrop-filter:blur(5px)}.canvas-tooltip:empty{display:none}.footer{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 19px;background:#152237;border-top:1px solid var(--border)}.footer .message{color:var(--muted);font-size:12px;line-height:1.45}.footer .message strong{color:var(--text)}.footer-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.small-pill{font-size:11px;font-weight:800;display:inline-block;border-radius:20px;padding:5px 9px;background:#31435b;color:#e3eefd}.hidden{display:none!important}.muted{color:var(--muted)}.status{font-size:11px;margin-top:9px;color:var(--lime);min-height:16px}.checkbox{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin:12px 0}.checkbox input{accent-color:var(--lime)}@media(max-width:1000px){.layout{grid-template-columns:300px minmax(0,1fr)}.app{padding:15px}.content{padding:15px}.canvas-wrap{min-height:400px}}@media(max-width:770px){.app{padding:12px 12px 25px}.header{margin-bottom:12px}.layout{grid-template-columns:1fr;gap:11px}.sidebar{order:2}.stage{order:1;min-height:0}.content{max-height:none;min-height:0}.stage-top{min-height:61px;padding:12px 13px}.canvas-wrap{height:53vh;min-height:300px;max-height:530px}.canvas-tooltip{font-size:10px;top:10px;left:10px}.footer{padding:12px;min-height:60px;flex-wrap:wrap}.brand h1{font-size:17px}.logo{width:36px;height:36px;font-size:20px}.chip{font-size:9px;padding:7px 9px}.sidebar{border-radius:16px}.tabs{padding:8px}.content{padding:16px}.stage-title{font-size:15px}}@media(max-width:380px){.canvas-wrap{min-height:275px;height:43vh}.btn{padding:9px 8px}.header .chip{display:none}}
-/* In-game car drawing studio and setup preview controls */
+/* In-game car drawing studio, transparent scan and phone-camera pairing */
+.camera-panel{margin-top:14px;border:1px solid #50708c;background:#10273d;border-radius:13px;padding:13px;display:grid;gap:9px}.camera-panel .camera-head{display:flex;align-items:center;justify-content:space-between;gap:7px;flex-wrap:wrap}.camera-head b{font-size:13px}.camera-code{font-size:23px;font-weight:900;letter-spacing:.15em;color:var(--lime);font-variant-numeric:tabular-nums}.camera-tools{display:flex;gap:7px;flex-wrap:wrap}.camera-tools .btn{flex:1}.camera-link{font-size:11px;color:#b6c9de;overflow-wrap:anywhere}.phone-preview{border:1px solid #516981;border-radius:10px;padding:7px;background:#0b1d31;display:grid;gap:7px}.phone-preview img{display:block;width:100%;max-height:176px;object-fit:contain;border-radius:7px;background:#172434}.phone-preview .mini-label{color:#bcd3e5;font-size:11px}.phone-preview img:not([src]){display:none}.phone-preview.pending{border-color:var(--lime)}.camera-qr{width:116px;height:116px;background:white;display:grid;place-items:center;border-radius:8px;padding:7px;margin:auto}.camera-qr img{max-width:100%;height:auto}.scan-controls{margin-top:9px}.scan-controls label{display:flex;justify-content:space-between;color:#c2d1e3;font-size:11px;gap:8px}.scan-controls input{accent-color:var(--lime);width:100%}
+
 .stage-right{display:flex;align-items:center;gap:11px}.preview-btn{font-size:11px;padding:7px 10px;min-height:34px;white-space:nowrap}.studio-open{overflow:hidden}.studio-backdrop{position:fixed;inset:0;background:rgba(4,13,26,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:14px}.studio-panel{width:min(960px,100%);max-height:96dvh;overflow-y:auto;background:#17283e;border:1px solid #647891;border-radius:22px;box-shadow:0 15px 60px #0008;padding:22px;display:flex;flex-direction:column;gap:13px}.studio-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.studio-top h2{font-size:22px}.studio-top .sub{margin:5px 0 0}.studio-kicker{font-size:10px;letter-spacing:.1em;font-weight:900;color:var(--lime);margin-bottom:7px}.studio-tools{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.studio-choices{display:flex;gap:7px;align-items:center}.color-dot{height:29px;width:29px;flex-shrink:0;border:3px solid #9fb0c5;background:var(--swatch);border-radius:50%;cursor:pointer}.color-dot.selected{outline:2px solid var(--lime);outline-offset:2px}.brush-control{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:9px}.brush-control input{width:100px;accent-color:var(--lime)}.studio-canvas-frame{border:5px solid #f4f8ff;background-color:#fff;background-image:radial-gradient(#d5deea .8px,transparent .8px);background-size:22px 22px;border-radius:13px;box-shadow:inset 0 0 0 2px #acbfd3;overflow:hidden}.studio-canvas-frame canvas{display:block;width:100%;aspect-ratio:760/350;touch-action:none;cursor:crosshair}.studio-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.studio-bottom span{font-size:12px;color:#afc3db;max-width:470px}.studio-actions{display:flex;gap:9px;justify-content:flex-end}@media(max-width:770px){.studio-backdrop{padding:6px}.studio-panel{border-radius:15px;padding:13px;max-height:98dvh;gap:11px}.studio-top h2{font-size:17px}.studio-top .sub{font-size:11px}.studio-canvas-frame{border-width:3px}.studio-tools{gap:8px}.studio-choices{gap:5px}.color-dot{width:26px;height:26px}.studio-bottom span{font-size:11px}.stage-right{gap:6px}.preview-btn{font-size:10px;padding:6px}}
 </style>
 </head>
@@ -15,7 +17,7 @@
 <div class="app">
   <header class="header">
     <div class="brand"><div class="logo">✎</div><div><h1>SKETCH RALLY</h1><small>Draw it. Scan it. Race it.</small></div></div>
-    <div class="chip">Playable prototype · v0.2</div>
+    <div class="chip">Playable prototype · v0.3</div>
   </header>
   <main class="layout">
     <aside class="sidebar">
@@ -48,9 +50,23 @@
           <span class="section-label">Create your car</span>
           <button type="button" class="btn primary full large" id="openDrawing">✎ Draw car in game</button>
           <p class="help">Draw with your finger, mouse or stylus. Your sketch becomes your racer's actual car body.</p>
-          <span class="section-label">Or scan paper</span>
+          <span class="section-label">Use your phone as the camera</span>
+          <div class="camera-panel" id="cameraPanel">
+            <div class="camera-head"><b>📱 Phone → Smartboard</b><span class="small-pill" id="phoneConnection">Not paired</span></div>
+            <button class="btn secondary" id="openPhonePair">Create pairing code</button>
+            <div class="hidden" id="cameraPairDetails">
+              <div class="camera-head" style="margin:7px 0"><div><span class="muted" style="font-size:11px">PAIRING CODE</span><div class="camera-code" id="cameraCode">—</div></div><div class="camera-qr" id="cameraQr" aria-label="QR code to open phone camera link"></div></div>
+              <div class="camera-link" id="cameraLink"></div>
+              <div class="camera-tools"><button class="btn" id="copyPhoneLink">Copy phone link</button><button class="btn" id="changePhoneCode">New code</button></div>
+            </div>
+            <div class="phone-preview hidden" id="phoneLiveBox"><span class="mini-label" id="phoneLiveLabel">Phone camera preview · point at a drawing</span><img id="phoneLiveImage" alt="Live preview from paired phone" /></div>
+            <div class="phone-preview hidden" id="phonePendingBox"><span class="mini-label" id="phonePendingLabel">Photo received · review before using</span><img id="phonePendingImage" alt="Captured paper drawing received from the phone" /><div class="camera-tools"><button class="btn primary" id="acceptPhonePhoto">Use for selected racer</button><button class="btn warn" id="discardPhonePhoto">Discard</button></div></div>
+            <div class="help" id="phoneTip" style="margin:0">Pair your phone to scan paper drawings into the smartboard game. Requires internet on both devices.</div>
+          </div>
+          <span class="section-label">Or scan paper on this device</span>
           <label class="upload">📷 &nbsp; Capture or upload your car drawing<input id="carUpload" type="file" accept="image/*" capture="environment" /></label>
           <div class="two-col" style="margin-top:8px"><button type="button" class="btn" id="retryScan">↻ Re-detect wheels</button><button type="button" class="btn warn" id="removePlayer">Remove racer</button></div>
+          <div class="scan-controls"><label for="backgroundCleanup">Background removal · <b id="cleanupValue">Balanced</b></label><input id="backgroundCleanup" type="range" min="0" max="100" step="5" value="55" aria-label="Adjust automatic background removal strength"/><p class="help" style="margin:3px 0 0">White paper and shadows become transparent. Move right to remove more background; review light pencil lines carefully.</p></div>
           <div class="minirow"><span>Wheel positions · drag to correct</span><b id="scanStatus">Demo car</b></div>
           <div class="correction"><canvas id="wheelCanvas" aria-label="Drag wheel markers to correct their positions"></canvas></div>
           <div class="minirow"><span>Choose a wheel to resize</span><b id="wheelLabel">FRONT WHEEL</b></div>
@@ -104,6 +120,8 @@
     <div class="studio-bottom"><span id="drawingStatus">Draw the body and both wheels. The sketch will be cropped automatically.</span><div class="studio-actions"><button class="btn" id="cancelDrawing">Cancel</button><button class="btn primary large" id="saveDrawing">Use this car →</button></div></div>
   </section>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
 'use strict';
 (() => {
@@ -112,6 +130,11 @@ const $=id=>document.getElementById(id), scene=$('scene'),sc=scene.getContext('2
 let page='track',mode='draw',preset='hills',ground=new Float32Array(521),rocks=[],players=[],selected=0,chosenWheel=1,roadStroke=null,draggingWheel=-1,dragStart=null,simulation='idle',elapsed=0,lastTime=0,camX=0,camY=0,stepCarry=0,scanMessage='';
 let sceneSize={w:0,h:0,dpr:1},wheelSizeCanvas={w:0,h:0,dpr:1};
 let previewEnabled=true,previewTime=0;
+// Ephemeral, room-code-based Realtime Broadcast: snapshots are not stored in a database.
+const SB_URL='https://qekcgsfeomjckctiubgm.supabase.co';
+const SB_KEY='sb_publishable_yJbCYOLDeMreuqM01g_oqA_eF5YEWwq';
+let realtimeClient=null,phoneChannel=null,phoneRoom='',pendingPhonePhoto=null,pendingPhoneName='',phonePreviewAt=0;
+
 const drawCanvas=$('drawCanvas'),dc=drawCanvas.getContext('2d',{willReadFrequently:true});
 let ink='#1a2e44',eraseInk=false,penDown=false,inkPointer=null,undoSteps=[],drawingRacerId=null;
 const clamp=(a,b,c)=>Math.max(b,Math.min(c,a)),lerp=(a,b,t)=>a+(b-a)*t;
@@ -137,7 +160,7 @@ return {canvas:cv,wheels:[{x:wheels[0]/380,y:124/178,r:radii[0]/380},{x:wheels[1
 function makePlayer(idx){let art=carShape(idx);return {id:Math.random().toString(36).slice(2),name:['Rocket','Sky Rider','Pink Comet','Grasshopper'][idx]||'Racer',color:COLORS[idx%4],canvas:art.canvas,wheels:art.wheels.map(wh=>({...wh,r:idx===0?.17:.14})),source:'demo',confidence:1,bodyW:120,bodyH:56,state:null}}
 function populate(){players=[makePlayer(0),makePlayer(1)];selected=0;refreshPlayers()}
 function activePlayer(){return players[selected]}
-function refreshPlayers(){const list=$('playerList');list.textContent='';players.forEach((p,i)=>{const btn=document.createElement('button');btn.className='player-row'+(i===selected?' active':'');btn.type='button';btn.innerHTML=`<span class="player-icon" style="background:${p.color}">${i+1}</span><span class="player-info"><b></b><small>${p.source==='photo'?'Scanned drawing':p.source==='drawn'?'In-game drawing':'Starter car'}</small></span><span class="tick">${i===selected?'✓':''}</span>`;btn.querySelector('b').textContent=p.name;btn.addEventListener('click',()=>{selected=i;chosenWheel=1;refreshPlayers();drawAll()});list.appendChild(btn)});$('addPlayer').disabled=players.length>=4;$('removePlayer').disabled=players.length<=1;$('playerName').value=activePlayer()?.name||'';showWheelSlider();$('scanStatus').textContent=activePlayer()?.source==='photo'?'Auto-detected':activePlayer()?.source==='drawn'?'In-game drawing':'Demo wheels';drawCorrection();}
+function refreshPlayers(){const list=$('playerList');list.textContent='';players.forEach((p,i)=>{const btn=document.createElement('button');btn.className='player-row'+(i===selected?' active':'');btn.type='button';btn.innerHTML=`<span class="player-icon" style="background:${p.color}">${i+1}</span><span class="player-info"><b></b><small>${p.source==='photo'?'Scanned drawing':p.source==='drawn'?'In-game drawing':'Starter car'}</small></span><span class="tick">${i===selected?'✓':''}</span>`;btn.querySelector('b').textContent=p.name;btn.addEventListener('click',()=>{selected=i;chosenWheel=1;refreshPlayers();drawAll()});list.appendChild(btn)});$('addPlayer').disabled=players.length>=4;$('removePlayer').disabled=players.length<=1;$('playerName').value=activePlayer()?.name||'';showWheelSlider();$('scanStatus').textContent=activePlayer()?.source==='photo'?'Paper removed · wheels estimated':activePlayer()?.source==='drawn'?'In-game drawing':'Demo wheels';drawCorrection();}
 function addPlayer(){if(players.length>=4)return;players.push(makePlayer(players.length));selected=players.length-1;chosenWheel=1;refreshPlayers();drawAll()}
 function removePlayer(){if(players.length<=1)return;players.splice(selected,1);selected=clamp(selected,0,players.length-1);refreshPlayers();drawAll()}
 function resizeCanvas(c,obj){const r=c.getBoundingClientRect();if(!r.width||!r.height)return;const dpr=Math.min(window.devicePixelRatio||1,2);let W=Math.round(r.width*dpr),H=Math.round(r.height*dpr);if(c.width!==W||c.height!==H){c.width=W;c.height=H}obj.w=r.width;obj.h=r.height;obj.dpr=dpr}
@@ -190,11 +213,61 @@ function correctionDown(e){const p=activePlayer();if(!p)return;wheelCanvas.setPo
 function correctionMove(e){if(draggingWheel<0)return;let p=activePlayer(),r=previewRect(),pt=correctionPoint(e),wh=p.wheels[draggingWheel];wh.x=clamp((pt.x-r.x)/r.w,.03,.97);wh.y=clamp((pt.y-r.y)/r.h,.1,.97);p.wheels.sort((a,b)=>a.x-b.x);chosenWheel=p.wheels.indexOf(wh);showWheelSlider();drawAll()}
 function correctionUp(){draggingWheel=-1}
 function imageLoad(file){if(!file)return;if(!file.type.startsWith('image/')){$('scanStatus').textContent='Choose an image';return}const reader=new FileReader();reader.onload=()=>{const img=new Image();img.onload=()=>{try{scanImage(img)}catch(err){$('scanStatus').textContent='Scan failed';console.error(err)}};img.src=reader.result};reader.readAsDataURL(file)}
-function scanImage(img){const p=activePlayer();const maxDim=940,scale=Math.min(1,maxDim/Math.max(img.naturalWidth,img.naturalHeight)),w=Math.max(1,Math.round(img.naturalWidth*scale)),h=Math.max(1,Math.round(img.naturalHeight*scale)),v=document.createElement('canvas');v.width=w;v.height=h;const vx=v.getContext('2d',{willReadFrequently:true});vx.drawImage(img,0,0,w,h);const data=vx.getImageData(0,0,w,h),pix=data.data;
-const cornerPts=[[1,1],[w-3,2],[2,h-3],[w-3,h-3]],bg=[0,0,0];cornerPts.forEach(([x,y])=>{let j=(Math.round(y)*w+Math.round(x))*4;bg[0]+=pix[j]/4;bg[1]+=pix[j+1]/4;bg[2]+=pix[j+2]/4});
-let minX=w,minY=h,maxX=0,maxY=0,ink=0;for(let y=0;y<h;y++)for(let x=0;x<w;x++){let i=(y*w+x)*4,diff=Math.max(Math.abs(pix[i]-bg[0]),Math.abs(pix[i+1]-bg[1]),Math.abs(pix[i+2]-bg[2]));let a=clamp((diff-20)/75,0,1);pix[i+3]=Math.round(255*a);if(a>.28){minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y);ink++}}
-if(ink<90){$('scanStatus').textContent='Drawing not found';$('carsStatus').textContent='Try a photo on plain paper with darker outlines.';return}
-const pad=Math.round(Math.min(w,h)*.025),sx=clamp(minX-pad,0,w-1),sy=clamp(minY-pad,0,h-1),sw=Math.min(w-sx,maxX-minX+pad*2+1),sh=Math.min(h-sy,maxY-minY+pad*2+1);vx.putImageData(data,0,0);const crop=document.createElement('canvas');crop.width=sw;crop.height=sh;const cc=crop.getContext('2d',{willReadFrequently:true});cc.drawImage(v,sx,sy,sw,sh,0,0,sw,sh);p.canvas=crop;p.source='photo';p.wheels=detectWheels(crop);p.confidence=0.5;$('scanStatus').textContent='2 wheels estimated';$('carsStatus').textContent='Scan complete. Check and drag the markers onto the real wheels.';$('carUpload').value='';chosenWheel=1;refreshPlayers();drawAll();}
+// Adaptive contrast + chroma cleanup preserves dark strokes while making paper and soft shadows transparent.
+function transparentPhoto(source,strength=55){
+ const maxDim=940,sw=source.naturalWidth||source.width,sh=source.naturalHeight||source.height;
+ const scale=Math.min(1,maxDim/Math.max(sw,sh)),w=Math.max(1,Math.round(sw*scale)),h=Math.max(1,Math.round(sh*scale));
+ const cv=document.createElement('canvas');cv.width=w;cv.height=h;const ctx=cv.getContext('2d',{willReadFrequently:true});ctx.drawImage(source,0,0,w,h);
+ const frame=ctx.getImageData(0,0,w,h),d=frame.data;let minA=255;
+ for(let i=3;i<d.length;i+=Math.max(4,Math.floor(d.length/2000/4)*4))minA=Math.min(minA,d[i]);
+ if(minA<245){ // Preserve existing PNG transparency instead of accidentally treating it as paper.
+   return cv;
+ }
+ const gray=new Uint8Array(w*h);const sum=new Float64Array((w+1)*(h+1)),stride=w+1;
+ for(let y=0;y<h;y++){
+   let row=0;for(let x=0;x<w;x++){
+     const i=(y*w+x)*4,lum=.2126*d[i]+.7152*d[i+1]+.0722*d[i+2];gray[y*w+x]=lum;row+=lum;
+     sum[(y+1)*stride+x+1]=sum[y*stride+x+1]+row;
+   }
+ }
+ const R=Math.max(13,Math.round(Math.min(w,h)*.045));const cutoff=12+strength*.30,soft=42;
+ for(let y=0;y<h;y++){
+  const y0=Math.max(0,y-R),y1=Math.min(h,y+R+1);
+  for(let x=0;x<w;x++){
+   const x0=Math.max(0,x-R),x1=Math.min(w,x+R+1),i=(y*w+x)*4;
+   const average=(sum[y1*stride+x1]-sum[y0*stride+x1]-sum[y1*stride+x0]+sum[y0*stride+x0])/((x1-x0)*(y1-y0));
+   const maximum=Math.max(d[i],d[i+1],d[i+2]),minimum=Math.min(d[i],d[i+1],d[i+2]);
+   const contrast=average-gray[y*w+x],saturation=maximum-minimum;
+   const local=clamp((contrast-cutoff)/soft,0,1);
+   const coloured=clamp((saturation-(23+strength*.07))/100,0,1)*clamp((250-gray[y*w+x])/45,0,1);
+   // Keep near-black filled interiors even when locally flat; avoid making gray paper shadows opaque.
+   const dark=clamp((120-gray[y*w+x])/95,0,1);
+   let a=Math.max(local,coloured,dark);
+   if(a<.035)a=0;
+   d[i+3]=Math.round(a*255);
+  }
+ }
+ ctx.putImageData(frame,0,0);return cv;
+}
+function cropInk(cv){const w=cv.width,h=cv.height,d=cv.getContext('2d',{willReadFrequently:true}).getImageData(0,0,w,h).data;
+ let minX=w,minY=h,maxX=-1,maxY=-1,ink=0;
+ for(let y=0;y<h;y++)for(let x=0;x<w;x++){const a=d[(y*w+x)*4+3];if(a>42){minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y);ink++}}
+ if(ink<90)return null;
+ const pad=Math.round(Math.min(w,h)*.025),sx=Math.max(0,minX-pad),sy=Math.max(0,minY-pad),ex=Math.min(w,maxX+pad+1),ey=Math.min(h,maxY+pad+1);
+ const crop=document.createElement('canvas');crop.width=ex-sx;crop.height=ey-sy;crop.getContext('2d').drawImage(cv,sx,sy,crop.width,crop.height,0,0,crop.width,crop.height);
+ return crop;
+}
+function scanImage(img,options={}){
+ const p=activePlayer();if(!p)return;
+ const original=document.createElement('canvas'),sw=img.naturalWidth||img.width,sh=img.naturalHeight||img.height,
+       scale=Math.min(1,940/Math.max(sw,sh));original.width=Math.max(1,Math.round(sw*scale));original.height=Math.max(1,Math.round(sh*scale));original.getContext('2d').drawImage(img,0,0,original.width,original.height);
+ const cleaned=transparentPhoto(original,Number($('backgroundCleanup').value)),crop=cropInk(cleaned);
+ if(!crop){$('scanStatus').textContent='Drawing not found';$('carsStatus').textContent='Try bright paper and dark outlines, or lower the background cleanup strength.';return}
+ p.rawScan=original;p.canvas=crop;p.source='photo';p.wheels=detectWheels(crop);p.confidence=.5;
+ $('scanStatus').textContent='Paper removed · 2 wheels estimated';$('carsStatus').textContent='Transparent background ready. Check the wheels. Light pencil strokes? Adjust background removal.';
+ $('carUpload').value='';chosenWheel=1;refreshPlayers();drawAll();
+}
+
 function detectWheels(cv){const n=cv.width,h=cv.height,c=cv.getContext('2d',{willReadFrequently:true}),d=c.getImageData(0,0,n,h).data;
 // Search for dark circular outlines in the lower half. It is an estimate, not a claim of reliable object recognition.
 const scale=Math.min(1,410/Math.max(n,h)),W=Math.max(20,Math.round(n*scale)),H=Math.max(20,Math.round(h*scale)),tmp=document.createElement('canvas');tmp.width=W;tmp.height=H;const tx=tmp.getContext('2d',{willReadFrequently:true});tx.drawImage(cv,0,0,W,H);const im=tx.getImageData(0,0,W,H).data,ink=new Float32Array(W*H);
@@ -249,7 +322,7 @@ drawCanvas.addEventListener('pointerup',endDrawingPointer);drawCanvas.addEventLi
 function useDrawing(){if(!drawingRacerId)return;const pixels=dc.getImageData(0,0,drawCanvas.width,drawCanvas.height).data,W=drawCanvas.width,H=drawCanvas.height;let minX=W,minY=H,maxX=-1,maxY=-1,inkCount=0;for(let y=0;y<H;y++)for(let x=0;x<W;x++){const a=pixels[(y*W+x)*4+3];if(a>34){inkCount++;minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y)}}if(inkCount<120){$('drawingStatus').textContent='Draw a car body and at least two wheels before saving.';return}
 const p=players.find(r=>r.id===drawingRacerId);if(!p){closeStudio();return}
 const pad=24,left=Math.max(0,minX-pad),top=Math.max(0,minY-pad),right=Math.min(W,maxX+pad+1),bottom=Math.min(H,maxY+pad+1);const crop=document.createElement('canvas');crop.width=Math.max(1,right-left);crop.height=Math.max(1,bottom-top);crop.getContext('2d').drawImage(drawCanvas,left,top,crop.width,crop.height,0,0,crop.width,crop.height);
-p.sketch=copyCanvas(drawCanvas);p.canvas=crop;p.wheels=detectWheels(crop);p.source='drawn';p.confidence=.5;selected=players.indexOf(p);chosenWheel=1;closeStudio();$('scanStatus').textContent='Wheels estimated';$('carsStatus').textContent='Drawing saved! Correct the two wheel markers below, then race.';refreshPlayers();drawAll()}
+p.sketch=copyCanvas(drawCanvas);p.canvas=crop;p.rawScan=null;p.wheels=detectWheels(crop);p.source='drawn';p.confidence=.5;selected=players.indexOf(p);chosenWheel=1;closeStudio();$('scanStatus').textContent='Wheels estimated';$('carsStatus').textContent='Drawing saved! Correct the two wheel markers below, then race.';refreshPlayers();drawAll()}
 $('openDrawing').addEventListener('click',openStudio);
 $('closeDrawing').addEventListener('click',closeStudio);
 $('cancelDrawing').addEventListener('click',closeStudio);
@@ -260,6 +333,43 @@ $('eraserBtn').addEventListener('click',()=>{eraseInk=!eraseInk;$('eraserBtn').c
 document.querySelectorAll('[data-ink]').forEach(b=>b.addEventListener('click',()=>chooseInk(b.dataset.ink)));
 document.addEventListener('keydown',e=>{if($('drawStudio').classList.contains('hidden'))return;if(e.key==='Escape')closeStudio();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();const prev=undoSteps.pop();if(prev)dc.putImageData(prev,0,0)}});
 $('previewToggle').addEventListener('click',()=>{previewEnabled=!previewEnabled;$('previewToggle').textContent=previewEnabled?'Ⅱ Demo on':'▶ Demo off';$('previewToggle').setAttribute('aria-pressed',String(previewEnabled));if(previewEnabled){camX=0;camY=0;previewTime=0}drawAll()});
+
+// Smartboard host: pair a phone with an unpredictable eight-character code.
+const ROOM_ALPHABET='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+function newRoomCode(){const a=new Uint32Array(8);crypto.getRandomValues(a);return Array.from(a,x=>ROOM_ALPHABET[x%ROOM_ALPHABET.length]).join('')}
+function phoneStatus(status){$('phoneConnection').textContent=status}
+function showPhonePair(status){$('cameraPairDetails').classList.remove('hidden');$('cameraCode').textContent=phoneRoom;
+ const url=new URL('phone.html',location.href);url.search='?room='+encodeURIComponent(phoneRoom);$('cameraLink').textContent=url.href;
+ const qr=$('cameraQr');qr.textContent='';if(window.QRCode){new QRCode(qr,{text:url.href,width:102,height:102,correctLevel:QRCode.CorrectLevel.M});}else{qr.textContent='Enter the code on your phone';qr.style.fontSize='11px';qr.style.color='#152237';}
+ $('phoneTip').textContent=status||'Open the QR link on your phone, allow its camera, and take a photo. The smartboard will ask for approval before applying it.';
+}
+async function pairPhone(){if(phoneChannel&&realtimeClient){await realtimeClient.removeChannel(phoneChannel);phoneChannel=null}
+ phoneRoom=newRoomCode();showPhonePair();phoneStatus('Connecting…');
+ if(!window.supabase?.createClient){phoneStatus('Library unavailable');$('phoneTip').textContent='Internet connection needed to load the phone pairing library. Refresh the page.';return}
+ try{
+ realtimeClient=realtimeClient||window.supabase.createClient(SB_URL,SB_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
+ const channel=realtimeClient.channel('sketch-rally:camera:'+phoneRoom,{config:{private:false,broadcast:{ack:true}}});phoneChannel=channel;
+ channel.on('broadcast',{event:'phone-hello'},async ({payload})=>{phoneStatus('Phone connected');$('phoneTip').textContent='Phone paired. Aim its camera at a car drawing, then tap Capture & send.';await channel.send({type:'broadcast',event:'host-ready',payload:{hello:true}})})
+ .on('broadcast',{event:'preview'},({payload})=>{if(typeof payload?.image!=='string'||!payload.image.startsWith('data:image/jpeg;base64,')||payload.image.length>60000)return;phonePreviewAt=Date.now();$('phoneLiveBox').classList.remove('hidden');$('phoneLiveImage').src=payload.image;phoneStatus('Camera live');})
+ .on('broadcast',{event:'snapshot'},({payload})=>{
+   if(typeof payload?.image!=='string'||!/^data:image\/(jpeg|png);base64,/.test(payload.image)||payload.image.length>240000)return;
+   pendingPhonePhoto=payload.image;pendingPhoneName=typeof payload.name==='string'?payload.name.trim().slice(0,24):'';$('phonePendingImage').src=payload.image;$('phonePendingBox').classList.remove('hidden');$('phonePendingBox').classList.add('pending');
+   $('phonePendingLabel').textContent='New photo from '+String(payload?.name||'phone').slice(0,24)+' · review before adding';
+   phoneStatus('Photo received');if(page!=='cars')setPage('cars');
+ });
+ channel.subscribe(status=>{if(channel!==phoneChannel)return;if(status==='SUBSCRIBED'){phoneStatus('Room ready');showPhonePair();}else if(status==='CHANNEL_ERROR'||status==='TIMED_OUT'||status==='CLOSED'){phoneStatus('Disconnected');$('phoneTip').textContent='Connection interrupted. Check internet, then tap New code.'}});
+ }catch(err){console.error('Phone pairing failed',err);phoneStatus('Connection failed')}
+}
+$('openPhonePair').addEventListener('click',pairPhone);
+$('changePhoneCode').addEventListener('click',pairPhone);
+$('copyPhoneLink').addEventListener('click',async ()=>{const url=$('cameraLink').textContent;try{await navigator.clipboard.writeText(url);$('phoneTip').textContent='Phone link copied. Open it on your phone.'}catch{$('phoneTip').textContent='Clipboard unavailable. Open this link on the phone: '+url}});
+$('discardPhonePhoto').addEventListener('click',()=>{pendingPhonePhoto=null;$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Room ready')});
+$('acceptPhonePhoto').addEventListener('click',()=>{if(!pendingPhonePhoto)return;
+ const image=new Image();image.onload=()=>{if(pendingPhoneName&&pendingPhoneName.toLowerCase()!=='phone')activePlayer().name=pendingPhoneName;scanImage(image);pendingPhonePhoto=null;pendingPhoneName='';$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Photo imported');};image.onerror=()=>{$('phoneTip').textContent='Image could not be decoded. Please retake it.'};image.src=pendingPhonePhoto;
+});
+$('backgroundCleanup').addEventListener('input',()=>{$('cleanupValue').textContent=Number($('backgroundCleanup').value)<30?'Gentle':Number($('backgroundCleanup').value)>75?'Strong':'Balanced';const p=activePlayer();if(p?.rawScan)scanImage(p.rawScan)});
+window.addEventListener('pagehide',()=>{if(phoneChannel&&realtimeClient)realtimeClient.removeChannel(phoneChannel)});
+
 // UI events
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.tab)));
 document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{presetTrack(b.dataset.preset);changeTool('draw')}));
