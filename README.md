@@ -1,26 +1,29 @@
-# Sketch Rally — v0.5
+# Sketch Rally — v0.6
 
-Draw, scan and race custom cars. Browser game for smartboards with an optional paired phone camera.
+Draw side-view and top-view cars, scan two-view paper sketches using a paired phone, and race automatically on hill-climb or downhill courses.
 
-## Play
-1. Open `index.html`. On the main menu, select **Hill Climb** (side view) or **Downhill** (top view), then **Start Game**.
-2. **Track** — choose a preset or draw your own hills / road bends.
-3. **Garage** — add racers and give each car a side view and/or a top view.
-4. **Race** — watch the fully automatic race. No steering controls.
+## What's new — timed car design
 
-Use the home icon to return to the main menu. Up to four cars race on one host device.
+- Every racer gets **one 3-minute turn**, including side/top drawing, scanning, naming and wheel adjustments.
+- In **Cars → Garage**, choose a racer and tap **Start 3:00** to begin their turn. The countdown is visible in the Garage, drawing studio and smartboard header.
+- Only the active racer can edit. Each player has their own timer. The next racer is selected after a turn ends; their clock does **not** begin until the host presses Start.
+- Tap **Finish early** to submit a design before time runs out, or let the timer reach zero. **At zero, current drafts auto-save and editing locks.** An unfinished racer uses the last available artwork or a starter car.
+- The timer keeps counting if you close the drawing studio or change screens. A browser page reload resets the unsaved local session, including timers.
+- The race is available once all racers have finished or timed out. There is no steering during races.
+- You can choose the number of racers before starting the first design turn (1–4 racers). The roster locks once the first turn begins.
 
-## Draw or scan two views
-- **In-app drawing:** Open **Side view** or **Top view** in the garage. Both tabs share one racer. Switch between them and press **Save views** to register drawings.
-- **Two-view paper scan:** Choose **2 views** before taking or uploading a photo. On portrait paper draw **TOP at the top and SIDE at the bottom**. On landscape paper draw **TOP on the left and SIDE on the right**. Keep margins between the sketches.
-- **Separate photos:** Choose **Side only** or **Top only**.
-- **Cleanup:** The app removes the paper background, trims the image and automatically thickens dark doodle lines. This is heuristic processing, so faint pencils or shadows may need adjustments in **Fine-tune car**.
-- The **side view** is used in Hill Climb and the **top view** in Downhill. If no top sketch has been provided, Downhill shows a simplified fallback car.
+## Run
 
-## Phone camera
-On the smartboard, select **Garage → Pair phone**, then scan the QR code using your phone or open `phone.html`. Enter the room code, select a scan type, take a photo and send it. The host reviews before importing.
+Open `index.html` from the GitHub Pages site. `phone.html` is the optional camera companion. Both are plain HTML. The phone and smartboard need internet for Supabase Realtime camera pairing; the actual race and drawing run locally.
 
-The camera pairing needs an internet connection and HTTPS. It uses Supabase Realtime Broadcast via a publishable client key; photos and preview frames are sent through a temporary room, and are not intentionally saved to a database. Codes are not authentication secrets; share only with trusted players.
+## Other features
 
-## Prototype notes
-The game runs as static HTML / CSS / JavaScript, without a build step. Main racing is local on the host; it does not provide an online lobby or cross-device racing controls. There is no permanent saved garage or track history; work can be lost on reload.
+- Main menu with **Hill Climb** (side view) and **Downhill Race** (top view)
+- Host-drawn hills or winding downhill roads; demo cars animate during setup
+- In-game side and top sketch canvases, transparent background, thickened doodle outlines
+- A two-panel paper drawing can supply both views, with manual wheel correction
+- Four-racer local automatic racing
+
+## Prototype limitations
+
+No persistent player data: refreshing the page resets racers, sketches, timing and tracks. The timer uses the host device's wall clock, so it continues while another tab is open, but a full page reload begins a fresh session. Phone scanning is hosted via a short-lived Realtime Broadcast room and requires the host's approval.
