@@ -1,4 +1,4 @@
-# Sketch Rally v0.8
+# Sketch Rally v0.9
 
 Sketch Rally is a browser game for hand-drawn cars, automated Hill Climb and Downhill racing, and phone-to-smartboard camera registration.
 
@@ -6,6 +6,14 @@ Sketch Rally is a browser game for hand-drawn cars, automated Hill Climb and Dow
 
 - **Smartboard:** Open `index.html`. Choose a mode, edit the track, register racers, then start.
 - **Host phone:** Pair with the room code or QR in the smartboard garage. Open `phone.html` to scan, name and register cars and to send the race start command. Internet access is needed on both devices; camera permission requires HTTPS.
+
+## New in v0.9
+
+- **30 racers:** Add or scan up to 30 unique cars per race, on either the smartboard or host phone. The host and phone roster displays both enforce 30.
+- **Large fields:** Scrollable racer lists and 30-place live standings; crowd-friendly race labels focus on leading cars, but all 30 remain simulated and ranked.
+- **Downhill grid:** Bounded lanes keep cars on the road instead of assigning increasingly wide offsets to higher player numbers.
+- **Memory:** Incoming photos are downsampled to reduce memory usage with many registrations.
+- The 3-minute design timer still applies separately to each racer when enabled.
 
 ## New in v0.8
 
