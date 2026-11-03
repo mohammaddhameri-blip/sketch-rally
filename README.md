@@ -1,26 +1,27 @@
-# Sketch Rally — v0.7
+# Sketch Rally v0.8
 
-## Host phone → Smartboard
+Sketch Rally is a browser game for hand-drawn cars, automated Hill Climb and Downhill racing, and phone-to-smartboard camera registration.
 
-1. On the smartboard open the game and choose **PAIR HOST PHONE** from the main menu (or **Cars → Pair host phone**).
-2. On your phone scan the QR link or open `phone.html`, enter the eight-character room code and connect.
-3. Choose **+ New racer**, type the player's name, and select **Top + Side sheet**, **Side view**, or **Top view**.
-4. Take a picture using the phone camera or select an existing photo, then tap **Capture & Register**. Wait for confirmation.
-5. Repeat to register up to **8 cars**. To add another view to an existing racer, select their name in the dropdown before scanning.
-6. Tap **START RACE** on the phone. The smartboard shows the selected fully automatic race mode and starts the animation.
+## How to play
 
-The first remote registration replaces the two sample racers. The live roster updates on the smartboard. The game removes paper backgrounds, thickens sketch lines and estimates wheel positions. The host can preselect either Hill Climb (side view) or Downhill (top view) on the smartboard.
+- **Smartboard:** Open `index.html`. Choose a mode, edit the track, register racers, then start.
+- **Host phone:** Pair with the room code or QR in the smartboard garage. Open `phone.html` to scan, name and register cars and to send the race start command. Internet access is needed on both devices; camera permission requires HTTPS.
+
+## New in v0.8
+
+- **Settings:** Accessible from the main menu and top-right gear. Enable/exit full screen on supported browsers.
+- **Time limit:** Toggle the 3-minute per-racer design deadline on or off. Off means unrestricted drawing and adjustments in the garage. The preference is saved locally.
+- **Car sound volume:** 0–100% slider for a synthesised engine tone. Volume is saved locally. Browser sound may require one tap on the smartboard before a phone-initiated race can produce audio.
+- **Flip sketches:** Horizontal flip for side and top drawings, including scanned photos.
+- **Fine wheel adjustment:** Four arrow buttons for the selected wheel, with 1/3/6-pixel steps; the canvas also supports keyboard arrow nudges.
+- **Auto-colour monochrome cars:** Fills plausible body spans with at least one solid racer colour, while retaining dark linework and transparent paper. It's approximate automatic colouring, not AI interpretation.
+- **Timed rematch:** When the timer is enabled, completed races offer a Rematch button. Each existing racer gets another 3 minutes to refine their car before the next race.
+- **Track length:** 1, 2, 5, 10 and **20 km**. Longer distances actually extend simulation and progress by repeating the host-drawn section, alternating its direction for continuous terrain. The km values are in-game distance units, not real-world scale. A slow starter can catch up over a longer race, but is not guaranteed to win.
 
 ## Existing features
 
-- Two game modes, hand-drawn tracks, in-game drawing of side and top views, automatic photo cleanup, wheel detection and adjustments.
-- An individual **3-minute timer** for players drawing and adjusting manually on the smartboard. Cars registered on the host phone count as completed designs and can race immediately. Any active manual design turns must finish before a race.
-- All driving remains fully automatic. The main smartboard runs the simulation; the phone sends controls and images.
-
-## Technology and safety
-
-This static GitHub Pages project uses the previously connected Supabase Realtime Broadcast service with a **publishable key**, and needs internet on both devices for pairing. Photo data is compressed and sent through a temporary room, not saved as a permanent online image gallery. Camera permission requires HTTPS; a photo-upload fallback is available. Pairing room codes aren't strong authentication: share them only with the intended host. Registration is blocked while racing. Session data resets on a reload.
+Two fully automatic racing modes, side and top car art, digital drawing, paper scanning, transparent-background processing, doodle line thickening, track editor, up to 8 racers, animated setup, phone registration and remote start remain available.
 
 ## Verification
 
-Both browser scripts passed JavaScript syntax checks. An isolated two-screen browser simulation passed: pairing, two named registrations, replacing sample racers, adding a top view to an existing racer, roster sync and remote starting of Hill Climb. Live physical-device / Supabase production connection has not been tested.
+The JavaScript parses successfully. Desktop Chromium checks covered settings, timer on/off, wheel nudges, flipping, 20 km downhill racing, timed rematches, and single-colour fill for black-and-white sketches. Physical phone-to-smartboard pairing and public Pages deployment were not re-tested in this update.
