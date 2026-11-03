@@ -1,4 +1,4 @@
-# Sketch Rally — Playable Prototype v0.3
+# Sketch Rally — Playable Prototype v0.4
 
 A self-contained 2D car sketch and automated racing prototype with an in-game drawing studio and animated setup preview. Core racing needs no server or login. Phone pairing uses an internet-connected Supabase Realtime service; the two hosted pages load a client library from a CDN.
 
@@ -33,7 +33,7 @@ While the host designs the course, the track editor shows animated demo cars usi
 
 ## Play
 
-1. **Track:** Choose a preset or select Draw and drag left-to-right across the track area to draw a road. Select Rock and tap to add an obstacle; Erase removes the nearest obstacle.
+1. **Track:** Choose a mode and preset, or select Draw and drag in any direction across the track preview to reshape the road. Select Rock and tap to add an obstacle; Erase removes the nearest obstacle.
 2. **Cars:** The game starts with two sample cars. Select a racer, enter a name and use Capture or upload to import a side-view sketch on plain paper. The background is removed and two wheel positions are estimated.
 3. **Correction:** Drag the two colored circles onto the wheels in the sketch. Select each wheel and set its size with the slider. Add up to four racers.
 4. **Race:** Press Start race. All racers use standardized engine force, and the simulation handles acceleration, gravity, wheel traction, chassis contact and rocks. Rankings and finish times appear automatically.
@@ -42,7 +42,7 @@ While the host designs the course, the track editor shows animated demo cars usi
 
 - **Multiplayer:** 1–4 racers on the smartboard. A paired phone can send sketches in real time, but the track and race still run on the host device (no online lobby).
 - **Scanning:** Heuristic background removal and estimated round wheel detection, with manual adjustments. It is not an advanced machine-vision model and won't recognize every drawing correctly.
-- **Track:** Continuous 2D road profile and rocks. It does not yet support tunnels, overhangs, loop-the-loops or arbitrary 2D obstacle art.
+- **Track:** Hill Climb supports a continuous side-view terrain profile and rocks; Downhill supports a top-down winding road. Neither supports tunnels, overhangs or fully arbitrary 2D obstacle art.
 - **Race physics:** Experimental lightweight browser simulation; results are not realistic engineering measurements. Very difficult tracks may leave every racer stuck.
 - **Storage:** Phone photos and previews travel ephemerally through Supabase Broadcast; there is no saved photo archive. Drawings and tracks are not persisted between reloads.
 
