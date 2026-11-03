@@ -560,7 +560,7 @@ drawScene=function(){
   resizeCanvas(scene,sceneSize);const {w,h,dpr}=sceneSize;if(!w||!h)return;
   sc.setTransform(dpr,0,0,dpr,0,0);sc.clearRect(0,0,w,h);
   if(page==='track')drawDownhillEditor(sc,w,h);
-  else if(page==='cars')drawDownhillWorld(sc,w,h,previewEnabled);
+  else if(page==='cars'){if(previewEnabled)drawDownhillWorld(sc,w,h,true);else {drawSky(sc,w,h);drawCarGallery(sc,w,h)}}
   else drawDownhillWorld(sc,w,h,false);
 };
 const originalInitRacers=initRacers;
