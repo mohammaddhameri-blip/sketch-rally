@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#101827" />
-<title>Sketch Rally v0.6 — Draw. Scan. Race.</title>
+<title>Sketch Rally v0.7 — Draw. Scan. Race.</title>
 <style>
 :root{--bg:#0c1422;--panel:#152237;--panel2:#1c2b43;--border:#30425c;--text:#f2f7ff;--muted:#a1b0c8;--lime:#c4f26b;--blue:#6fc8fa;--orange:#ffb478;--danger:#ff8191;--radius:15px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}.app{max-width:1530px;margin:auto;min-height:100vh;padding:22px 26px 30px}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:13px}.logo{width:44px;height:44px;display:grid;place-items:center;background:var(--lime);color:var(--bg);border-radius:13px;box-shadow:0 0 0 4px rgba(196,242,107,.08);font-size:24px}.brand h1{margin:0;font-size:21px;letter-spacing:-.8px;line-height:1.1}.brand small{color:var(--muted);font-size:12px;font-weight:500}.chip{border:1px solid #4a6647;background:#223c30;border-radius:100px;color:var(--lime);font-size:11px;font-weight:800;letter-spacing:.09em;padding:9px 12px;text-transform:uppercase}.layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:19px;align-items:stretch}.sidebar,.stage{border:1px solid var(--border);border-radius:20px;background:var(--panel);overflow:hidden}.sidebar{display:flex;flex-direction:column}.tabs{display:grid;grid-template-columns:repeat(3,1fr);padding:12px;gap:6px;border-bottom:1px solid var(--border)}.tab{border:0;border-radius:10px;background:transparent;color:var(--muted);padding:12px 6px;font-size:12px;font-weight:800;letter-spacing:.02em}.tab.on{color:var(--bg);background:var(--lime)}.content{padding:20px;overflow-y:auto;max-height:calc(100vh - 160px);min-height:565px}.pane{display:none}.pane.active{display:block}h2{font-size:21px;margin:0 0 6px;letter-spacing:-.5px}h3{font-size:13px;font-weight:800;margin:18px 0 9px}.sub{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 19px}.section-label{display:block;color:#afc0d7;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin:16px 0 8px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:10px;min-height:39px;padding:10px 12px;font-size:12px;font-weight:700;transition:background .1s,border-color .1s}.btn:hover{border-color:#7189a8}.btn.selected{border-color:var(--lime);color:var(--lime);background:#273c30}.btn.primary{color:#0b1920;background:var(--lime);border-color:var(--lime)}.btn.primary:hover{background:#ddffa8}.btn.secondary{background:#294861;color:#dff5ff}.btn.warn{color:var(--danger)}.btn.full{width:100%;margin-top:12px}.btn.large{min-height:47px;font-size:14px}.help{font-size:12px;line-height:1.55;color:var(--muted);margin:11px 0 0}.note{font-size:12px;line-height:1.45;border:1px solid #405676;border-radius:12px;padding:11px 12px;color:#cbd9eb;background:rgba(108,166,238,.06);margin-top:15px}.rule{height:1px;background:var(--border);margin:18px 0}.player-list{display:grid;gap:7px}.player-row{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--border);background:var(--panel2);border-radius:10px;padding:8px 9px;color:var(--text)}.player-row.active{border-color:var(--lime);background:#293c34}.player-icon{width:31px;height:28px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:#0e1b26;font-weight:900;font-size:13px}.player-info{min-width:0;flex:1}.player-info b{display:block;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.player-info small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.player-row .tick{color:var(--lime);font-weight:900}.field{width:100%;padding:11px 12px;background:#0f1a2b;border:1px solid #49607a;color:white;border-radius:10px;outline:0;font-size:13px}.field:focus{border-color:var(--lime)}.upload{border:1px dashed #7890a8;border-radius:12px;min-height:70px;display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;color:#e2efff;font-weight:700;font-size:12px;text-align:center;padding:12px;background:#1a2e45}.upload input{display:none}.upload:hover{border-color:var(--lime)}.correction{position:relative;border:1px solid #426077;background:linear-gradient(45deg,#ebedf1 25%,#ffffff 25% 50%,#ebedf1 50% 75%,#ffffff 75%);background-size:18px 18px;border-radius:12px;overflow:hidden;margin-top:9px}.correction canvas{display:block;width:100%;height:184px;touch-action:none;cursor:grab}.correction canvas:active{cursor:grabbing}.minirow{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:10px 0 0}.minirow span{font-size:11px;color:var(--muted)}.minirow b{font-size:11px;color:var(--lime)}.range{width:100%;accent-color:var(--lime)}.standings{display:grid;gap:8px;margin-top:15px}.result{display:flex;gap:8px;align-items:center;background:#1d2e46;border:1px solid var(--border);padding:10px;border-radius:10px}.result .rank{font-size:11px;width:18px;color:var(--muted);font-weight:900}.result-name{min-width:0;flex:1}.result-name b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.result-name small{color:var(--muted);font-size:10px}.result .progress{width:70px;background:#0d1a2b;border-radius:10px;height:5px;overflow:hidden}.result .fill{height:100%;background:var(--lime);width:0}.stage{min-height:630px;display:flex;flex-direction:column;background:#101e32}.stage-top{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 20px;border-bottom:1px solid var(--border)}.stage-title{font-weight:900;font-size:17px;letter-spacing:-.3px}.stage-description{font-size:12px;color:var(--muted);margin-top:4px}.stage-counter{font-weight:900;font-size:15px;color:var(--lime);font-variant-numeric:tabular-nums;white-space:nowrap}.canvas-wrap{height:min(65vh,608px);min-height:455px;position:relative;overflow:hidden;background:#a6d8eb}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.canvas-tooltip{position:absolute;top:17px;left:17px;border-radius:10px;background:rgba(13,29,46,.78);color:#f7fcff;font-size:12px;font-weight:700;padding:10px 12px;pointer-events:none;max-width:70%;backdrop-filter:blur(5px)}.canvas-tooltip:empty{display:none}.footer{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 19px;background:#152237;border-top:1px solid var(--border)}.footer .message{color:var(--muted);font-size:12px;line-height:1.45}.footer .message strong{color:var(--text)}.footer-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.small-pill{font-size:11px;font-weight:800;display:inline-block;border-radius:20px;padding:5px 9px;background:#31435b;color:#e3eefd}.hidden{display:none!important}.muted{color:var(--muted)}.status{font-size:11px;margin-top:9px;color:var(--lime);min-height:16px}.checkbox{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin:12px 0}.checkbox input{accent-color:var(--lime)}@media(max-width:1000px){.layout{grid-template-columns:300px minmax(0,1fr)}.app{padding:15px}.content{padding:15px}.canvas-wrap{min-height:400px}}@media(max-width:770px){.app{padding:12px 12px 25px}.header{margin-bottom:12px}.layout{grid-template-columns:1fr;gap:11px}.sidebar{order:2}.stage{order:1;min-height:0}.content{max-height:none;min-height:0}.stage-top{min-height:61px;padding:12px 13px}.canvas-wrap{height:53vh;min-height:300px;max-height:530px}.canvas-tooltip{font-size:10px;top:10px;left:10px}.footer{padding:12px;min-height:60px;flex-wrap:wrap}.brand h1{font-size:17px}.logo{width:36px;height:36px;font-size:20px}.chip{font-size:9px;padding:7px 9px}.sidebar{border-radius:16px}.tabs{padding:8px}.content{padding:16px}.stage-title{font-size:15px}}@media(max-width:380px){.canvas-wrap{min-height:275px;height:43vh}.btn{padding:9px 8px}.header .chip{display:none}}
 /* In-game car drawing studio, transparent scan and phone-camera pairing */
@@ -32,12 +32,18 @@
 .studio-clock.urgent{color:#ffb178;border-color:#b27d54}
 #pane-cars .btn:disabled,#pane-cars .field:disabled{opacity:.46;cursor:not-allowed}
 @media(max-width:500px){.turn-clock{font-size:29px}.studio-clock{font-size:18px;padding:7px}.stage-right{gap:5px}.turn-stage-clock{font-size:15px;padding:6px}}
+/* v0.7 · host pairing and live racer roster */
+.host-entry{width:min(495px,100%);margin:10px auto 0;padding:13px;border:1px solid #608f8e;background:#192f41;color:#c4f26b;border-radius:12px;cursor:pointer;font-weight:850;letter-spacing:.04em}
+.host-entry:hover{border-color:#c4f26b}.host-roster-ribbon{display:flex;align-items:center;gap:10px;padding:8px 14px;background:#0f2336;border-bottom:1px solid #35546c;min-height:42px;overflow:hidden}
+.host-roster-ribbon strong{color:#b9e881;font-size:10px;letter-spacing:.06em;white-space:nowrap}.host-roster-names{display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:thin;min-width:0}
+.host-roster-names span{padding:5px 9px;background:#2b4456;border-radius:99px;color:#e8f4ff;font-size:11px;font-weight:750;white-space:nowrap}
+.host-roster-names span.ready{background:#2c493a;color:#c4f26b}
 </style>
 </head>
 <body class="menu-open">
 <div class="menu-cover" id="mainMenu" role="region" aria-label="Sketch Rally main menu">
   <div class="menu-inner">
-    <div class="menu-eyebrow"><span class="menu-bullet"></span> SKETCH RALLY <span class="menu-version">v0.6</span></div>
+    <div class="menu-eyebrow"><span class="menu-bullet"></span> SKETCH RALLY <span class="menu-version">v0.7</span></div>
     <div class="menu-art" aria-hidden="true">
       <svg viewBox="0 0 680 195" preserveAspectRatio="xMidYMid meet">
         <defs><linearGradient id="menuRoad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#587a6a"/><stop offset="1" stop-color="#284f58"/></linearGradient></defs>
@@ -53,13 +59,14 @@
       <button class="menu-mode" type="button" data-home-mode="downhill"><strong>↝ DOWNHILL</strong><span>Top view</span></button>
     </div>
     <button type="button" class="menu-start" id="menuStart">START GAME <span>→</span></button>
-    <div class="menu-meta">1–4 racers <span>·</span> 3 minutes each <span>·</span> Full auto race</div>
+    <button type="button" class="host-entry" id="menuHostPhone">📱 PAIR HOST PHONE</button>
+    <div class="menu-meta">Up to 8 racers <span>·</span> 3-minute manual design <span>·</span> Full auto race</div>
   </div>
 </div>
 <div class="app">
   <header class="header">
     <div class="brand"><button type="button" class="menu-home" id="menuHome" aria-label="Open main menu" title="Main menu">⌂</button><div class="logo">✎</div><div><h1>SKETCH RALLY</h1><small>Draw · Race</small></div></div>
-    <div class="chip">v0.6</div>
+    <div class="chip">v0.7</div>
   </header>
   <main class="layout">
     <aside class="sidebar">
@@ -95,17 +102,17 @@
             <div class="turn-status" id="turnStatus">Start a racer's turn to unlock drawing and adjustments.</div>
           </div>
           <div id="playerList" class="player-list"></div>
-          <button type="button" class="btn full" id="addPlayer">+ Add racer <span class="muted">(max 4)</span></button>
+          <button type="button" class="btn full" id="addPlayer">+ Add racer <span class="muted">(max 8)</span></button>
           <div class="rule"></div>
           <label class="section-label" for="playerName">Selected racer's name</label><input class="field" id="playerName" maxlength="22" placeholder="Racer name" />
           <span class="section-label">Create your car</span>
           <div class="dual-status"><span id="sideStatus">SIDE · Starter</span><span id="topStatus">TOP · Auto</span></div>
           <div class="two-col"><button type="button" class="btn primary" id="openDrawing">✎ Side view</button><button type="button" class="btn secondary" id="openTopDrawing">✎ Top view</button></div>
           <p class="help">Draw with your finger, mouse or stylus. Your sketch becomes your racer's actual car body.</p>
-          <span class="section-label">Use your phone as the camera</span>
+          <span class="section-label">Host phone</span>
           <div class="camera-panel" id="cameraPanel">
             <div class="camera-head"><b>📱 Phone camera</b><span class="small-pill" id="phoneConnection">Not paired</span></div>
-            <button class="btn secondary" id="openPhonePair">Pair phone</button>
+            <button class="btn secondary" id="openPhonePair">Pair host phone</button>
             <div class="hidden" id="cameraPairDetails">
               <div class="camera-head" style="margin:7px 0"><div><span class="muted" style="font-size:11px">PAIRING CODE</span><div class="camera-code" id="cameraCode">—</div></div><div class="camera-qr" id="cameraQr" aria-label="QR code to open phone camera link"></div></div>
               <div class="camera-link" id="cameraLink"></div>
@@ -113,7 +120,7 @@
             </div>
             <div class="phone-preview hidden" id="phoneLiveBox"><span class="mini-label" id="phoneLiveLabel">Phone camera preview · point at a drawing</span><img id="phoneLiveImage" alt="Live preview from paired phone" /></div>
             <div class="phone-preview hidden" id="phonePendingBox"><span class="mini-label" id="phonePendingLabel">Photo received · review before using</span><img id="phonePendingImage" alt="Captured paper drawing received from the phone" /><div class="camera-tools"><button class="btn primary" id="acceptPhonePhoto">Use for selected racer</button><button class="btn warn" id="discardPhonePhoto">Discard</button></div></div>
-            <div class="help" id="phoneTip" style="margin:0">Pair your phone to scan paper drawings into the smartboard game. Requires internet on both devices.</div>
+            <div class="help" id="phoneTip" style="margin:0">Scan, name, register and start races from your phone.</div>
           </div>
           <span class="section-label">Scan drawings</span>
           <div class="two-col"><button type="button" class="btn selected" data-scan-view="sheet">2 views</button><button type="button" class="btn" data-scan-view="side">Side only</button></div>
@@ -144,6 +151,7 @@
     </aside>
     <section class="stage">
       <div class="stage-top"><div><div class="stage-title" id="stageTitle">HOST TRACK EDITOR</div><div class="stage-description" id="stageSubtitle">Draw hills or place obstacles on the course</div></div><div class="stage-right"><div class="turn-stage-clock hidden" id="turnStageClock" aria-label="Design time remaining">03:00</div><button type="button" class="btn preview-btn" id="previewToggle" aria-pressed="true">Ⅱ Demo on</button><div class="stage-counter" id="stageCounter">FULL COURSE</div></div></div>
+      <div class="host-roster-ribbon hidden" id="hostRosterRibbon" aria-live="polite"><strong id="hostRosterCount">0 RACERS</strong><div id="hostRosterNames" class="host-roster-names"></div></div>
       <div class="canvas-wrap" id="sceneWrap"><canvas id="scene" aria-label="Track editor and live car race"></canvas><div class="canvas-tooltip" id="canvasTooltip">✎ Draw from left to right to design the road</div></div>
       <div class="footer"><div class="message" id="footerMessage"><strong>HOST MODE</strong> · Create a track, then let racers scan their sketches.</div><div class="footer-actions"><span class="small-pill" id="phasePill">COURSE</span><button class="btn primary" id="mainAction">Next: Cars →</button></div></div>
     </section>
@@ -215,9 +223,9 @@ return {canvas:cv,wheels:[{x:wheels[0]/380,y:124/178,r:radii[0]/380},{x:wheels[1
 function makePlayer(idx){let art=carShape(idx);return {turnState:'waiting',turnDeadline:0,id:Math.random().toString(36).slice(2),name:['Rocket','Sky Rider','Pink Comet','Grasshopper'][idx]||'Racer',color:COLORS[idx%4],canvas:art.canvas,wheels:art.wheels.map(wh=>({...wh,r:idx===0?.17:.14})),source:'demo',confidence:1,bodyW:120,bodyH:56,state:null,topCanvas:null,topSketch:null,topSource:'auto',sideSource:'demo',rawView:'side'}}
 function populate(){players=[makePlayer(0),makePlayer(1)];selected=0;refreshPlayers()}
 function activePlayer(){return players[selected]}
-function refreshPlayers(){const list=$('playerList');list.textContent='';players.forEach((p,i)=>{const btn=document.createElement('button');btn.className='player-row'+(i===selected?' active':'');btn.type='button';btn.innerHTML=`<span class="player-icon" style="background:${p.color}">${i+1}</span><span class="player-info"><b></b><small>${playerTurnLabel(p)}</small></span><span class="tick">${i===selected?'✓':''}</span>`;btn.querySelector('b').textContent=p.name;btn.disabled=!!currentDesignTurn()&&currentDesignTurn()!==p;btn.addEventListener('click',()=>{if(currentDesignTurn()&&currentDesignTurn()!==p)return;selected=i;chosenWheel=1;refreshPlayers();drawAll()});list.appendChild(btn)});$('addPlayer').disabled=players.length>=4;$('removePlayer').disabled=players.length<=1;$('playerName').value=activePlayer()?.name||'';showWheelSlider();$('scanStatus').textContent=activePlayer()?.source==='photo'?'Paper removed · wheels estimated':activePlayer()?.source==='drawn'?'In-game drawing':'Demo wheels';drawCorrection();updateDualViewStatus();renderTurnControls();}
-function addPlayer(){if(players.length>=4||rosterLocked())return;players.push(makePlayer(players.length));selected=players.length-1;chosenWheel=1;refreshPlayers();drawAll()}
-function removePlayer(){if(players.length<=1||rosterLocked())return;players.splice(selected,1);selected=clamp(selected,0,players.length-1);refreshPlayers();drawAll()}
+function refreshPlayers(){updateHostRibbon();const list=$('playerList');list.textContent='';players.forEach((p,i)=>{const btn=document.createElement('button');btn.className='player-row'+(i===selected?' active':'');btn.type='button';btn.innerHTML=`<span class="player-icon" style="background:${p.color}">${i+1}</span><span class="player-info"><b></b><small>${playerTurnLabel(p)}</small></span><span class="tick">${i===selected?'✓':''}</span>`;btn.querySelector('b').textContent=p.name;btn.disabled=!!currentDesignTurn()&&currentDesignTurn()!==p;btn.addEventListener('click',()=>{if(currentDesignTurn()&&currentDesignTurn()!==p)return;selected=i;chosenWheel=1;refreshPlayers();drawAll()});list.appendChild(btn)});$('addPlayer').disabled=players.length>=8;$('removePlayer').disabled=players.length<=1;$('playerName').value=activePlayer()?.name||'';showWheelSlider();$('scanStatus').textContent=activePlayer()?.source==='photo'?'Paper removed · wheels estimated':activePlayer()?.source==='drawn'?'In-game drawing':'Demo wheels';drawCorrection();updateDualViewStatus();renderTurnControls();}
+function addPlayer(){if(players.length>=8||rosterLocked())return;players.push(makePlayer(players.length));selected=players.length-1;chosenWheel=1;refreshPlayers();sendHostRoster();drawAll()}
+function removePlayer(){if(players.length<=1||rosterLocked())return;players.splice(selected,1);selected=clamp(selected,0,players.length-1);refreshPlayers();sendHostRoster();drawAll()}
 function resizeCanvas(c,obj){const r=c.getBoundingClientRect();if(!r.width||!r.height)return;const dpr=Math.min(window.devicePixelRatio||1,2);let W=Math.round(r.width*dpr),H=Math.round(r.height*dpr);if(c.width!==W||c.height!==H){c.width=W;c.height=H}obj.w=r.width;obj.h=r.height;obj.dpr=dpr}
 function rounded(c,x,y,w,h,r){r=Math.min(r,w/2,h/2);c.beginPath();c.roundRect(x,y,w,h,r)}
 function drawSky(ctx,w,h,background=true){const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'#80b8d8');g.addColorStop(.6,'#b3e2ee');g.addColorStop(1,'#f1e5c1');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.save();ctx.globalAlpha=.28;ctx.fillStyle='#f8fcff';for(const [xx,yy,size] of [[.16,.21,45],[.76,.15,35],[.94,.31,28]]){ctx.beginPath();ctx.ellipse(w*xx,h*yy,size*1.5,size*.35,0,0,7);ctx.ellipse(w*xx-20,h*yy-7,size*.7,size*.35,0,0,7);ctx.fill()}ctx.restore()}
@@ -234,7 +242,7 @@ c.restore()}
 function drawTerrain(c,xMap,yMap,w,h){c.save();c.beginPath();for(let i=0;i<ground.length;i++){const x=xMap(i/(ground.length-1)*WORLD_W),y=yMap(ground[i]);if(i===0)c.moveTo(x,y);else c.lineTo(x,y)}c.lineTo(w,h+5);c.lineTo(0,h+5);c.closePath();let fill=c.createLinearGradient(0,h*.45,0,h);fill.addColorStop(0,'#648452');fill.addColorStop(.35,'#8a8555');fill.addColorStop(1,'#5c5243');c.fillStyle=fill;c.fill();c.beginPath();for(let i=0;i<ground.length;i++){let x=xMap(i/(ground.length-1)*WORLD_W),y=yMap(ground[i]);if(i===0)c.moveTo(x,y);else c.lineTo(x,y)}c.strokeStyle='#d1f98a';c.lineWidth=5;c.lineJoin='round';c.stroke();c.restore()}
 function drawGate(c,x,y,h,label){const baseY=clamp(y-14,35,h-35);c.save();c.strokeStyle='#1b3345';c.lineWidth=2;c.beginPath();c.moveTo(x,baseY);c.lineTo(x,baseY-34);c.stroke();c.fillStyle=label==='FINISH'?'#34485d':'#bded7a';c.fillRect(x,baseY-37,label==='FINISH'?44:36,18);c.fillStyle=label==='FINISH'?'#fff':'#17282b';c.font='800 8px system-ui';c.textAlign='center';c.fillText(label,x+(label==='FINISH'?22:18),baseY-25);c.restore()}
 function drawRock(c,x,y,r){c.save();c.beginPath();c.moveTo(x-r*.9,y);c.lineTo(x-r*.75,y-r*.7);c.lineTo(x-r*.1,y-r*1.23);c.lineTo(x+r*.75,y-r*.8);c.lineTo(x+r,y);c.closePath();c.fillStyle='#687282';c.fill();c.strokeStyle='#c8d0d9';c.lineWidth=1.5;c.stroke();c.restore()}
-function drawCarGallery(c,w,h){let count=players.length;const gap=15,margin=28,itemW=Math.min(270,(w-margin*2-gap*(count-1))/Math.min(count,4)),posY=h*.56;const totalW=(itemW+gap)*count-gap;let startX=(w-totalW)/2;const scale=Math.max(.55,Math.min(1.35,itemW/180));c.fillStyle='rgba(14,34,53,.14)';c.fillRect(0,h*.75,w,h*.25);c.strokeStyle='#eef9eb';c.lineWidth=3;c.beginPath();c.moveTo(0,h*.75);c.lineTo(w,h*.75);c.stroke();for(let i=0;i<count;i++){const p=players[i],cx=startX+itemW*i+itemW/2;c.save();c.fillStyle=i===selected?'rgba(255,255,255,.25)':'rgba(255,255,255,.1)';rounded(c,cx-itemW*.48,h*.2,itemW*.96,h*.59,16);c.fill();c.translate(cx,posY);c.scale(scale,scale);paintCar(c,p,0,false);c.restore();c.textAlign='center';c.fillStyle='#15334b';c.font='800 12px system-ui';c.fillText(p.name,cx,h*.3);c.font='11px system-ui';c.fillText(p.source==='photo'?'SCANNED CAR':p.source==='drawn'?'HAND-DRAWN CAR':'SAMPLE CAR',cx,h*.3+17)}c.fillStyle='#1e4055';c.font='bold 12px system-ui';c.textAlign='center';c.fillText('SELECT A RACER ON THE LEFT TO SCAN OR CORRECT',w/2,h*.93)}
+function drawCarGallery(c,w,h){let count=Math.min(players.length,4),sliceStart=players.length<=4?0:Math.floor(selected/4)*4;count=Math.min(4,players.length-sliceStart);const gap=15,margin=28,itemW=Math.max(75,Math.min(270,(w-margin*2-gap*(count-1))/Math.max(1,count))),posY=h*.56;const totalW=(itemW+gap)*count-gap;let startX=(w-totalW)/2;const scale=Math.max(.55,Math.min(1.35,itemW/180));c.fillStyle='rgba(14,34,53,.14)';c.fillRect(0,h*.75,w,h*.25);c.strokeStyle='#eef9eb';c.lineWidth=3;c.beginPath();c.moveTo(0,h*.75);c.lineTo(w,h*.75);c.stroke();for(let i=0;i<count;i++){const p=players[sliceStart+i],cx=startX+itemW*i+itemW/2;c.save();c.fillStyle=sliceStart+i===selected?'rgba(255,255,255,.25)':'rgba(255,255,255,.1)';rounded(c,cx-itemW*.48,h*.2,itemW*.96,h*.59,16);c.fill();c.translate(cx,posY);c.scale(scale,scale);paintCar(c,p,0,false);c.restore();c.textAlign='center';c.fillStyle='#15334b';c.font='800 12px system-ui';c.fillText(p.name,cx,h*.3);c.font='11px system-ui';c.fillText(p.source==='photo'?'SCANNED CAR':p.source==='drawn'?'HAND-DRAWN CAR':'SAMPLE CAR',cx,h*.3+17)}c.fillStyle='#1e4055';c.font='bold 12px system-ui';c.textAlign='center';c.fillText('SELECT A RACER ON THE LEFT TO SCAN OR CORRECT',w/2,h*.93)}
 function physical(p){const cv=p.canvas,ratio=cv.width/Math.max(cv.height,1);let bodyW=clamp(104+(ratio-2)*17,85,158),bodyH=clamp(bodyW/ratio,34,104);const wheels=p.wheels.map(wh=>({ax:(wh.x-.5)*bodyW,ay:(wh.y-.50)*bodyH,r:clamp(wh.r*bodyW,12,42)}));return {bodyW,bodyH,wheels,mass:105+bodyH*.17+bodyW*.05, inertia:(105+bodyH*.17+bodyW*.05)*bodyW*bodyW/8,drag:65+bodyH*.6,friction:1.35}}
 function paintCar(c,p,theta=0,shadow=true,spinX=null){const ph=physical(p);c.save();if(theta)c.rotate(theta);const {bodyW,bodyH,wheels}=ph;if(shadow){c.fillStyle='rgba(9,31,34,.18)';c.beginPath();c.ellipse(3,bodyH*.8,bodyW*.52,7,0,0,7);c.fill()}if(p.canvas)c.drawImage(p.canvas,-bodyW/2,-bodyH/2,bodyW,bodyH);
 for(let i=0;i<wheels.length;i++){const wh=wheels[i];c.beginPath();c.arc(wh.ax,wh.ay,wh.r,0,Math.PI*2);c.fillStyle='#142637';c.fill();c.strokeStyle='#d2e4f2';c.lineWidth=2.2;c.stroke();c.beginPath();c.arc(wh.ax,wh.ay,wh.r*.53,0,Math.PI*2);c.fillStyle='#d4e4eb';c.fill();c.strokeStyle='#445c74';c.lineWidth=1.5;c.stroke();c.beginPath();c.arc(wh.ax,wh.ay,wh.r*.17,0,7);c.fillStyle='#53697e';c.fill();if(spinX!==null||(page==='race'&&p.state)){c.save();c.translate(wh.ax,wh.ay);c.rotate(((spinX===null?p.state.x:spinX)-START)/Math.max(wh.r,8));c.strokeStyle='#526b7c';c.lineWidth=2.2;for(let j=0;j<4;j++){let a=j*Math.PI/2;c.beginPath();c.moveTo(Math.cos(a)*wh.r*.22,Math.sin(a)*wh.r*.22);c.lineTo(Math.cos(a)*wh.r*.49,Math.sin(a)*wh.r*.49);c.stroke()}c.restore()}}c.restore()}
@@ -404,8 +412,10 @@ function refreshStandings(){if(page!=='race')return;const sorted=[...players].so
 function toggleRace(){if(window.innerWidth<=770){document.querySelector('.stage').scrollIntoView({behavior:'smooth',block:'start'})}if(simulation==='running'){simulation='paused';$('startRace').textContent='▶ Resume race';return}if(simulation==='paused'){simulation='running';$('startRace').textContent='Ⅱ Pause race';return}initRacers()}
 function resetRace(){simulation='idle';elapsed=0;players.forEach(p=>p.state=null);camX=0;camY=0;$('startRace').textContent='▶ Start race';$('canvasTooltip').textContent='Ready! Press Start race';refreshStandings();drawAll()}
 function setPage(name){if(name==='race'&&!players.every(p=>p.turnState==='done'||p.turnState==='expired')){if(players.length){$('carsStatus').textContent='Each racer gets a 3:00 design turn. Finish all turns before racing.';if(page!=='cars')return setPage('cars');return}}if(page==='race'&&name!=='race'&&simulation!=='idle')resetRace();page=name;document.querySelector('.app').classList.toggle('garage-view',name==='cars');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('active',p.id==='pane-'+name));let title={track:'TRACK EDITOR',cars:'GARAGE',race:'RACE'};let subtitle={track:'Draw a track',cars:'Side + top drawings',race:'Automatic racing'};$('stageTitle').textContent=title[name];$('stageSubtitle').textContent=subtitle[name];$('mainAction').textContent=name==='track'?'Cars →':name==='cars'?'Race →':'↻ Restart';$('phasePill').textContent=name==='track'?'COURSE':name==='cars'?'GARAGE':'READY';$('canvasTooltip').textContent=name==='track'?(mode==='draw'?'✎ Draw the road · preview cars are just a demo':mode==='rock'?'◆ Tap to place rocks':'⌫ Tap to erase rocks'):name==='cars'?'✎ Draw a car or scan a paper sketch · demo preview':'▶ Press Start race to begin';$('stageCounter').textContent=name==='race'?elapsed.toFixed(1)+' s':name==='cars'?players.length+' RACERS':'FULL COURSE';$('footerMessage').innerHTML=name==='track'?'<strong>HOST MODE</strong> · Build a track while demo cars animate.':name==='cars'?'<strong>CAR DESIGN</strong> · Draw or scan cars, then correct the wheel markers.':'<strong>AUTO-RACE</strong> · All cars use equal motor power. The fastest design wins.';$('previewToggle').classList.toggle('hidden',name==='race');$('previewToggle').textContent=previewEnabled?'Ⅱ Demo on':'▶ Demo off';$('previewToggle').setAttribute('aria-pressed',String(previewEnabled));$('mainAction').onclick=()=>name==='track'?setPage('cars'):name==='cars'?setPage('race'):resetRace();if(name==='race'){if(simulation==='idle'){players.forEach(p=>p.state=null)}refreshStandings()}if(name==='cars')refreshPlayers();renderTurnControls();requestAnimationFrame(drawAll)}
+let lastRemoteRaceState='';
+function syncRemoteRaceState(){const state=simulation;if(state!==lastRemoteRaceState){lastRemoteRaceState=state;sendHostRoster()}}
 function drawAll(){drawScene();if(page==='cars')drawCorrection()}
-function loop(ts){if(!lastTime)lastTime=ts;let delta=Math.min(.05,(ts-lastTime)/1000);lastTime=ts;if(page!=='race'&&previewEnabled&&!document.hidden&&$('drawStudio').classList.contains('hidden'))previewTime+=delta;if(simulation==='running'){stepCarry+=delta*($('speedMode').checked?2:1);let cycles=0;while(stepCarry>=1/120&&cycles<24){simulate(1/120);stepCarry-=1/120;cycles++}if(Math.floor(ts/115)!==Math.floor((ts-delta*1000)/115))refreshStandings()}drawScene();requestAnimationFrame(loop)}
+function loop(ts){if(!lastTime)lastTime=ts;let delta=Math.min(.05,(ts-lastTime)/1000);lastTime=ts;if(page!=='race'&&previewEnabled&&!document.hidden&&$('drawStudio').classList.contains('hidden'))previewTime+=delta;if(simulation==='running'){stepCarry+=delta*($('speedMode').checked?2:1);let cycles=0;while(stepCarry>=1/120&&cycles<24){simulate(1/120);stepCarry-=1/120;cycles++}if(Math.floor(ts/115)!==Math.floor((ts-delta*1000)/115))refreshStandings()}drawScene();syncRemoteRaceState();requestAnimationFrame(loop)}
 // Built-in sketch studio: transparent strokes, touch/mouse/stylus input, undo, and wheel detection.
 function copyCanvas(source){const canvas=document.createElement('canvas');canvas.width=source.width;canvas.height=source.height;canvas.getContext('2d').drawImage(source,0,0);return canvas}
 let studioView='side',draftViews={side:null,top:null};
@@ -478,14 +488,17 @@ async function pairPhone(){if(phoneChannel&&realtimeClient){await realtimeClient
  try{
  realtimeClient=realtimeClient||window.supabase.createClient(SB_URL,SB_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
  const channel=realtimeClient.channel('sketch-rally:camera:'+phoneRoom,{config:{private:false,broadcast:{ack:true}}});phoneChannel=channel;
- channel.on('broadcast',{event:'phone-hello'},async ({payload})=>{phoneStatus('Phone connected');$('phoneTip').textContent='Phone paired. Aim its camera at a car drawing, then tap Capture & send.';await channel.send({type:'broadcast',event:'host-ready',payload:{hello:true}})})
+ channel.on('broadcast',{event:'phone-hello'},async ({payload})=>{phoneStatus('Host phone connected');$('phoneTip').textContent='Phone ready · register cars and start race remotely.';await channel.send({type:'broadcast',event:'host-ready',payload:{hello:true,version:7}});sendHostRoster(channel)})
  .on('broadcast',{event:'preview'},({payload})=>{if(typeof payload?.image!=='string'||!payload.image.startsWith('data:image/jpeg;base64,')||payload.image.length>60000)return;phonePreviewAt=Date.now();$('phoneLiveBox').classList.remove('hidden');$('phoneLiveImage').src=payload.image;phoneStatus('Camera live');})
  .on('broadcast',{event:'snapshot'},({payload})=>{
    if(typeof payload?.image!=='string'||!/^data:image\/(jpeg|png);base64,/.test(payload.image)||payload.image.length>240000)return;
    pendingPhonePhoto=payload.image;pendingPhoneName=typeof payload.name==='string'?payload.name.trim().slice(0,24):'';pendingPhoneView=['sheet','side','top'].includes(payload.view)?payload.view:'sheet';$('phonePendingImage').src=payload.image;$('phonePendingBox').classList.remove('hidden');$('phonePendingBox').classList.add('pending');
    $('phonePendingLabel').textContent='New photo from '+String(payload?.name||'phone').slice(0,24)+' · review before adding';
    phoneStatus('Photo received');if(page!=='cars')setPage('cars');
- });
+ })
+ .on('broadcast',{event:'register-car'},({payload})=>handleRemoteRegister(payload,channel))
+  .on('broadcast',{event:'remote-start'},({payload})=>handleRemoteStart(payload,channel))
+  .on('broadcast',{event:'roster-request'},()=>sendHostRoster(channel));
  channel.subscribe(status=>{if(channel!==phoneChannel)return;if(status==='SUBSCRIBED'){phoneStatus('Room ready');showPhonePair();}else if(status==='CHANNEL_ERROR'||status==='TIMED_OUT'||status==='CLOSED'){phoneStatus('Disconnected');$('phoneTip').textContent='Connection interrupted. Check internet, then tap New code.'}});
  }catch(err){console.error('Phone pairing failed',err);phoneStatus('Connection failed')}
 }
@@ -498,6 +511,75 @@ $('acceptPhonePhoto').addEventListener('click',()=>{if(!pendingPhonePhoto||!canE
 });
 $('backgroundCleanup').addEventListener('input',()=>{if(!canEdit())return;$('cleanupValue').textContent=Number($('backgroundCleanup').value)<30?'Gentle':Number($('backgroundCleanup').value)>75?'Strong':'Balanced';const p=activePlayer();if(p?.rawScan)scanImage(p.rawScan,{view:p.rawView||scanView})});
 window.addEventListener('pagehide',()=>{if(phoneChannel&&realtimeClient)realtimeClient.removeChannel(phoneChannel)});
+
+
+// v0.7 Host phone: multi-car registration, live roster and remote race start.
+const MAX_RACERS=8;
+let remoteRosterStarted=false;
+const remoteRequestSeen=new Set();
+function rosterSummary(){return players.filter(p=>remoteRosterStarted||p.remoteId||p.turnState!=='waiting'||p.source!=='demo').map(p=>({id:p.remoteId||p.id,name:p.name,side:p.sideSource!=='demo',top:!!p.topCanvas,registered:!!p.remoteId}));}
+async function remoteMessage(channel,event,payload){if(!channel||channel!==phoneChannel)return;try{await channel.send({type:'broadcast',event,payload})}catch(error){console.warn('Remote message error',error)}}
+function sendHostRoster(channel=phoneChannel){remoteMessage(channel,'roster-state',{racers:rosterSummary(),max:MAX_RACERS,racing:simulation==='running'||simulation==='paused',mode:gameMode});}
+function updateHostRibbon(){const bar=$('hostRosterRibbon'),names=$('hostRosterNames');if(!bar||!names)return;bar.classList.toggle('hidden',!remoteRosterStarted);$('hostRosterCount').textContent=players.length+' / '+MAX_RACERS+' RACERS';names.replaceChildren();for(const p of players){const tag=document.createElement('span');tag.className=p.remoteId?'ready':'';tag.textContent=p.name;names.append(tag)}}
+function registerResult(channel,requestId,ok,message,p){remoteMessage(channel,'registration-result',{requestId,ok,message,id:p?.remoteId||null,name:p?.name||'',racers:rosterSummary()})}
+function normalizeRacerName(raw){return String(raw||'').replace(/[<>\u0000-\u001f]/g,'').trim().slice(0,24)}
+async function handleRemoteRegister(payload,channel){
+ if(channel!==phoneChannel)return;
+ const requestId=typeof payload?.requestId==='string'?payload.requestId.slice(0,64):'';
+ if(!requestId||remoteRequestSeen.has(requestId))return;
+ remoteRequestSeen.add(requestId);if(remoteRequestSeen.size>400)remoteRequestSeen.clear();
+ if(simulation==='running'||simulation==='paused'){registerResult(channel,requestId,false,'Race in progress. Register after the race.');return}
+ if(typeof payload?.image!=='string'||!/^data:image\/(jpeg|png);base64,/.test(payload.image)||payload.image.length>235000){registerResult(channel,requestId,false,'Invalid or oversized photo.');return}
+ const name=normalizeRacerName(payload.name),view=['side','top','sheet'].includes(payload.view)?payload.view:'sheet';
+ if(!name){registerResult(channel,requestId,false,'Enter a racer name.');return}
+ const remoteId=typeof payload.racerId==='string'&&/^[A-Za-z0-9_-]{8,64}$/.test(payload.racerId)?payload.racerId:null;
+ if(!remoteId){registerResult(channel,requestId,false,'Racer ID unavailable. Try again.');return}
+ let player=players.find(p=>p.remoteId===remoteId);
+ const sampleOnly=!remoteRosterStarted&&players.length===2&&players.every(p=>p.source==='demo'&&p.turnState==='waiting');
+ const countAfterReset=sampleOnly?0:players.length;
+ if(!player&&countAfterReset>=MAX_RACERS){registerResult(channel,requestId,false,'Garage full (8 racers).');return}
+ const image=new Image();
+ image.onerror=()=>registerResult(channel,requestId,false,'Could not read image. Retake photo.');
+ image.onload=()=>{
+  try{
+   if(channel!==phoneChannel)return;
+   const canvas=document.createElement('canvas'),w=image.naturalWidth,h=image.naturalHeight,scale=Math.min(1,1100/Math.max(w,h));
+   canvas.width=Math.max(1,Math.round(w*scale));canvas.height=Math.max(1,Math.round(h*scale));canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);
+   const destination=player||makePlayer(players.length);let accepted=0;
+   if(view==='sheet'){
+     if(applyViewArt(destination,'top',cropSheetPanel(canvas,'top'),'photo'))accepted++;
+     if(applyViewArt(destination,'side',cropSheetPanel(canvas,'side'),'photo'))accepted++;
+   }else if(applyViewArt(destination,view,canvas,'photo'))accepted++;
+   if(!accepted){registerResult(channel,requestId,false,'No car sketch detected. Use darker lines.');return}
+   destination.name=name;destination.remoteId=remoteId;destination.rawScan=canvas;destination.rawView=view;
+   destination.turnState='done';destination.turnDeadline=0;
+   if(!player){if(sampleOnly)players=[];players.push(destination)}
+   remoteRosterStarted=true;
+   if(simulation==='complete')resetRace();
+   const active=currentDesignTurn();if(!active){selected=players.indexOf(destination);chosenWheel=1}
+   if(page==='track'||page==='cars')setPage('cars');
+   if(page==='race')refreshStandings();
+   refreshPlayers();updateHostRibbon();drawAll();
+   $('carsStatus').textContent=name+' registered · '+players.length+' racers';phoneStatus(players.length+' racers ready');
+   registerResult(channel,requestId,true,'Registered',destination);sendHostRoster(channel);
+  }catch(err){console.error('Remote registration',err);registerResult(channel,requestId,false,'Could not process sketch. Try another photo.')}
+ };
+ image.src=payload.image;
+}
+async function handleRemoteStart(payload,channel){
+ if(channel!==phoneChannel)return;
+ const requestId=typeof payload?.requestId==='string'?payload.requestId.slice(0,64):'';
+ if(!requestId)return;
+ if(!players.length){remoteMessage(channel,'race-result',{requestId,ok:false,message:'Register at least one car first.'});return}
+ if(currentDesignTurn()||players.some(p=>p.turnState==='waiting')){remoteMessage(channel,'race-result',{requestId,ok:false,message:'Finish manual 3-minute design turns first.'});return}
+ if(simulation==='running'||simulation==='paused'){remoteMessage(channel,'race-result',{requestId,ok:false,message:'Race already underway.'});return}
+ try{
+  if(simulation==='complete')resetRace();
+  if(!$('mainMenu').classList.contains('hidden')){$('mainMenu').classList.add('hidden');document.body.classList.remove('menu-open')}
+  setPage('race');initRacers();drawAll();
+  remoteMessage(channel,'race-result',{requestId,ok:true,message:'Race started',mode:gameMode});sendHostRoster(channel);
+ }catch(err){console.error('Remote race start',err);remoteMessage(channel,'race-result',{requestId,ok:false,message:'Race could not start.'})}
+}
 
 // v0.4 — Two separately editable courses. Downhill is fully automatic.
 let gameMode='hills', downhillPreset='hills', downhillTrack=new Float32Array(521);
@@ -750,7 +832,7 @@ function renderTurnControls(){
  const editingIds=['playerName','openDrawing','openTopDrawing','carUpload','retryScan','rearWheelBtn','frontWheelBtn','wheelSize','backgroundCleanup','acceptPhonePhoto'];
  editingIds.forEach(id=>{const node=$(id);if(node)node.disabled=!editable});
  document.querySelectorAll('[data-scan-view]').forEach(node=>node.disabled=!editable);
- const locked=rosterLocked();$('addPlayer').disabled=locked||players.length>=4;$('removePlayer').disabled=locked||players.length<=1;
+ const locked=rosterLocked();$('addPlayer').disabled=locked||players.length>=8;$('removePlayer').disabled=locked||players.length<=1;
  $('turnStageClock').classList.toggle('hidden',page!=='cars'||!active);
  $('turnStageClock').textContent=clockString(remaining);
  $('studioClock').textContent=clockString(remaining);$('studioClock').classList.toggle('urgent',remaining<=30);
@@ -789,13 +871,14 @@ document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setP
 document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{if(gameMode==='downhill')setDownhillPreset(b.dataset.preset);else presetTrack(b.dataset.preset);changeTool('draw');syncCourseUI()}));
 document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>changeTool(b.dataset.tool)));
 $('clearRocks').addEventListener('click',()=>{rocks=[];drawAll()});$('resetTrack').addEventListener('click',()=>{if(gameMode==='downhill')setDownhillPreset('hills');else presetTrack('hills');syncCourseUI()});$('trackNext').addEventListener('click',()=>setPage('cars'));
-$('addPlayer').addEventListener('click',addPlayer);$('removePlayer').addEventListener('click',removePlayer);$('playerName').addEventListener('input',e=>{if(!canEdit())return;activePlayer().name=e.target.value||'Racer';refreshPlayers();drawAll()});$('carUpload').addEventListener('change',e=>imageLoad(e.target.files[0]));$('retryScan').addEventListener('click',()=>{if(!canEdit())return;if(['photo','drawn'].includes(activePlayer().source)){activePlayer().wheels=detectWheels(activePlayer().canvas);$('scanStatus').textContent='Re-detected';showWheelSlider();drawAll()}});
+$('addPlayer').addEventListener('click',addPlayer);$('removePlayer').addEventListener('click',removePlayer);$('playerName').addEventListener('input',e=>{if(!canEdit())return;activePlayer().name=e.target.value||'Racer';refreshPlayers();sendHostRoster();drawAll()});$('carUpload').addEventListener('change',e=>imageLoad(e.target.files[0]));$('retryScan').addEventListener('click',()=>{if(!canEdit())return;if(['photo','drawn'].includes(activePlayer().source)){activePlayer().wheels=detectWheels(activePlayer().canvas);$('scanStatus').textContent='Re-detected';showWheelSlider();drawAll()}});
 $('rearWheelBtn').addEventListener('click',()=>{if(canEdit())chooseWheel(0)});$('frontWheelBtn').addEventListener('click',()=>{if(canEdit())chooseWheel(1)});$('wheelSize').addEventListener('input',e=>{if(!canEdit())return;const p=activePlayer();p.wheels[chosenWheel].r=Number(e.target.value)/physical(p).bodyW;$('wheelSizeValue').textContent=e.target.value+' px';drawAll()});$('carsNext').addEventListener('click',()=>setPage('race'));
 // Simple landing screen; preserves the host's current car/track when returning home.
 function openMainMenu(){if(simulation!=='idle')resetRace();$('mainMenu').classList.remove('hidden');document.body.classList.add('menu-open');}
 function startFromMenu(){document.body.classList.remove('menu-open');$('mainMenu').classList.add('hidden');setPage('track');requestAnimationFrame(drawAll);}
 $('menuHome').addEventListener('click',openMainMenu);
 $('menuStart').addEventListener('click',startFromMenu);
+ $('menuHostPhone').addEventListener('click',()=>{startFromMenu();setPage('cars');pairPhone()});
 document.querySelectorAll('[data-home-mode]').forEach(btn=>btn.addEventListener('click',()=>{
  const next=btn.dataset.homeMode;changeGameMode(next);
  document.querySelectorAll('[data-home-mode]').forEach(b=>b.classList.toggle('active',b===btn));
