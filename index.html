@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#101827" />
-<title>Sketch Rally v0.3 — Draw. Scan. Race.</title>
+<title>Sketch Rally v0.4 — Draw. Scan. Race.</title>
 <style>
 :root{--bg:#0c1422;--panel:#152237;--panel2:#1c2b43;--border:#30425c;--text:#f2f7ff;--muted:#a1b0c8;--lime:#c4f26b;--blue:#6fc8fa;--orange:#ffb478;--danger:#ff8191;--radius:15px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}.app{max-width:1530px;margin:auto;min-height:100vh;padding:22px 26px 30px}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:13px}.logo{width:44px;height:44px;display:grid;place-items:center;background:var(--lime);color:var(--bg);border-radius:13px;box-shadow:0 0 0 4px rgba(196,242,107,.08);font-size:24px}.brand h1{margin:0;font-size:21px;letter-spacing:-.8px;line-height:1.1}.brand small{color:var(--muted);font-size:12px;font-weight:500}.chip{border:1px solid #4a6647;background:#223c30;border-radius:100px;color:var(--lime);font-size:11px;font-weight:800;letter-spacing:.09em;padding:9px 12px;text-transform:uppercase}.layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:19px;align-items:stretch}.sidebar,.stage{border:1px solid var(--border);border-radius:20px;background:var(--panel);overflow:hidden}.sidebar{display:flex;flex-direction:column}.tabs{display:grid;grid-template-columns:repeat(3,1fr);padding:12px;gap:6px;border-bottom:1px solid var(--border)}.tab{border:0;border-radius:10px;background:transparent;color:var(--muted);padding:12px 6px;font-size:12px;font-weight:800;letter-spacing:.02em}.tab.on{color:var(--bg);background:var(--lime)}.content{padding:20px;overflow-y:auto;max-height:calc(100vh - 160px);min-height:565px}.pane{display:none}.pane.active{display:block}h2{font-size:21px;margin:0 0 6px;letter-spacing:-.5px}h3{font-size:13px;font-weight:800;margin:18px 0 9px}.sub{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 19px}.section-label{display:block;color:#afc0d7;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin:16px 0 8px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:10px;min-height:39px;padding:10px 12px;font-size:12px;font-weight:700;transition:background .1s,border-color .1s}.btn:hover{border-color:#7189a8}.btn.selected{border-color:var(--lime);color:var(--lime);background:#273c30}.btn.primary{color:#0b1920;background:var(--lime);border-color:var(--lime)}.btn.primary:hover{background:#ddffa8}.btn.secondary{background:#294861;color:#dff5ff}.btn.warn{color:var(--danger)}.btn.full{width:100%;margin-top:12px}.btn.large{min-height:47px;font-size:14px}.help{font-size:12px;line-height:1.55;color:var(--muted);margin:11px 0 0}.note{font-size:12px;line-height:1.45;border:1px solid #405676;border-radius:12px;padding:11px 12px;color:#cbd9eb;background:rgba(108,166,238,.06);margin-top:15px}.rule{height:1px;background:var(--border);margin:18px 0}.player-list{display:grid;gap:7px}.player-row{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--border);background:var(--panel2);border-radius:10px;padding:8px 9px;color:var(--text)}.player-row.active{border-color:var(--lime);background:#293c34}.player-icon{width:31px;height:28px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:#0e1b26;font-weight:900;font-size:13px}.player-info{min-width:0;flex:1}.player-info b{display:block;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.player-info small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.player-row .tick{color:var(--lime);font-weight:900}.field{width:100%;padding:11px 12px;background:#0f1a2b;border:1px solid #49607a;color:white;border-radius:10px;outline:0;font-size:13px}.field:focus{border-color:var(--lime)}.upload{border:1px dashed #7890a8;border-radius:12px;min-height:70px;display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;color:#e2efff;font-weight:700;font-size:12px;text-align:center;padding:12px;background:#1a2e45}.upload input{display:none}.upload:hover{border-color:var(--lime)}.correction{position:relative;border:1px solid #426077;background:linear-gradient(45deg,#ebedf1 25%,#ffffff 25% 50%,#ebedf1 50% 75%,#ffffff 75%);background-size:18px 18px;border-radius:12px;overflow:hidden;margin-top:9px}.correction canvas{display:block;width:100%;height:184px;touch-action:none;cursor:grab}.correction canvas:active{cursor:grabbing}.minirow{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:10px 0 0}.minirow span{font-size:11px;color:var(--muted)}.minirow b{font-size:11px;color:var(--lime)}.range{width:100%;accent-color:var(--lime)}.standings{display:grid;gap:8px;margin-top:15px}.result{display:flex;gap:8px;align-items:center;background:#1d2e46;border:1px solid var(--border);padding:10px;border-radius:10px}.result .rank{font-size:11px;width:18px;color:var(--muted);font-weight:900}.result-name{min-width:0;flex:1}.result-name b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.result-name small{color:var(--muted);font-size:10px}.result .progress{width:70px;background:#0d1a2b;border-radius:10px;height:5px;overflow:hidden}.result .fill{height:100%;background:var(--lime);width:0}.stage{min-height:630px;display:flex;flex-direction:column;background:#101e32}.stage-top{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 20px;border-bottom:1px solid var(--border)}.stage-title{font-weight:900;font-size:17px;letter-spacing:-.3px}.stage-description{font-size:12px;color:var(--muted);margin-top:4px}.stage-counter{font-weight:900;font-size:15px;color:var(--lime);font-variant-numeric:tabular-nums;white-space:nowrap}.canvas-wrap{height:min(65vh,608px);min-height:455px;position:relative;overflow:hidden;background:#a6d8eb}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.canvas-tooltip{position:absolute;top:17px;left:17px;border-radius:10px;background:rgba(13,29,46,.78);color:#f7fcff;font-size:12px;font-weight:700;padding:10px 12px;pointer-events:none;max-width:70%;backdrop-filter:blur(5px)}.canvas-tooltip:empty{display:none}.footer{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 19px;background:#152237;border-top:1px solid var(--border)}.footer .message{color:var(--muted);font-size:12px;line-height:1.45}.footer .message strong{color:var(--text)}.footer-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.small-pill{font-size:11px;font-weight:800;display:inline-block;border-radius:20px;padding:5px 9px;background:#31435b;color:#e3eefd}.hidden{display:none!important}.muted{color:var(--muted)}.status{font-size:11px;margin-top:9px;color:var(--lime);min-height:16px}.checkbox{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin:12px 0}.checkbox input{accent-color:var(--lime)}@media(max-width:1000px){.layout{grid-template-columns:300px minmax(0,1fr)}.app{padding:15px}.content{padding:15px}.canvas-wrap{min-height:400px}}@media(max-width:770px){.app{padding:12px 12px 25px}.header{margin-bottom:12px}.layout{grid-template-columns:1fr;gap:11px}.sidebar{order:2}.stage{order:1;min-height:0}.content{max-height:none;min-height:0}.stage-top{min-height:61px;padding:12px 13px}.canvas-wrap{height:53vh;min-height:300px;max-height:530px}.canvas-tooltip{font-size:10px;top:10px;left:10px}.footer{padding:12px;min-height:60px;flex-wrap:wrap}.brand h1{font-size:17px}.logo{width:36px;height:36px;font-size:20px}.chip{font-size:9px;padding:7px 9px}.sidebar{border-radius:16px}.tabs{padding:8px}.content{padding:16px}.stage-title{font-size:15px}}@media(max-width:380px){.canvas-wrap{min-height:275px;height:43vh}.btn{padding:9px 8px}.header .chip{display:none}}
 /* In-game car drawing studio, transparent scan and phone-camera pairing */
@@ -17,7 +17,7 @@
 <div class="app">
   <header class="header">
     <div class="brand"><div class="logo">✎</div><div><h1>SKETCH RALLY</h1><small>Draw it. Scan it. Race it.</small></div></div>
-    <div class="chip">Playable prototype · v0.3</div>
+    <div class="chip">Playable prototype · v0.4</div>
   </header>
   <main class="layout">
     <aside class="sidebar">
@@ -29,16 +29,19 @@
       <div class="content">
         <section id="pane-track" class="pane active">
           <h2>Design the course</h2><p class="sub">The host draws the road. Players will design cars to handle whatever you create.</p>
+          <span class="section-label">Race mode</span>
+          <div class="two-col"><button class="btn selected" type="button" id="modeHills">⛰ Hill Climb</button><button class="btn" type="button" id="modeDownhill">↪ Downhill Race</button></div>
+          <p class="help">Both races are fully automatic. Each mode has its own editable course.</p>
           <span class="section-label">Quick courses</span>
           <div class="two-col">
             <button class="btn" data-preset="flat">↔ &nbsp; Drag race</button><button class="btn selected" data-preset="hills">⌁ &nbsp; Hill climb</button>
             <button class="btn" data-preset="rough">◠ &nbsp; Rough road</button><button class="btn" data-preset="gauntlet">⚑ &nbsp; Challenge</button>
           </div>
           <span class="section-label">Drawing tools</span>
-          <div class="three-col"><button class="btn selected" data-tool="draw">✎ Draw</button><button class="btn" data-tool="rock">◆ Rock</button><button class="btn" data-tool="erase">⌫ Erase</button></div>
-          <p class="help" id="trackHelp">Drag from left to right across the track preview to draw a continuous road. The road updates when you release.</p>
+          <div class="three-col"><button class="btn selected" data-tool="draw">✎ Draw</button><button class="btn" data-tool="rock" id="rockTool">◆ Rock</button><button class="btn" data-tool="erase" id="eraseTool">⌫ Erase</button></div>
+          <p class="help" id="trackHelp">Draw in either direction, on any part of the track, to reshape the hills.</p>
           <div class="two-col" style="margin-top:13px"><button class="btn" id="clearRocks">Clear rocks</button><button class="btn" id="resetTrack">Reset track</button></div>
-          <div class="note">Only the track surface is solid. Add rocks as obstacles; all racers use the same terrain and motor power.</div>
+          <div class="note" id="trackNote">Only the track surface is solid. Add rocks as obstacles; all racers use the same terrain and motor power.</div>
           <button type="button" class="btn primary full large" id="trackNext">Next: Design cars →</button>
         </section>
         <section id="pane-cars" class="pane">
@@ -78,12 +81,12 @@
           <div class="status" id="carsStatus"></div>
         </section>
         <section id="pane-race" class="pane">
-          <h2>Race day</h2><p class="sub">No steering or throttle. Press start and see which design can conquer the host's course.</p>
+          <h2>Race day</h2><p class="sub" id="raceDescription">No steering or throttle. Press start and see which design can conquer the host's course.</p>
           <div class="two-col"><button class="btn primary large" id="startRace">▶ Start race</button><button class="btn large" id="resetRace">↺ Restart</button></div>
           <label class="checkbox"><input type="checkbox" id="speedMode"/> Speed up simulation ×2</label>
           <span class="section-label">Live standings</span>
           <div id="standings" class="standings"></div>
-          <div class="note">Wheel radius, wheelbase, body proportions, ground clearance and balance influence the results. Motor power and baseline materials are standardized.</div>
+          <div class="note" id="raceNote">Wheel radius, wheelbase, body proportions, ground clearance and balance influence the results. Motor power and baseline materials are standardized.</div>
           <button type="button" class="btn full" id="backToCars">← Modify car designs</button>
           <button type="button" class="btn full" id="backToTrack">← Modify track</button>
         </section>
@@ -370,18 +373,244 @@ $('acceptPhonePhoto').addEventListener('click',()=>{if(!pendingPhonePhoto)return
 $('backgroundCleanup').addEventListener('input',()=>{$('cleanupValue').textContent=Number($('backgroundCleanup').value)<30?'Gentle':Number($('backgroundCleanup').value)>75?'Strong':'Balanced';const p=activePlayer();if(p?.rawScan)scanImage(p.rawScan)});
 window.addEventListener('pagehide',()=>{if(phoneChannel&&realtimeClient)realtimeClient.removeChannel(phoneChannel)});
 
+// v0.4 — Two separately editable courses. Downhill is fully automatic.
+let gameMode='hills', downhillPreset='hills', downhillTrack=new Float32Array(521);
+const DOWNHILL_ROAD_WIDTH=150;
+function sampleDownhill(x){return field(x/WORLD_W,downhillTrack)}
+function downhillGrade(x){return (sampleDownhill(x+14)-sampleDownhill(x-14))/28}
+function setDownhillPreset(kind){
+  downhillPreset=kind;
+  const samples={
+    flat:[[0,.52],[1,.52]],
+    hills:[[0,.47],[.13,.47],[.24,.73],[.37,.71],[.49,.29],[.60,.29],[.73,.73],[.86,.69],[1,.43]],
+    rough:[[0,.50],[.12,.50],[.23,.25],[.34,.67],[.46,.37],[.56,.75],[.67,.28],[.78,.65],[.88,.34],[1,.52]],
+    gauntlet:[[0,.47],[.12,.47],[.20,.78],[.30,.22],[.40,.79],[.51,.20],[.60,.76],[.70,.26],[.80,.72],[.90,.31],[1,.53]]
+  };
+  const points=samples[kind]||samples.hills;
+  for(let i=0;i<downhillTrack.length;i++){
+    const x=i/(downhillTrack.length-1);
+    let k=1;while(k<points.length-1&&points[k][0]<x)k++;
+    const a=points[k-1],b=points[k],v=clamp((x-a[0])/(b[0]-a[0]||1),0,1);
+    const t=v*v*(3-2*v);downhillTrack[i]=WORLD_H*lerp(a[1],b[1],t);
+  }
+  syncCourseUI();drawAll();
+}
+// A brush stroke edits only the portion under the finger, preserves untouched sections,
+// supports dragging in either direction, and handles near-vertical strokes as a hill brush.
+function applyTerrainStroke(stroke){
+  if(!stroke||stroke.length<1)return false;
+  const points=stroke.map(p=>({x:clamp(p.x,0,1),y:clamp(p.y,.13,.87)})).sort((a,b)=>a.x-b.x);
+  const target=gameMode==='hills'?ground:downhillTrack,original=Float32Array.from(target);
+  const first=points[0],last=points[points.length-1],width=last.x-first.x;
+  if(width<.016){
+    const cx=first.x,radius=.033;
+    const desired=points.reduce((sum,p)=>sum+p.y,0)/points.length*WORLD_H;
+    for(let i=0;i<target.length;i++){
+      const u=i/(target.length-1),weight=Math.max(0,1-Math.abs(u-cx)/radius);
+      if(weight>0)target[i]=lerp(original[i],desired,weight*weight*(3-2*weight));
+    }
+  }else{
+    const feather=.018;
+    for(let i=0;i<target.length;i++){
+      const u=i/(target.length-1);
+      if(u<first.x-feather||u>last.x+feather)continue;
+      let k=1;while(k<points.length-1&&points[k].x<u)k++;
+      const a=points[k-1],b=points[k];const t=clamp((u-a.x)/(b.x-a.x||1),0,1);
+      const y=lerp(a.y,b.y,t)*WORLD_H;
+      const left=clamp((u-first.x+feather)/(feather*2),0,1);
+      const right=clamp((last.x-u+feather)/(feather*2),0,1);
+      const weight=Math.min(left,right,1);
+      target[i]=lerp(original[i],y,weight*weight*(3-2*weight));
+    }
+  }
+  const snap=Float32Array.from(target);
+  for(let i=1;i<target.length-1;i++)target[i]=.22*snap[i-1]+.56*snap[i]+.22*snap[i+1];
+  for(let i=0;i<target.length;i++)target[i]=clamp(target[i],gameMode==='hills'?115:115,gameMode==='hills'?650:605);
+  if(gameMode==='hills')preset='custom';else downhillPreset='custom';
+  return true;
+}
+// Replace the original one-way / minimum-three-point drawing interaction.
+let trackPointer=null;
+pointerTrackDown=function(e){
+  if(page!=='track'||(trackPointer!==null))return;
+  e.preventDefault();scene.setPointerCapture(e.pointerId);
+  const pos=scenePoint(e),x=clamp(pos.x/Math.max(sceneSize.w,1),0,1),y=clamp(pos.y/Math.max(sceneSize.h,1),.13,.87);
+  if(gameMode==='hills'&&mode==='rock'){
+    rocks.push({x:clamp(x*WORLD_W,START+100,FINISH-70),r:15+Math.random()*7});drawAll();return;
+  }
+  if(gameMode==='hills'&&mode==='erase'){
+    const nearest=rocks.reduce((best,r,i)=>Math.abs(r.x-x*WORLD_W)<best.dist?{i,dist:Math.abs(r.x-x*WORLD_W)}:best,{i:-1,dist:Infinity});
+    if(nearest.dist<180)rocks.splice(nearest.i,1);drawAll();return;
+  }
+  trackPointer=e.pointerId;roadStroke=[{x,y}];drawAll();
+};
+pointerTrackMove=function(e){
+  if(page!=='track'||trackPointer!==e.pointerId||!roadStroke)return;
+  e.preventDefault();const pos=scenePoint(e),x=clamp(pos.x/Math.max(sceneSize.w,1),0,1),y=clamp(pos.y/Math.max(sceneSize.h,1),.13,.87);
+  const last=roadStroke[roadStroke.length-1];
+  if(Math.hypot((x-last.x)*sceneSize.w,(y-last.y)*sceneSize.h)>1.5){roadStroke.push({x,y});drawAll()}
+};
+pointerTrackUp=function(e){
+  if(trackPointer!==e.pointerId||!roadStroke)return;
+  e.preventDefault();
+  const pos=scenePoint(e),x=clamp(pos.x/Math.max(sceneSize.w,1),0,1),y=clamp(pos.y/Math.max(sceneSize.h,1),.13,.87);
+  const last=roadStroke[roadStroke.length-1];
+  if(Math.hypot((x-last.x)*sceneSize.w,(y-last.y)*sceneSize.h)>2)roadStroke.push({x,y});
+  applyTerrainStroke(roadStroke);
+  roadStroke=null;trackPointer=null;dragStart=null;
+  try{if(scene.hasPointerCapture(e.pointerId))scene.releasePointerCapture(e.pointerId)}catch{}
+  syncCourseUI();drawAll();
+};
+function changeGameMode(next){
+  if(next===gameMode)return;
+  if(simulation!=='idle')resetRace();
+  gameMode=next;mode='draw';roadStroke=null;trackPointer=null;camX=0;camY=0;previewTime=0;
+  syncCourseUI();if(page==='race')refreshStandings();drawAll();
+}
+function syncCourseUI(){
+  if(!$('modeHills'))return;
+  $('modeHills').classList.toggle('selected',gameMode==='hills');
+  $('modeDownhill').classList.toggle('selected',gameMode==='downhill');
+  const downhill=gameMode==='downhill';
+  const labels=downhill?['↔ Straight sprint','↪ Hairpin pass','〰 S-bends','⤺ Switchbacks']:['↔ Drag race','⌁ Hill climb','◠ Rough road','⚑ Challenge'];
+  document.querySelectorAll('[data-preset]').forEach((b,i)=>{b.textContent=labels[i];b.classList.toggle('selected',b.dataset.preset===(downhill?downhillPreset:preset))});
+  $('rockTool').classList.toggle('hidden',downhill);$('eraseTool').classList.toggle('hidden',downhill);
+  $('clearRocks').classList.toggle('hidden',downhill);
+  if(downhill){mode='draw';document.querySelectorAll('[data-tool]').forEach(b=>b.classList.toggle('selected',b.dataset.tool==='draw'))}
+  $('trackHelp').textContent=downhill?'Draw the ROAD CENTRE from any direction, on any part of the preview. The gray road follows your curves. The cars handle corners automatically.':'Draw on ANY part of the track, in EITHER direction. Lift or lower hills with short strokes; the other parts stay unchanged.';
+  $('trackNote').textContent=downhill?'Top-down mountain road. Draw hairpins and S-curves; cars steer and brake automatically. Each mode remembers its own track.':'Only the terrain surface is solid. Place rock obstacles. Downhill tracks are saved separately.';
+  $('raceDescription').textContent=downhill?'Full auto downhill. Cars steer, slow for corners and race to the finish without player controls.':'Full auto hill climb. The physics engine handles driving, jumps and obstacles.';
+  $('raceNote').textContent=downhill?'The top-view cars use simplified body shapes and colours with a sketch decal; this is not AI 3D reconstruction. Wheelbase and body proportions influence cornering.':'Wheel radius, wheelbase, body proportions, ground clearance and balance influence results. Motor power is standardized.';
+  if(page==='track'){$('stageTitle').textContent=downhill?'DOWNHILL TRACK EDITOR':'HOST TRACK EDITOR';$('stageSubtitle').textContent=downhill?'Draw corners · the race is fully automatic':'Draw hills · edit the road with your finger or mouse';$('canvasTooltip').textContent=downhill?'✎ Shape the road through corners · automatic racing':'✎ Draw in any direction to reshape the hills';$('stageCounter').textContent=downhill?'TOP-DOWN COURSE':'FULL COURSE'}
+  if(page==='race'){$('stageTitle').textContent=downhill?'DOWNHILL AUTO RACE':'HILL CLIMB AUTO RACE';$('stageSubtitle').textContent=downhill?'Top view · automatic cornering':'Side view · automatic physics'}
+  $('footerMessage').innerHTML=page==='track'?downhill?'<strong>DOWNHILL</strong> · Draw the road centreline; all cars steer themselves.':'<strong>HILL CLIMB</strong> · Draw hills in either direction.':page==='cars'?'<strong>GARAGE</strong> · Scan or draw your car design.':downhill?'<strong>DOWNHILL RACE</strong> · Fastest automatic descent wins.':'<strong>HILL RACE</strong> · Fastest finisher wins.';
+}
+const originalSetPage=setPage;
+setPage=function(name){originalSetPage(name);syncCourseUI()};
+function downhillRoadPath(c,x0,x1){
+  c.beginPath();let started=false;
+  for(let x=Math.max(0,x0);x<=Math.min(WORLD_W,x1);x+=7){if(!started){c.moveTo(x,sampleDownhill(x));started=true}else c.lineTo(x,sampleDownhill(x))}
+  c.lineTo(Math.min(WORLD_W,x1),sampleDownhill(Math.min(WORLD_W,x1)));
+}
+function paintTopCar(c,p,heading=0){
+  const ph=physical(p),length=clamp(ph.bodyW*.77,73,121),width=clamp(ph.bodyH*.62,36,66);
+  c.save();c.rotate(heading);c.fillStyle='#12283e';
+  for(let ax of [-length*.30,length*.30])for(let side of [-1,1]){rounded(c,ax-10,side*(width*.55)-6,20,12,3);c.fill()}
+  c.fillStyle=p.color;c.strokeStyle='#20374a';c.lineWidth=4;rounded(c,-length/2,-width/2,length,width,14);c.fill();c.stroke();
+  c.fillStyle='#a9dcee';rounded(c,-length*.14,-width*.40,length*.37,width*.80,7);c.fill();
+  // The original side-view artwork is kept as a decorative decal on the roof.
+  if(p.canvas){c.save();rounded(c,-length*.30,-width*.24,length*.25,width*.48,3);c.clip();c.globalAlpha=.86;c.drawImage(p.canvas,-length*.30,-width*.24,length*.25,width*.48);c.restore()}
+  c.fillStyle='rgba(255,249,176,.9)';c.fillRect(length*.41,-width*.28,5,9);c.fillRect(length*.41,width*.14,5,9);
+  c.fillStyle='#f5fffd';c.textAlign='center';c.font='bold 11px system-ui';c.fillText(String(players.indexOf(p)+1),length*.18,4);c.restore();
+}
+function drawDownhillEditor(c,w,h){
+  c.save();const g=c.createLinearGradient(0,0,w,h);g.addColorStop(0,'#426d4b');g.addColorStop(.52,'#6e9158');g.addColorStop(1,'#294e49');c.fillStyle=g;c.fillRect(0,0,w,h);
+  c.strokeStyle='rgba(255,255,255,.09)';c.lineWidth=1;c.setLineDash([5,9]);for(let i=1;i<10;i++){c.beginPath();c.moveTo(i*w/10,0);c.lineTo(i*w/10,h);c.stroke()}c.setLineDash([]);
+  const sX=w/WORLD_W,sY=h/WORLD_H,roadPx=DOWNHILL_ROAD_WIDTH*Math.min(sX,sY)*1.22;
+  function path(){c.beginPath();for(let i=0;i<downhillTrack.length;i++){const x=i/(downhillTrack.length-1)*w,y=downhillTrack[i]*sY;if(i===0)c.moveTo(x,y);else c.lineTo(x,y)}}
+  path();c.lineCap='round';c.lineJoin='round';c.strokeStyle='#a8ba85';c.lineWidth=roadPx+15;c.stroke();
+  path();c.strokeStyle='#233548';c.lineWidth=roadPx+7;c.stroke();path();c.strokeStyle='#48556a';c.lineWidth=roadPx;c.stroke();
+  path();c.strokeStyle='#f1d28b';c.lineWidth=2;c.setLineDash([12,13]);c.stroke();c.setLineDash([]);
+  for(const [x,text] of [[START,'START'],[FINISH,'FINISH']]){const sx=x*sX,sy=sampleDownhill(x)*sY;c.save();c.translate(sx,sy);c.fillStyle='#dcfbe5';c.font='800 10px system-ui';c.textAlign='center';c.fillText(text,sx>w-65? -24:24,-roadPx*.65);c.restore()}
+  if(previewEnabled){players.forEach((p,i)=>{const x=START+((previewTime*88+i*125)%(FINISH-START));c.save();c.translate(x*sX,(sampleDownhill(x)+(i-1)*12)*sY);c.scale(.54,.54);paintTopCar(c,p,Math.atan(downhillGrade(x)));c.restore()})}
+  if(roadStroke?.length){c.beginPath();roadStroke.forEach((p,i)=>i?c.lineTo(p.x*w,p.y*h):c.moveTo(p.x*w,p.y*h));c.lineWidth=4;c.lineCap='round';c.strokeStyle='#ffce70';c.setLineDash([7,5]);c.stroke();c.setLineDash([])}
+  c.restore();
+}
+function downhillPreview(p,i){
+  const x=START+((previewTime*(108+i*3)+i*90)%(FINISH-START));
+  return {x,y:sampleDownhill(x)+(i-(players.length-1)/2)*12,vx:170,angle:Math.atan(downhillGrade(x)),status:'preview'};
+}
+function drawDownhillWorld(c,w,h,preview=false){
+  const scale=clamp(w/840,.50,1.15),viewW=w/scale,viewH=h/scale;
+  const entries=players.map((p,i)=>({p,st:preview?downhillPreview(p,i):p.state}));
+  const leader=Math.max(START,...entries.map(e=>e.st?.x||START));
+  let desiredX=clamp(leader-viewW*.36,0,Math.max(0,WORLD_W-viewW));
+  if(simulation!=='idle'||preview)camX=lerp(camX,desiredX,.09);else camX=0;
+  const targetY=clamp(sampleDownhill(leader)-viewH*.5,-100,Math.max(-100,WORLD_H-viewH+100));camY=lerp(camY,targetY,.07);
+  c.save();c.fillStyle='#426c50';c.fillRect(0,0,w,h);c.scale(scale,scale);c.translate(-camX,-camY);
+  const left=camX-100,right=camX+viewW+100;
+  // Foliage is fixed in world coordinates rather than shifting with the cars.
+  c.fillStyle='#355b48';for(let i=0;i<120;i++){const x=(i*347)%WORLD_W,y=(i*191+65)%WORLD_H;if(x<left-30||x>right+30||Math.abs(y-sampleDownhill(x))<DOWNHILL_ROAD_WIDTH*.9)continue;c.beginPath();c.arc(x,y,12+(i%4)*6,0,7);c.fill()}
+  downhillRoadPath(c,left,right);c.lineCap='round';c.lineJoin='round';c.strokeStyle='#afb887';c.lineWidth=DOWNHILL_ROAD_WIDTH+30;c.stroke();
+  downhillRoadPath(c,left,right);c.strokeStyle='#233647';c.lineWidth=DOWNHILL_ROAD_WIDTH+10;c.stroke();
+  downhillRoadPath(c,left,right);c.strokeStyle='#495568';c.lineWidth=DOWNHILL_ROAD_WIDTH;c.stroke();
+  downhillRoadPath(c,left,right);c.strokeStyle='#f2cd7b';c.lineWidth=3;c.setLineDash([18,28]);c.stroke();c.setLineDash([]);
+  for(const [x,label] of [[START,'START'],[FINISH,'FINISH']]){
+    if(x<left-90||x>right+90)continue;
+    const y=sampleDownhill(x);c.save();c.translate(x,y);c.rotate(Math.atan(downhillGrade(x)));
+    c.strokeStyle='#f6ffff';c.lineWidth=6;c.beginPath();c.moveTo(0,-DOWNHILL_ROAD_WIDTH*.48);c.lineTo(0,DOWNHILL_ROAD_WIDTH*.48);c.stroke();
+    c.fillStyle='#0b2636';c.font='bold 16px system-ui';c.textAlign='center';c.fillText(label,30,-DOWNHILL_ROAD_WIDTH*.58);c.restore();
+  }
+  for(const {p,st} of entries.sort((a,b)=>(a.st?.x||0)-(b.st?.x||0))){
+    if(!st)continue;c.save();c.translate(st.x,st.y);paintTopCar(c,p,st.angle||0);c.restore();
+    c.font='bold 13px system-ui';c.textAlign='center';const name=p.name.slice(0,12),tw=Math.max(65,c.measureText(name).width+15);
+    c.fillStyle='rgba(9,25,39,.85)';rounded(c,st.x-tw/2,st.y-76,tw,22,7);c.fill();c.fillStyle=p.color;c.fillText(name,st.x,st.y-61);
+  }
+  c.restore();
+  if(preview){c.save();c.fillStyle='rgba(10,29,45,.78)';rounded(c,w/2-105,12,210,29,10);c.fill();c.textAlign='center';c.fillStyle='#e5ffba';c.font='bold 12px system-ui';c.fillText('DOWNHILL · DEMO LOOP',w/2,31);c.restore()}
+  if(simulation==='complete'&&!preview){
+    c.save();c.fillStyle='rgba(9,25,37,.73)';c.fillRect(0,0,w,h);c.fillStyle='#10263a';rounded(c,w/2-158,h/2-60,316,120,18);c.fill();
+    c.textAlign='center';c.fillStyle='#c4f26b';c.font='900 23px system-ui';c.fillText('DOWNHILL FINISHED',w/2,h/2-18);
+    const champ=[...players].filter(p=>p.state?.status==='finished').sort((a,b)=>a.state.finishTime-b.state.finishTime)[0];c.fillStyle='white';c.font='14px system-ui';c.fillText(champ?champ.name+' wins!':'No finishers',w/2,h/2+15);c.restore();
+  }
+}
+const originalDrawScene=drawScene;
+drawScene=function(){
+  if(gameMode==='hills')return originalDrawScene();
+  resizeCanvas(scene,sceneSize);const {w,h,dpr}=sceneSize;if(!w||!h)return;
+  sc.setTransform(dpr,0,0,dpr,0,0);sc.clearRect(0,0,w,h);
+  if(page==='track')drawDownhillEditor(sc,w,h);
+  else if(page==='cars')drawDownhillWorld(sc,w,h,previewEnabled);
+  else drawDownhillWorld(sc,w,h,false);
+};
+const originalInitRacers=initRacers;
+initRacers=function(){
+  if(gameMode==='hills')return originalInitRacers();
+  players.forEach((p,i)=>{p.state={x:START,y:sampleDownhill(START)+(i-(players.length-1)/2)*12,vx:72+i*1.5,vy:0,angle:0,finishTime:0,status:'racing',topSpeed:0,offroad:0}});
+  camX=0;camY=0;elapsed=0;stepCarry=0;simulation='running';$('startRace').textContent='Ⅱ Pause race';$('canvasTooltip').textContent='▶ Automatic downhill race · cars steer and brake themselves';refreshStandings();
+};
+function simulateDownhill(dt){
+  elapsed+=dt;
+  for(let i=0;i<players.length;i++){
+    const p=players[i],s=p.state;if(!s||s.status!=='racing')continue;
+    const ph=physical(p),wheelbase=ph.wheels[1].ax-ph.wheels[0].ax;
+    const handling=clamp(1.12-(wheelbase-72)/440-(ph.bodyW-110)/360,.67,1.25);
+    const turn=Math.abs(downhillGrade(s.x+88)-downhillGrade(s.x-28));
+    const safeSpeed=clamp((325-turn*190)*handling,100,350);
+    const acceleration=105+3*Math.sin(s.x*.006),automaticBrake=s.vx>safeSpeed?240:0;
+    s.vx=clamp(s.vx+(acceleration-automaticBrake-(s.vx*.18))*dt,30,350);
+    // Autonomous steering follows the road; faster cars can drift wide on tight bends.
+    const target=sampleDownhill(s.x+32)+(i-(players.length-1)/2)*12;
+    const steer=clamp((target-s.y)*2.8-s.vy*4,-460*handling,460*handling);
+    s.vy=clamp(s.vy+steer*dt,-210,210);
+    s.x+=s.vx*dt;s.y+=s.vy*dt;
+    const deviation=Math.abs(s.y-sampleDownhill(s.x));
+    if(deviation>DOWNHILL_ROAD_WIDTH*.43){s.offroad+=dt;s.vx=Math.max(30,s.vx-175*dt)}
+    else s.offroad=Math.max(0,s.offroad-dt);
+    s.angle=Math.atan2(s.vy,s.vx);
+    s.topSpeed=Math.max(s.topSpeed,s.vx);
+    if(s.x>=FINISH){s.x=FINISH;s.status='finished';s.finishTime=elapsed}
+    if(elapsed>90)s.status='timed out';
+  }
+  if(players.every(p=>p.state?.status!=='racing')){simulation='complete';$('startRace').textContent='▶ Race again'}
+}
+const originalSimulate=simulate;
+simulate=function(dt){if(gameMode==='downhill')simulateDownhill(dt);else originalSimulate(dt)};
+$('modeHills').addEventListener('click',()=>changeGameMode('hills'));
+$('modeDownhill').addEventListener('click',()=>changeGameMode('downhill'));
+
 // UI events
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.tab)));
-document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{presetTrack(b.dataset.preset);changeTool('draw')}));
+document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{if(gameMode==='downhill')setDownhillPreset(b.dataset.preset);else presetTrack(b.dataset.preset);changeTool('draw');syncCourseUI()}));
 document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>changeTool(b.dataset.tool)));
-$('clearRocks').addEventListener('click',()=>{rocks=[];drawAll()});$('resetTrack').addEventListener('click',()=>presetTrack('hills'));$('trackNext').addEventListener('click',()=>setPage('cars'));
+$('clearRocks').addEventListener('click',()=>{rocks=[];drawAll()});$('resetTrack').addEventListener('click',()=>{if(gameMode==='downhill')setDownhillPreset('hills');else presetTrack('hills');syncCourseUI()});$('trackNext').addEventListener('click',()=>setPage('cars'));
 $('addPlayer').addEventListener('click',addPlayer);$('removePlayer').addEventListener('click',removePlayer);$('playerName').addEventListener('input',e=>{activePlayer().name=e.target.value||'Racer';refreshPlayers();drawAll()});$('carUpload').addEventListener('change',e=>imageLoad(e.target.files[0]));$('retryScan').addEventListener('click',()=>{if(['photo','drawn'].includes(activePlayer().source)){activePlayer().wheels=detectWheels(activePlayer().canvas);$('scanStatus').textContent='Re-detected';showWheelSlider();drawAll()}});
 $('rearWheelBtn').addEventListener('click',()=>chooseWheel(0));$('frontWheelBtn').addEventListener('click',()=>chooseWheel(1));$('wheelSize').addEventListener('input',e=>{const p=activePlayer();p.wheels[chosenWheel].r=Number(e.target.value)/physical(p).bodyW;$('wheelSizeValue').textContent=e.target.value+' px';drawAll()});$('carsNext').addEventListener('click',()=>setPage('race'));
 $('startRace').addEventListener('click',toggleRace);$('resetRace').addEventListener('click',resetRace);$('backToCars').addEventListener('click',()=>{resetRace();setPage('cars')});$('backToTrack').addEventListener('click',()=>{resetRace();setPage('track')});
 scene.addEventListener('pointerdown',pointerTrackDown);scene.addEventListener('pointermove',pointerTrackMove);scene.addEventListener('pointerup',pointerTrackUp);scene.addEventListener('pointercancel',pointerTrackUp);
 wheelCanvas.addEventListener('pointerdown',correctionDown);wheelCanvas.addEventListener('pointermove',correctionMove);wheelCanvas.addEventListener('pointerup',correctionUp);wheelCanvas.addEventListener('pointercancel',correctionUp);
 window.addEventListener('resize',drawAll);document.addEventListener('visibilitychange',()=>{if(document.hidden&&simulation==='running'){simulation='paused';$('startRace').textContent='▶ Resume race'}});
-presetTrack('hills');populate();setPage('track');requestAnimationFrame(loop);
+presetTrack('hills');setDownhillPreset('hills');populate();setPage('track');requestAnimationFrame(loop);
 })();
 </script>
 </body>
