@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0c1422" />
-<title>Sketch Rally · Phone Camera</title>
+<title>Sketch Rally · Phone Camera v0.5</title>
 <style>
 :root{--bg:#0c1422;--panel:#17283e;--muted:#a4b6ce;--line:#3c526d;--green:#c4f26b;--blue:#80d7ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px system-ui,-apple-system,sans-serif;color:#eef8ff}main{padding:19px 15px 35px;max-width:610px;margin:0 auto}header{display:flex;align-items:center;gap:10px;margin-bottom:17px}header .mark{font-size:28px;background:var(--green);border-radius:13px;display:grid;place-items:center;width:46px;height:46px}header h1{font-size:19px;line-height:1.14;letter-spacing:-.3px;margin:0}header p{margin:2px 0 0;color:var(--muted);font-size:12px}.panel{background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:16px;margin-bottom:14px}h2{font-size:17px;margin:0 0 9px}p{font-size:13px;line-height:1.55;color:var(--muted);margin:5px 0 13px}.field{background:#0d1b2b;color:white;font:700 18px system-ui;letter-spacing:.17em;text-align:center;padding:13px 8px;border:1px solid #667e99;border-radius:10px;width:100%;text-transform:uppercase}button,.file-button{padding:12px 13px;min-height:45px;border:1px solid var(--line);background:#263e58;border-radius:11px;color:white;font-weight:750;font-size:14px;cursor:pointer;text-align:center}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--green);color:#102332;border-color:var(--green)}.blue{background:#294b6e;border-color:#477391}.row{display:flex;gap:9px}.row>button,.row>.file-button{flex:1}.full{width:100%;margin-top:11px}.status{font-size:12px;margin:11px 0 0;color:#c4f26b;line-height:1.5;min-height:18px}.video-frame{background:#080f1d;border:1px solid #6b8298;border-radius:14px;overflow:hidden;aspect-ratio:3 / 4;position:relative;display:grid;place-items:center}.video-frame video{width:100%;height:100%;object-fit:cover}.video-frame .hint{position:absolute;inset:auto 12px 12px;border-radius:10px;background:#07111aaa;color:white;font-size:12px;padding:9px 10px;pointer-events:none;text-align:center}.video-frame:has(video:not([srcObject])){background:#0c1b2c}.cam-off{min-height:160px;aspect-ratio:auto}.cam-off video{display:none}.cam-off .hint{position:static;background:transparent;color:var(--muted)}.preview{max-width:100%;max-height:270px;display:block;margin:auto;border-radius:11px}.hidden{display:none!important}.file-button{display:flex;align-items:center;justify-content:center}.file-button input{display:none}.subtle{font-size:11px;color:#91a9c1;margin-top:12px}.chip{border-radius:20px;color:var(--green);background:#2d4436;font-size:11px;padding:6px 9px;display:inline-block;font-weight:850}
@@ -15,22 +15,22 @@
 <main>
 <header><div class="mark">📷</div><div><h1>Sketch Rally · Phone Camera</h1><p>Send paper car sketches to the smartboard</p></div></header>
 <section class="panel">
-<h2>1 · Pair with the smartboard</h2>
-<p>On the smartboard, open <strong>Cars → Create pairing code</strong>. Scan its QR code or enter its 8-character code below.</p>
+<h2>Pair</h2>
+
 <div class="row"><input id="room" class="field" inputmode="text" autocapitalize="characters" placeholder="ROOM CODE" maxlength="8" aria-label="Smartboard pairing code"/><button class="primary" id="connect">Connect</button></div>
 <div id="connectionStatus" class="status" role="status">Not connected</div>
 </section>
 <section class="panel">
-<h2>2 · Take a photo of your drawing</h2>
-<p>Your phone camera looks at the paper, and the smartboard can see a low-resolution live preview while you scan. Only photos you send are imported into the game.</p>
-<div id="cameraFrame" class="video-frame cam-off"><video id="video" autoplay playsinline muted aria-label="Live phone camera view"></video><div class="hint" id="cameraHint">Connect first, then start the camera. Aim at a side-view car drawing on plain paper.</div></div>
+<h2>Scan a car</h2>
+
+<div id="cameraFrame" class="video-frame cam-off"><video id="video" autoplay playsinline muted aria-label="Live phone camera view"></video><div class="hint" id="cameraHint">Connect first, then start the camera. Aim at your car drawing.</div></div>
 <div class="row" style="margin-top:11px"><button id="startCamera" class="blue" disabled>📷 Start camera</button><button id="switchCamera" disabled>↻ Flip</button><button id="stopCamera" disabled>Stop</button></div>
-<div style="margin-top:12px"><label for="racerName" style="font-size:12px;color:var(--muted)">Optional player name</label><input id="racerName" style="margin-top:5px;letter-spacing:normal;text-align:left;font-size:14px" class="field" maxlength="24" placeholder="Racer name (optional)" /></div>
+<div style="margin-top:13px"><label for="viewType" style="font-size:12px;color:var(--muted)">Scan type</label><select id="viewType" style="margin-top:5px;width:100%;min-height:44px;padding:9px;background:#0d1b2b;color:#f2f8ff;border:1px solid #667e99;border-radius:10px"><option value="sheet">2 views · Top + Side sheet</option><option value="side">Side view only</option><option value="top">Top view only</option></select></div><div style="margin-top:12px"><label for="racerName" style="font-size:12px;color:var(--muted)">Optional player name</label><input id="racerName" style="margin-top:5px;letter-spacing:normal;text-align:left;font-size:14px" class="field" maxlength="24" placeholder="Racer name (optional)" /></div>
 <button id="capture" class="primary full" disabled>Capture &amp; send to smartboard</button>
 <label class="file-button full">Or select a photo from your phone<input type="file" accept="image/*" capture="environment" id="filePhoto" disabled/></label>
 <div class="status" id="photoStatus" role="status">Choose a pairing code to begin.</div>
 </section>
-<section class="panel hidden" id="sentPanel"><h2>Photo submitted</h2><img id="sentImage" class="preview" alt="The photo sent to the smartboard"/><p>Your smartboard host can now review and accept this image for the selected racer. The game removes the paper background automatically and lets you correct the wheels.</p></section>
+<section class="panel hidden" id="sentPanel"><h2>Photo submitted</h2><img id="sentImage" class="preview" alt="The photo sent to the smartboard"/><p>Review and accept on the smartboard.</p></section>
 <p class="subtle">Privacy: This camera companion broadcasts preview frames and selected photos only to devices in the same temporary room. No photos are saved to the site's database. Anyone with the code may join the room, so keep it within your group.</p>
 </main>
 <script>
@@ -73,7 +73,7 @@ function compressImage(source){const w=source.videoWidth||source.naturalWidth||s
  }if(data.length>234000)throw Error('Photo too large to send. Move closer to the paper.');return data;
 }
 async function transmit(source){if(!paired||!channel){photoStatus('Pair with the smartboard first.');return}if(sending)return;
- sending=true;enable();try{const data=compressImage(source);photoStatus('Sending photo…');const response=await channel.send({type:'broadcast',event:'snapshot',payload:{image:data,name:$('racerName').value.trim().slice(0,24)||'phone'}});
+ sending=true;enable();try{const data=compressImage(source);photoStatus('Sending photo…');const response=await channel.send({type:'broadcast',event:'snapshot',payload:{image:data,name:$('racerName').value.trim().slice(0,24)||'phone',view:$('viewType').value}});
  if(response!=='ok'){throw Error('Send not confirmed: '+response)}
  $('sentImage').src=data;$('sentPanel').classList.remove('hidden');photoStatus('Photo sent! Review and accept it on the smartboard.');
  }catch(err){console.error(err);photoStatus('Could not send photo. Check that both devices are online, then retry.')}finally{sending=false;enable()}
