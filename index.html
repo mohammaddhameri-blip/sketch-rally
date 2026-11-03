@@ -4,60 +4,62 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#101827" />
-<title>Sketch Rally v0.5 — Draw. Scan. Race.</title>
+<title>Sketch Rally v0.6 — Draw. Scan. Race.</title>
 <style>
 :root{--bg:#0c1422;--panel:#152237;--panel2:#1c2b43;--border:#30425c;--text:#f2f7ff;--muted:#a1b0c8;--lime:#c4f26b;--blue:#6fc8fa;--orange:#ffb478;--danger:#ff8191;--radius:15px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}.app{max-width:1530px;margin:auto;min-height:100vh;padding:22px 26px 30px}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:13px}.logo{width:44px;height:44px;display:grid;place-items:center;background:var(--lime);color:var(--bg);border-radius:13px;box-shadow:0 0 0 4px rgba(196,242,107,.08);font-size:24px}.brand h1{margin:0;font-size:21px;letter-spacing:-.8px;line-height:1.1}.brand small{color:var(--muted);font-size:12px;font-weight:500}.chip{border:1px solid #4a6647;background:#223c30;border-radius:100px;color:var(--lime);font-size:11px;font-weight:800;letter-spacing:.09em;padding:9px 12px;text-transform:uppercase}.layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:19px;align-items:stretch}.sidebar,.stage{border:1px solid var(--border);border-radius:20px;background:var(--panel);overflow:hidden}.sidebar{display:flex;flex-direction:column}.tabs{display:grid;grid-template-columns:repeat(3,1fr);padding:12px;gap:6px;border-bottom:1px solid var(--border)}.tab{border:0;border-radius:10px;background:transparent;color:var(--muted);padding:12px 6px;font-size:12px;font-weight:800;letter-spacing:.02em}.tab.on{color:var(--bg);background:var(--lime)}.content{padding:20px;overflow-y:auto;max-height:calc(100vh - 160px);min-height:565px}.pane{display:none}.pane.active{display:block}h2{font-size:21px;margin:0 0 6px;letter-spacing:-.5px}h3{font-size:13px;font-weight:800;margin:18px 0 9px}.sub{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 19px}.section-label{display:block;color:#afc0d7;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin:16px 0 8px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:10px;min-height:39px;padding:10px 12px;font-size:12px;font-weight:700;transition:background .1s,border-color .1s}.btn:hover{border-color:#7189a8}.btn.selected{border-color:var(--lime);color:var(--lime);background:#273c30}.btn.primary{color:#0b1920;background:var(--lime);border-color:var(--lime)}.btn.primary:hover{background:#ddffa8}.btn.secondary{background:#294861;color:#dff5ff}.btn.warn{color:var(--danger)}.btn.full{width:100%;margin-top:12px}.btn.large{min-height:47px;font-size:14px}.help{font-size:12px;line-height:1.55;color:var(--muted);margin:11px 0 0}.note{font-size:12px;line-height:1.45;border:1px solid #405676;border-radius:12px;padding:11px 12px;color:#cbd9eb;background:rgba(108,166,238,.06);margin-top:15px}.rule{height:1px;background:var(--border);margin:18px 0}.player-list{display:grid;gap:7px}.player-row{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--border);background:var(--panel2);border-radius:10px;padding:8px 9px;color:var(--text)}.player-row.active{border-color:var(--lime);background:#293c34}.player-icon{width:31px;height:28px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:#0e1b26;font-weight:900;font-size:13px}.player-info{min-width:0;flex:1}.player-info b{display:block;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.player-info small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.player-row .tick{color:var(--lime);font-weight:900}.field{width:100%;padding:11px 12px;background:#0f1a2b;border:1px solid #49607a;color:white;border-radius:10px;outline:0;font-size:13px}.field:focus{border-color:var(--lime)}.upload{border:1px dashed #7890a8;border-radius:12px;min-height:70px;display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;color:#e2efff;font-weight:700;font-size:12px;text-align:center;padding:12px;background:#1a2e45}.upload input{display:none}.upload:hover{border-color:var(--lime)}.correction{position:relative;border:1px solid #426077;background:linear-gradient(45deg,#ebedf1 25%,#ffffff 25% 50%,#ebedf1 50% 75%,#ffffff 75%);background-size:18px 18px;border-radius:12px;overflow:hidden;margin-top:9px}.correction canvas{display:block;width:100%;height:184px;touch-action:none;cursor:grab}.correction canvas:active{cursor:grabbing}.minirow{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:10px 0 0}.minirow span{font-size:11px;color:var(--muted)}.minirow b{font-size:11px;color:var(--lime)}.range{width:100%;accent-color:var(--lime)}.standings{display:grid;gap:8px;margin-top:15px}.result{display:flex;gap:8px;align-items:center;background:#1d2e46;border:1px solid var(--border);padding:10px;border-radius:10px}.result .rank{font-size:11px;width:18px;color:var(--muted);font-weight:900}.result-name{min-width:0;flex:1}.result-name b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.result-name small{color:var(--muted);font-size:10px}.result .progress{width:70px;background:#0d1a2b;border-radius:10px;height:5px;overflow:hidden}.result .fill{height:100%;background:var(--lime);width:0}.stage{min-height:630px;display:flex;flex-direction:column;background:#101e32}.stage-top{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 20px;border-bottom:1px solid var(--border)}.stage-title{font-weight:900;font-size:17px;letter-spacing:-.3px}.stage-description{font-size:12px;color:var(--muted);margin-top:4px}.stage-counter{font-weight:900;font-size:15px;color:var(--lime);font-variant-numeric:tabular-nums;white-space:nowrap}.canvas-wrap{height:min(65vh,608px);min-height:455px;position:relative;overflow:hidden;background:#a6d8eb}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.canvas-tooltip{position:absolute;top:17px;left:17px;border-radius:10px;background:rgba(13,29,46,.78);color:#f7fcff;font-size:12px;font-weight:700;padding:10px 12px;pointer-events:none;max-width:70%;backdrop-filter:blur(5px)}.canvas-tooltip:empty{display:none}.footer{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 19px;background:#152237;border-top:1px solid var(--border)}.footer .message{color:var(--muted);font-size:12px;line-height:1.45}.footer .message strong{color:var(--text)}.footer-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.small-pill{font-size:11px;font-weight:800;display:inline-block;border-radius:20px;padding:5px 9px;background:#31435b;color:#e3eefd}.hidden{display:none!important}.muted{color:var(--muted)}.status{font-size:11px;margin-top:9px;color:var(--lime);min-height:16px}.checkbox{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin:12px 0}.checkbox input{accent-color:var(--lime)}@media(max-width:1000px){.layout{grid-template-columns:300px minmax(0,1fr)}.app{padding:15px}.content{padding:15px}.canvas-wrap{min-height:400px}}@media(max-width:770px){.app{padding:12px 12px 25px}.header{margin-bottom:12px}.layout{grid-template-columns:1fr;gap:11px}.sidebar{order:2}.stage{order:1;min-height:0}.content{max-height:none;min-height:0}.stage-top{min-height:61px;padding:12px 13px}.canvas-wrap{height:53vh;min-height:300px;max-height:530px}.canvas-tooltip{font-size:10px;top:10px;left:10px}.footer{padding:12px;min-height:60px;flex-wrap:wrap}.brand h1{font-size:17px}.logo{width:36px;height:36px;font-size:20px}.chip{font-size:9px;padding:7px 9px}.sidebar{border-radius:16px}.tabs{padding:8px}.content{padding:16px}.stage-title{font-size:15px}}@media(max-width:380px){.canvas-wrap{min-height:275px;height:43vh}.btn{padding:9px 8px}.header .chip{display:none}}
 /* In-game car drawing studio, transparent scan and phone-camera pairing */
 .camera-panel{margin-top:14px;border:1px solid #50708c;background:#10273d;border-radius:13px;padding:13px;display:grid;gap:9px}.camera-panel .camera-head{display:flex;align-items:center;justify-content:space-between;gap:7px;flex-wrap:wrap}.camera-head b{font-size:13px}.camera-code{font-size:23px;font-weight:900;letter-spacing:.15em;color:var(--lime);font-variant-numeric:tabular-nums}.camera-tools{display:flex;gap:7px;flex-wrap:wrap}.camera-tools .btn{flex:1}.camera-link{font-size:11px;color:#b6c9de;overflow-wrap:anywhere}.phone-preview{border:1px solid #516981;border-radius:10px;padding:7px;background:#0b1d31;display:grid;gap:7px}.phone-preview img{display:block;width:100%;max-height:176px;object-fit:contain;border-radius:7px;background:#172434}.phone-preview .mini-label{color:#bcd3e5;font-size:11px}.phone-preview img:not([src]){display:none}.phone-preview.pending{border-color:var(--lime)}.camera-qr{width:116px;height:116px;background:white;display:grid;place-items:center;border-radius:8px;padding:7px;margin:auto}.camera-qr img{max-width:100%;height:auto}.scan-controls{margin-top:9px}.scan-controls label{display:flex;justify-content:space-between;color:#c2d1e3;font-size:11px;gap:8px}.scan-controls input{accent-color:var(--lime);width:100%}
 
 .stage-right{display:flex;align-items:center;gap:11px}.preview-btn{font-size:11px;padding:7px 10px;min-height:34px;white-space:nowrap}.studio-open{overflow:hidden}.studio-backdrop{position:fixed;inset:0;background:rgba(4,13,26,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:14px}.studio-panel{width:min(960px,100%);max-height:96dvh;overflow-y:auto;background:#17283e;border:1px solid #647891;border-radius:22px;box-shadow:0 15px 60px #0008;padding:22px;display:flex;flex-direction:column;gap:13px}.studio-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.studio-top h2{font-size:22px}.studio-top .sub{margin:5px 0 0}.studio-kicker{font-size:10px;letter-spacing:.1em;font-weight:900;color:var(--lime);margin-bottom:7px}.studio-tools{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.studio-choices{display:flex;gap:7px;align-items:center}.color-dot{height:29px;width:29px;flex-shrink:0;border:3px solid #9fb0c5;background:var(--swatch);border-radius:50%;cursor:pointer}.color-dot.selected{outline:2px solid var(--lime);outline-offset:2px}.brush-control{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:9px}.brush-control input{width:100px;accent-color:var(--lime)}.studio-canvas-frame{border:5px solid #f4f8ff;background-color:#fff;background-image:radial-gradient(#d5deea .8px,transparent .8px);background-size:22px 22px;border-radius:13px;box-shadow:inset 0 0 0 2px #acbfd3;overflow:hidden}.studio-canvas-frame canvas{display:block;width:100%;aspect-ratio:760/350;touch-action:none;cursor:crosshair}.studio-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.studio-bottom span{font-size:12px;color:#afc3db;max-width:470px}.studio-actions{display:flex;gap:9px;justify-content:flex-end}@media(max-width:770px){.studio-backdrop{padding:6px}.studio-panel{border-radius:15px;padding:13px;max-height:98dvh;gap:11px}.studio-top h2{font-size:17px}.studio-top .sub{font-size:11px}.studio-canvas-frame{border-width:3px}.studio-tools{gap:8px}.studio-choices{gap:5px}.color-dot{width:26px;height:26px}.studio-bottom span{font-size:11px}.stage-right{gap:6px}.preview-btn{font-size:10px;padding:6px}}
-
-/* v0.5 dual-view car status and advanced editor */
-.dual-status{display:flex;gap:7px;margin:10px 0}.dual-status span{flex:1;text-align:center;font-size:10px;font-weight:900;letter-spacing:.04em;color:#c9dfed;background:#293c51;border-radius:8px;padding:8px 5px}.dual-status span.ready{background:#304737;color:#c4f26b}
-.advanced{border:1px solid #3f5870;background:#14263b;border-radius:12px;margin-top:12px;padding:10px}.advanced summary{font-size:12px;font-weight:800;cursor:pointer;color:#d6e9f8}.advanced-inner{padding-top:8px}.studio-view-tabs{display:flex;gap:9px;margin-bottom:12px}.studio-view-tabs .btn{flex:1;font-size:13px}
-/* v0.5 cleaner interface, landing screen and mobile garage */
-.menu-cover{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:22px 16px;overflow-y:auto;background:radial-gradient(ellipse at 50% 30%,#203b50,#111e31 65%,#0a1422);color:#f0f8ff}
-.menu-inner{text-align:center;width:min(660px,100%)}
-.menu-kicker{font-size:12px;letter-spacing:.20em;color:#c6f27a;font-weight:900}.menu-kicker span{color:#a1b0c8;font-size:10px;border:1px solid #526478;border-radius:8px;padding:3px 8px;letter-spacing:0}
-.menu-illustration{width:100%;max-width:640px;height:180px;margin:10px auto 0;overflow:visible}
-.menu-cart{animation:menuBounce 1.9s ease-in-out infinite}.menu-cart.second{animation-delay:-1s}
-@keyframes menuBounce{0%,100%{translate:0 0}50%{translate:0 -6px}}
-.menu-inner h1{font-size:clamp(43px,7.3vw,72px);letter-spacing:-.05em;line-height:1.02;font-weight:950;margin:0 0 26px}
-.menu-inner h1 em{font-style:normal;color:#c4f26b}
-.menu-modes{max-width:500px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.menu-mode{background:#1c2e47;color:#e9f4fb;border:1px solid #496079;min-height:78px;border-radius:13px;display:grid;align-content:center;gap:5px;cursor:pointer}
-.menu-mode.chosen{background:#2e473b;border-color:#c4f26b;box-shadow:inset 0 0 0 1px #c4f26b66}
-.menu-mode b{font-size:13px}.menu-mode small{color:#aac2d4;font-size:11px}
-.menu-start{display:flex;justify-content:space-between;align-items:center;max-width:500px;width:100%;padding:15px 20px;margin:12px auto 0;border:0;border-radius:13px;background:#c4f26b;color:#112430;font-weight:900;font-size:16px;cursor:pointer}.menu-start span{font-size:23px}
-.menu-meta{color:#96aabf;font-size:11px;letter-spacing:.12em;margin-top:17px}
-.menu-home{width:38px;height:38px;border:1px solid #4a6177;border-radius:10px;background:#21364a;color:#e5f5ff;font-size:22px;cursor:pointer}
-.content .help,.content .sub,.content .note{display:none}.camera-panel .help{display:block}
-.content h2{margin-bottom:13px}.sidebar .content{padding:15px}.sidebar .rule{margin:13px 0}
-.menu-open .app{pointer-events:none}
-@media(max-width:770px){.menu-illustration{height:140px}.menu-inner h1{font-size:clamp(35px,10vw,55px)}.menu-mode{min-height:72px}.app.garage-view .sidebar{order:1}.app.garage-view .stage{order:2}.app.garage-view .canvas-wrap{height:36vh;min-height:245px}.stage-top .stage-description{display:none}}
-@media(prefers-reduced-motion:reduce){.menu-cart{animation:none}}
+/* v0.5 menu and clean UI */
+@media(max-width:770px){.app.garage-view .sidebar{order:1}.app.garage-view .stage{order:2}.app.garage-view .canvas-wrap{height:36vh;min-height:250px}.canvas-tooltip{max-width:75%;font-size:10px}.stage-top .stage-description{display:none}.stage-right{gap:6px}.stage-counter{font-size:11px}.stage-top .preview-btn{font-size:9px;padding:7px}.studio-panel .studio-top{gap:9px}}
+.menu-cover{position:fixed;inset:0;z-index:40;overflow-y:auto;background:radial-gradient(ellipse 65% 40% at 50% 30%,#24445b 0%,#121f32 70%,#0b1321 100%);display:grid;place-items:center;padding:26px 16px;color:#f5f9ff}
+.menu-cover.hidden{display:none!important}.menu-inner{width:min(680px,100%);text-align:center}.menu-eyebrow{font-size:12px;letter-spacing:.23em;font-weight:900;color:#d5f8a9;display:flex;align-items:center;justify-content:center;gap:10px}.menu-bullet{width:10px;height:10px;background:#c4f26b;display:inline-block;border-radius:50%;box-shadow:0 0 16px #c4f26b88}.menu-version{font-size:10px;color:#829ab4;letter-spacing:0;border:1px solid #527086;border-radius:8px;padding:3px 7px}.menu-art{width:100%;max-width:650px;height:180px;margin:7px auto -8px}.menu-art svg{width:100%;height:100%;overflow:visible}.menu-racer.one{animation:menuBob 2.2s ease-in-out infinite}.menu-racer.two{animation:menuBob 1.8s ease-in-out infinite reverse}@keyframes menuBob{0%,100%{translate:0 0}50%{translate:0 -7px}}.menu-inner>h1{font-size:clamp(44px,7.5vw,74px);font-weight:950;line-height:.98;letter-spacing:-.055em;margin:0 0 29px}.menu-inner>h1 span{color:#c4f26b}.menu-modes{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:0 auto 14px;max-width:495px}.menu-mode{border:1px solid #47617b;border-radius:14px;min-height:81px;background:#1a2b43;color:#e8f4ff;display:grid;place-content:center;gap:5px;cursor:pointer}.menu-mode.active{border-color:#c4f26b;background:#2b463b;box-shadow:inset 0 0 0 1px #c4f26b66}.menu-mode strong{font-size:14px;letter-spacing:.02em}.menu-mode span{font-size:12px;color:#aac1d4}.menu-start{width:min(495px,100%);padding:18px 22px;border:0;border-radius:14px;background:#c4f26b;color:#132227;font-size:16px;font-weight:950;letter-spacing:.05em;display:flex;justify-content:space-between;align-items:center;cursor:pointer;margin:0 auto}.menu-start span{font-size:22px}.menu-start:hover{background:#deff9e}.menu-meta{font-size:11px;color:#8eaac0;margin-top:17px;letter-spacing:.12em}.menu-meta span{margin:0 8px}.menu-home{width:39px;height:39px;border:1px solid #425c73;border-radius:11px;background:#1c3046;color:#dcf1ff;font-size:23px;cursor:pointer}.dual-status{display:flex;gap:7px;margin:12px 0 9px}.dual-status span{flex:1;padding:8px 6px;border-radius:9px;background:#283c52;color:#cee3f3;font-size:10px;font-weight:800;text-align:center;letter-spacing:.04em}.dual-status span.ready{color:#c4f26b;background:#283f36}.advanced{border:1px solid #3e526d;background:#17283e;border-radius:12px;padding:9px 11px;margin-top:12px}.advanced summary{cursor:pointer;font-size:12px;color:#d4e7f7;font-weight:800;list-style:none;display:flex;justify-content:space-between;align-items:center}.advanced summary:after{content:'⌄';font-size:18px}.advanced[open] summary:after{content:'⌃'}.advanced-inner{padding:8px 0 0}.studio-view-tabs{display:flex;gap:9px;padding:0 0 12px}.studio-view-tabs .btn{flex:1;font-size:14px}.studio-panel .sub{margin:3px 0 0}.content .help,.content .sub,.content .note{display:none}.camera-panel .help{display:block}.content h2{margin-bottom:14px}.content .section-label{margin-top:14px}.camera-panel{margin-top:10px}.sidebar .content{padding:15px}.sidebar .rule{margin:13px 0}.sidebar .upload{min-height:54px}.footer .message{font-size:11px}.stage-description{font-size:11px}.studio-panel .studio-bottom{gap:10px}.studio-bottom #drawingStatus{max-width:50%}
+@media(max-width:770px){.menu-art{height:146px}.menu-inner>h1{font-size:clamp(37px,9vw,60px)}.menu-mode{min-height:74px}.menu-modes{gap:8px}.menu-mode strong{font-size:12px}.menu-cover{padding:22px 15px}.studio-bottom #drawingStatus{max-width:100%}.studio-view-tabs{padding:0 0 7px}.header .brand small{display:none}}
+@media(prefers-reduced-motion:reduce){.menu-racer{animation:none!important}}
+/* v0.6: dedicated per-racer three-minute design turns */
+.turn-timer{margin:10px 0 14px;padding:13px;border:1px solid #536c83;border-radius:13px;background:#13263a;display:grid;gap:10px}
+.turn-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.turn-kicker{color:#c6d8ea;font-size:10px;font-weight:850;letter-spacing:.1em}
+.turn-clock{font-weight:900;font-size:35px;letter-spacing:-.05em;font-variant-numeric:tabular-nums;color:var(--lime);line-height:1}
+.turn-clock.urgent{color:#ffb178}.turn-clock.expired{color:#ff8792}
+.turn-actions{display:flex;gap:8px}.turn-actions button{flex:1}
+.turn-status{color:#bfd0e2;font-size:11px;min-height:15px}
+.turn-progress{height:5px;border-radius:10px;background:#31465c;overflow:hidden}
+.turn-progress>span{display:block;background:var(--lime);height:100%;width:100%;transition:width .18s linear}
+.turn-stage-clock{border:1px solid #789359;background:#1c3a35;color:var(--lime);font-size:19px;font-weight:900;font-variant-numeric:tabular-nums;padding:7px 10px;border-radius:9px;white-space:nowrap}
+.studio-clock{font-size:21px;font-weight:900;color:var(--lime);font-variant-numeric:tabular-nums;display:inline-flex;align-items:center;border:1px solid #63825b;border-radius:10px;padding:9px 13px;background:#213e37;margin-left:auto;white-space:nowrap}
+.studio-clock.urgent{color:#ffb178;border-color:#b27d54}
+#pane-cars .btn:disabled,#pane-cars .field:disabled{opacity:.46;cursor:not-allowed}
+@media(max-width:500px){.turn-clock{font-size:29px}.studio-clock{font-size:18px;padding:7px}.stage-right{gap:5px}.turn-stage-clock{font-size:15px;padding:6px}}
 </style>
 </head>
 <body class="menu-open">
 <div class="menu-cover" id="mainMenu" role="region" aria-label="Sketch Rally main menu">
- <div class="menu-inner">
-  <div class="menu-kicker">● &nbsp; SKETCH RALLY <span>v0.5</span></div>
-  <svg class="menu-illustration" viewBox="0 0 680 180" aria-hidden="true">
-   <path d="M-6 128 C120 102 200 144 300 115 S510 96 688 118" fill="none" stroke="#3d685a" stroke-width="62" stroke-linecap="round"/>
-   <path d="M-6 128 C120 102 200 144 300 115 S510 96 688 118" fill="none" stroke="#bbdf9a" stroke-width="2" stroke-dasharray="15 18"/>
-   <g class="menu-cart" transform="translate(172 60) rotate(-6)"><path d="M-68 13 L-43 -7 L-9 -24 L34 -22 L67 12 L62 30 L-68 30Z" fill="#ffb375" stroke="#142637" stroke-width="6" stroke-linejoin="round"/><path d="M-20 -12 L29 -12 L39 12 L-36 12Z" fill="#a5e5f5" stroke="#142637" stroke-width="4"/><circle cx="-40" cy="29" r="16" fill="#182b3d" stroke="#d4e6eb" stroke-width="5"/><circle cx="39" cy="29" r="16" fill="#182b3d" stroke="#d4e6eb" stroke-width="5"/></g>
-   <g class="menu-cart second" transform="translate(450 54) rotate(5)"><path d="M-68 13 L-43 -7 L-9 -24 L34 -22 L67 12 L62 30 L-68 30Z" fill="#91def1" stroke="#142637" stroke-width="6" stroke-linejoin="round"/><path d="M-20 -12 L29 -12 L39 12 L-36 12Z" fill="#d7f7fa" stroke="#142637" stroke-width="4"/><circle cx="-40" cy="29" r="16" fill="#182b3d" stroke="#d4e6eb" stroke-width="5"/><circle cx="39" cy="29" r="16" fill="#182b3d" stroke="#d4e6eb" stroke-width="5"/></g>
-  </svg>
-  <h1>DRAW.<br><em>RACE.</em> REPEAT.</h1>
-  <div class="menu-modes"><button type="button" class="menu-mode chosen" data-home-mode="hills"><b>⛰ HILL CLIMB</b><small>Side view</small></button><button type="button" class="menu-mode" data-home-mode="downhill"><b>↝ DOWNHILL</b><small>Top view</small></button></div>
-  <button type="button" id="menuStart" class="menu-start">START GAME <span>→</span></button>
-  <div class="menu-meta">1–4 RACERS &nbsp; · &nbsp; FULLY AUTOMATIC</div>
- </div>
+  <div class="menu-inner">
+    <div class="menu-eyebrow"><span class="menu-bullet"></span> SKETCH RALLY <span class="menu-version">v0.6</span></div>
+    <div class="menu-art" aria-hidden="true">
+      <svg viewBox="0 0 680 195" preserveAspectRatio="xMidYMid meet">
+        <defs><linearGradient id="menuRoad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#587a6a"/><stop offset="1" stop-color="#284f58"/></linearGradient></defs>
+        <path d="M-8 142 C110 120 160 152 280 123 S480 102 688 126" fill="none" stroke="url(#menuRoad)" stroke-width="61" stroke-linecap="round"/>
+        <path d="M-8 142 C110 120 160 152 280 123 S480 102 688 126" fill="none" stroke="#cfefab" stroke-width="2" stroke-dasharray="18 17" opacity=".7"/>
+        <g class="menu-racer one" transform="translate(148 70) rotate(-7)"><path d="M-57 17 L-39 -3 L1 -25 L36 -21 L61 12 L54 28 L-56 28Z" fill="#f9a46c" stroke="#172b3e" stroke-width="5" stroke-linejoin="round"/><path d="M-11 -17 L25 -16 L37 9 L-30 9Z" fill="#b7ecff" stroke="#172b3e" stroke-width="4"/><circle cx="-34" cy="29" r="15" fill="#102237" stroke="#b3ccda" stroke-width="6"/><circle cx="35" cy="29" r="15" fill="#102237" stroke="#b3ccda" stroke-width="6"/></g>
+        <g class="menu-racer two" transform="translate(447 55) rotate(4)"><path d="M-66 17 L-45 -6 L-8 -14 L32 -17 L65 15 L59 28 L-66 28Z" fill="#94dcf3" stroke="#172b3e" stroke-width="5" stroke-linejoin="round"/><path d="M-27 -9 L26 -10 L39 9 L-39 9Z" fill="#d9f6fc" stroke="#172b3e" stroke-width="4"/><circle cx="-40" cy="28" r="15" fill="#102237" stroke="#b3ccda" stroke-width="6"/><circle cx="39" cy="28" r="15" fill="#102237" stroke="#b3ccda" stroke-width="6"/></g>
+      </svg>
+    </div>
+    <h1>DRAW.<br><span>RACE.</span> REPEAT.</h1>
+    <div class="menu-modes" role="group" aria-label="Choose race mode">
+      <button class="menu-mode active" type="button" data-home-mode="hills"><strong>⛰ HILL CLIMB</strong><span>Side view</span></button>
+      <button class="menu-mode" type="button" data-home-mode="downhill"><strong>↝ DOWNHILL</strong><span>Top view</span></button>
+    </div>
+    <button type="button" class="menu-start" id="menuStart">START GAME <span>→</span></button>
+    <div class="menu-meta">1–4 racers <span>·</span> 3 minutes each <span>·</span> Full auto race</div>
+  </div>
 </div>
 <div class="app">
   <header class="header">
-    <div class="brand"><button type="button" id="menuHome" class="menu-home" aria-label="Main menu">⌂</button><div class="logo">✎</div><div><h1>SKETCH RALLY</h1><small>Draw · Race</small></div></div>
-    <div class="chip">v0.5</div>
+    <div class="brand"><button type="button" class="menu-home" id="menuHome" aria-label="Open main menu" title="Main menu">⌂</button><div class="logo">✎</div><div><h1>SKETCH RALLY</h1><small>Draw · Race</small></div></div>
+    <div class="chip">v0.6</div>
   </header>
   <main class="layout">
     <aside class="sidebar">
@@ -86,17 +88,24 @@
         </section>
         <section id="pane-cars" class="pane">
           <h2>Garage</h2>
+          <div class="turn-timer" id="turnTimer" aria-label="Car design timer">
+            <div class="turn-head"><span class="turn-kicker" id="turnWho">PLAYER 1 · DESIGN TIME</span><strong class="turn-clock" id="turnClock" role="timer" aria-live="off">03:00</strong></div>
+            <div class="turn-progress"><span id="turnProgress"></span></div>
+            <div class="turn-actions"><button class="btn primary" type="button" id="beginTurn">▶ Start 3:00</button><button class="btn" type="button" id="finishTurn" disabled>✓ Finish early</button></div>
+            <div class="turn-status" id="turnStatus">Start a racer's turn to unlock drawing and adjustments.</div>
+          </div>
           <div id="playerList" class="player-list"></div>
           <button type="button" class="btn full" id="addPlayer">+ Add racer <span class="muted">(max 4)</span></button>
           <div class="rule"></div>
           <label class="section-label" for="playerName">Selected racer's name</label><input class="field" id="playerName" maxlength="22" placeholder="Racer name" />
           <span class="section-label">Create your car</span>
-          <div class="dual-status"><span id="sideStatus">SIDE · Starter</span><span id="topStatus">TOP · Auto</span></div><div class="two-col"><button type="button" class="btn primary" id="openDrawing">✎ Side view</button><button type="button" class="btn secondary" id="openTopDrawing">✎ Top view</button></div>
+          <div class="dual-status"><span id="sideStatus">SIDE · Starter</span><span id="topStatus">TOP · Auto</span></div>
+          <div class="two-col"><button type="button" class="btn primary" id="openDrawing">✎ Side view</button><button type="button" class="btn secondary" id="openTopDrawing">✎ Top view</button></div>
           <p class="help">Draw with your finger, mouse or stylus. Your sketch becomes your racer's actual car body.</p>
           <span class="section-label">Use your phone as the camera</span>
           <div class="camera-panel" id="cameraPanel">
-            <div class="camera-head"><b>📱 Phone → Smartboard</b><span class="small-pill" id="phoneConnection">Not paired</span></div>
-            <button class="btn secondary" id="openPhonePair">Create pairing code</button>
+            <div class="camera-head"><b>📱 Phone camera</b><span class="small-pill" id="phoneConnection">Not paired</span></div>
+            <button class="btn secondary" id="openPhonePair">Pair phone</button>
             <div class="hidden" id="cameraPairDetails">
               <div class="camera-head" style="margin:7px 0"><div><span class="muted" style="font-size:11px">PAIRING CODE</span><div class="camera-code" id="cameraCode">—</div></div><div class="camera-qr" id="cameraQr" aria-label="QR code to open phone camera link"></div></div>
               <div class="camera-link" id="cameraLink"></div>
@@ -106,20 +115,23 @@
             <div class="phone-preview hidden" id="phonePendingBox"><span class="mini-label" id="phonePendingLabel">Photo received · review before using</span><img id="phonePendingImage" alt="Captured paper drawing received from the phone" /><div class="camera-tools"><button class="btn primary" id="acceptPhonePhoto">Use for selected racer</button><button class="btn warn" id="discardPhonePhoto">Discard</button></div></div>
             <div class="help" id="phoneTip" style="margin:0">Pair your phone to scan paper drawings into the smartboard game. Requires internet on both devices.</div>
           </div>
-          <span class="section-label">Scan sketches</span><div class="two-col"><button type="button" class="btn selected" data-scan-view="sheet">2 views</button><button type="button" class="btn" data-scan-view="side">Side only</button></div><button type="button" class="btn full" data-scan-view="top">Top only</button><label class="upload" style="margin-top:8px">📷 &nbsp; Scan / Upload<input id="carUpload" type="file" accept="image/*" capture="environment" /></label>
-          <details class="advanced" id="fineTune"><summary>Fine-tune car</summary><div class="advanced-inner"><div class="two-col" style="margin-top:8px"><button type="button" class="btn" id="retryScan">↻ Re-detect wheels</button><button type="button" class="btn warn" id="removePlayer">Remove racer</button></div>
+          <span class="section-label">Scan drawings</span>
+          <div class="two-col"><button type="button" class="btn selected" data-scan-view="sheet">2 views</button><button type="button" class="btn" data-scan-view="side">Side only</button></div>
+          <button type="button" class="btn full" data-scan-view="top">Top only</button>
+          <label class="upload" style="margin-top:8px">📷 &nbsp; Scan / Upload<input id="carUpload" type="file" accept="image/*" capture="environment" /></label>
+          <details class="advanced"><summary>Fine-tune car</summary><div class="advanced-inner"><div class="two-col" style="margin-top:8px"><button type="button" class="btn" id="retryScan">↻ Re-detect wheels</button><button type="button" class="btn warn" id="removePlayer">Remove racer</button></div>
           <div class="scan-controls"><label for="backgroundCleanup">Background removal · <b id="cleanupValue">Balanced</b></label><input id="backgroundCleanup" type="range" min="0" max="100" step="5" value="55" aria-label="Adjust automatic background removal strength"/><p class="help" style="margin:3px 0 0">White paper and shadows become transparent. Move right to remove more background; review light pencil lines carefully.</p></div>
-          <div class="minirow"><span>Wheel positions · drag to correct</span><b id="scanStatus">Demo car</b></div>
+          <div class="minirow"><span>Side-view wheels</span><b id="scanStatus">Demo car</b></div>
           <div class="correction"><canvas id="wheelCanvas" aria-label="Drag wheel markers to correct their positions"></canvas></div>
           <div class="minirow"><span>Choose a wheel to resize</span><b id="wheelLabel">FRONT WHEEL</b></div>
           <div class="two-col" style="margin-top:8px"><button class="btn" id="rearWheelBtn">Rear wheel</button><button class="btn selected" id="frontWheelBtn">Front wheel</button></div>
           <div class="minirow"><span>Selected wheel size</span><b id="wheelSizeValue">24</b></div>
           <input type="range" class="range" id="wheelSize" min="12" max="42" step="1" value="24" />
-          <p class="help">Correct the wheels if necessary.</p></div></details><button type="button" class="btn primary full large" id="carsNext">Race →</button>
+          <p class="help">Drag wheel markers if needed.</p></div></details><button type="button" class="btn primary full large" id="carsNext">Race →</button>
           <div class="status" id="carsStatus"></div>
         </section>
         <section id="pane-race" class="pane">
-          <h2>Race</h2><p class="sub" id="raceDescription">No steering or throttle. Press start and see which design can conquer the host's course.</p>
+          <h2>Race</h2><p class="sub" id="raceDescription">Full auto</p>
           <div class="two-col"><button class="btn primary large" id="startRace">▶ Start race</button><button class="btn large" id="resetRace">↺ Restart</button></div>
           <label class="checkbox"><input type="checkbox" id="speedMode"/> Speed up simulation ×2</label>
           <span class="section-label">Live standings</span>
@@ -131,7 +143,7 @@
       </div>
     </aside>
     <section class="stage">
-      <div class="stage-top"><div><div class="stage-title" id="stageTitle">HOST TRACK EDITOR</div><div class="stage-description" id="stageSubtitle">Draw hills or place obstacles on the course</div></div><div class="stage-right"><button type="button" class="btn preview-btn" id="previewToggle" aria-pressed="true">Ⅱ Demo on</button><div class="stage-counter" id="stageCounter">FULL COURSE</div></div></div>
+      <div class="stage-top"><div><div class="stage-title" id="stageTitle">HOST TRACK EDITOR</div><div class="stage-description" id="stageSubtitle">Draw hills or place obstacles on the course</div></div><div class="stage-right"><div class="turn-stage-clock hidden" id="turnStageClock" aria-label="Design time remaining">03:00</div><button type="button" class="btn preview-btn" id="previewToggle" aria-pressed="true">Ⅱ Demo on</button><div class="stage-counter" id="stageCounter">FULL COURSE</div></div></div>
       <div class="canvas-wrap" id="sceneWrap"><canvas id="scene" aria-label="Track editor and live car race"></canvas><div class="canvas-tooltip" id="canvasTooltip">✎ Draw from left to right to design the road</div></div>
       <div class="footer"><div class="message" id="footerMessage"><strong>HOST MODE</strong> · Create a track, then let racers scan their sketches.</div><div class="footer-actions"><span class="small-pill" id="phasePill">COURSE</span><button class="btn primary" id="mainAction">Next: Cars →</button></div></div>
     </section>
@@ -140,10 +152,12 @@
 <div class="studio-backdrop hidden" id="drawStudio" role="dialog" aria-modal="true" aria-labelledby="studioTitle">
   <section class="studio-panel">
     <div class="studio-top">
-      <div><div class="studio-kicker">CAR STUDIO</div><h2 id="studioTitle">Draw your car</h2><p id="studioSubtitle" class="sub">Side view</p></div>
+      <div><div class="studio-kicker">CAR STUDIO</div><h2 id="studioTitle">Draw your car</h2><p class="sub" id="studioSubtitle">Side view</p></div>
+      <div class="studio-clock" id="studioClock" aria-label="Design time remaining">03:00</div>
       <button type="button" class="btn" id="closeDrawing" aria-label="Close drawing studio">✕ Close</button>
     </div>
-    <div class="studio-view-tabs"><button type="button" id="studioSide" class="btn selected">Side view</button><button type="button" id="studioTop" class="btn">Top view</button></div><div class="studio-tools">
+    <div class="studio-view-tabs"><button id="studioSide" class="btn selected" type="button">Side view</button><button id="studioTop" class="btn" type="button">Top view</button></div>
+    <div class="studio-tools">
       <div class="studio-choices" id="drawPalette" aria-label="Pen colours">
         <button class="color-dot selected" data-ink="#1a2e44" style="--swatch:#1a2e44" aria-label="Dark pen" title="Dark pen"></button>
         <button class="color-dot" data-ink="#ed665e" style="--swatch:#ed665e" aria-label="Red pen" title="Red pen"></button>
@@ -158,7 +172,7 @@
       <button type="button" class="btn warn" id="clearDrawing">Clear</button>
     </div>
     <div class="studio-canvas-frame"><canvas id="drawCanvas" width="760" height="350" aria-label="Draw your car on this white canvas using mouse, finger or stylus"></canvas></div>
-    <div class="studio-bottom"><span id="drawingStatus">Draw the body and both wheels. The sketch will be cropped automatically.</span><div class="studio-actions"><button class="btn" id="cancelDrawing">Cancel</button><button class="btn primary large" id="saveDrawing">Save views ✓</button></div></div>
+    <div class="studio-bottom"><span id="drawingStatus">Draw both views, or save either view.</span><div class="studio-actions"><button class="btn" id="cancelDrawing">Cancel</button><button class="btn primary large" id="saveDrawing">Save views ✓</button></div></div>
   </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0"></script>
@@ -198,12 +212,12 @@ c.lineWidth=5;c.strokeStyle='#1a3952';c.beginPath();c.moveTo(30,110);c.lineTo(34
 const wheels=[v===2?89:83, v===1?279:292],radii=[v===2?32:24,v===3?18:26];wheels.forEach((x,i)=>{c.beginPath();c.arc(x,124,radii[i],0,Math.PI*2);c.fillStyle='#263344';c.fill();c.lineWidth=4;c.strokeStyle='#07151f';c.stroke();c.beginPath();c.arc(x,124,radii[i]*.55,0,Math.PI*2);c.fillStyle='#b6d5e3';c.fill();});
 c.fillStyle='rgba(255,255,255,.7)';c.font='bold 28px system-ui';c.fillText('0'+(seed+1),196,111);
 return {canvas:cv,wheels:[{x:wheels[0]/380,y:124/178,r:radii[0]/380},{x:wheels[1]/380,y:124/178,r:radii[1]/380}]};}
-function makePlayer(idx){let art=carShape(idx);return {id:Math.random().toString(36).slice(2),name:['Rocket','Sky Rider','Pink Comet','Grasshopper'][idx]||'Racer',color:COLORS[idx%4],canvas:art.canvas,wheels:art.wheels.map(wh=>({...wh,r:idx===0?.17:.14})),source:'demo',confidence:1,bodyW:120,bodyH:56,state:null,topCanvas:null,topSketch:null,topSource:'auto',sideSource:'demo',rawView:'side'}}
+function makePlayer(idx){let art=carShape(idx);return {turnState:'waiting',turnDeadline:0,id:Math.random().toString(36).slice(2),name:['Rocket','Sky Rider','Pink Comet','Grasshopper'][idx]||'Racer',color:COLORS[idx%4],canvas:art.canvas,wheels:art.wheels.map(wh=>({...wh,r:idx===0?.17:.14})),source:'demo',confidence:1,bodyW:120,bodyH:56,state:null,topCanvas:null,topSketch:null,topSource:'auto',sideSource:'demo',rawView:'side'}}
 function populate(){players=[makePlayer(0),makePlayer(1)];selected=0;refreshPlayers()}
 function activePlayer(){return players[selected]}
-function refreshPlayers(){const list=$('playerList');list.textContent='';players.forEach((p,i)=>{const btn=document.createElement('button');btn.className='player-row'+(i===selected?' active':'');btn.type='button';btn.innerHTML=`<span class="player-icon" style="background:${p.color}">${i+1}</span><span class="player-info"><b></b><small>${p.source==='photo'?'Scanned drawing':p.source==='drawn'?'In-game drawing':'Starter car'}</small></span><span class="tick">${i===selected?'✓':''}</span>`;btn.querySelector('b').textContent=p.name;btn.addEventListener('click',()=>{selected=i;chosenWheel=1;refreshPlayers();drawAll()});list.appendChild(btn)});$('addPlayer').disabled=players.length>=4;$('removePlayer').disabled=players.length<=1;$('playerName').value=activePlayer()?.name||'';showWheelSlider();$('scanStatus').textContent=activePlayer()?.source==='photo'?'Paper removed · wheels estimated':activePlayer()?.source==='drawn'?'In-game drawing':'Demo wheels';drawCorrection();updateDualViewStatus();}
-function addPlayer(){if(players.length>=4)return;players.push(makePlayer(players.length));selected=players.length-1;chosenWheel=1;refreshPlayers();drawAll()}
-function removePlayer(){if(players.length<=1)return;players.splice(selected,1);selected=clamp(selected,0,players.length-1);refreshPlayers();drawAll()}
+function refreshPlayers(){const list=$('playerList');list.textContent='';players.forEach((p,i)=>{const btn=document.createElement('button');btn.className='player-row'+(i===selected?' active':'');btn.type='button';btn.innerHTML=`<span class="player-icon" style="background:${p.color}">${i+1}</span><span class="player-info"><b></b><small>${playerTurnLabel(p)}</small></span><span class="tick">${i===selected?'✓':''}</span>`;btn.querySelector('b').textContent=p.name;btn.disabled=!!currentDesignTurn()&&currentDesignTurn()!==p;btn.addEventListener('click',()=>{if(currentDesignTurn()&&currentDesignTurn()!==p)return;selected=i;chosenWheel=1;refreshPlayers();drawAll()});list.appendChild(btn)});$('addPlayer').disabled=players.length>=4;$('removePlayer').disabled=players.length<=1;$('playerName').value=activePlayer()?.name||'';showWheelSlider();$('scanStatus').textContent=activePlayer()?.source==='photo'?'Paper removed · wheels estimated':activePlayer()?.source==='drawn'?'In-game drawing':'Demo wheels';drawCorrection();updateDualViewStatus();renderTurnControls();}
+function addPlayer(){if(players.length>=4||rosterLocked())return;players.push(makePlayer(players.length));selected=players.length-1;chosenWheel=1;refreshPlayers();drawAll()}
+function removePlayer(){if(players.length<=1||rosterLocked())return;players.splice(selected,1);selected=clamp(selected,0,players.length-1);refreshPlayers();drawAll()}
 function resizeCanvas(c,obj){const r=c.getBoundingClientRect();if(!r.width||!r.height)return;const dpr=Math.min(window.devicePixelRatio||1,2);let W=Math.round(r.width*dpr),H=Math.round(r.height*dpr);if(c.width!==W||c.height!==H){c.width=W;c.height=H}obj.w=r.width;obj.h=r.height;obj.dpr=dpr}
 function rounded(c,x,y,w,h,r){r=Math.min(r,w/2,h/2);c.beginPath();c.roundRect(x,y,w,h,r)}
 function drawSky(ctx,w,h,background=true){const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'#80b8d8');g.addColorStop(.6,'#b3e2ee');g.addColorStop(1,'#f1e5c1');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.save();ctx.globalAlpha=.28;ctx.fillStyle='#f8fcff';for(const [xx,yy,size] of [[.16,.21,45],[.76,.15,35],[.94,.31,28]]){ctx.beginPath();ctx.ellipse(w*xx,h*yy,size*1.5,size*.35,0,0,7);ctx.ellipse(w*xx-20,h*yy-7,size*.7,size*.35,0,0,7);ctx.fill()}ctx.restore()}
@@ -250,10 +264,10 @@ function pointerTrackUp(e){if(!roadStroke)return;if(roadStroke.length>=3){smooth
 function updatePresetButtons(){document.querySelectorAll('[data-preset]').forEach(b=>b.classList.toggle('selected',b.dataset.preset===preset))}
 function changeTool(m){mode=m;document.querySelectorAll('[data-tool]').forEach(b=>b.classList.toggle('selected',b.dataset.tool===m));$('canvasTooltip').textContent=m==='draw'?'✎ Draw the road from left to right':m==='rock'?'◆ Tap the track to place a rock':'⌫ Tap near a rock to erase it';$('trackHelp').textContent=m==='draw'?'Drag from left to right across the track preview to draw a continuous road. The road updates when you release.':m==='rock'?'Tap anywhere on the track preview to add a rock obstacle.':'Tap near a rock to remove it.'}
 function correctionPoint(e){const rect=wheelCanvas.getBoundingClientRect();return{x:e.clientX-rect.left,y:e.clientY-rect.top}}
-function correctionDown(e){const p=activePlayer();if(!p)return;wheelCanvas.setPointerCapture(e.pointerId);let rect=previewRect(),point=correctionPoint(e);let distances=p.wheels.map(wh=>Math.hypot(point.x-(rect.x+wh.x*rect.w),point.y-(rect.y+wh.y*rect.h)));let idx=distances.indexOf(Math.min(...distances));if(distances[idx]<Math.max(25,rect.w*.085)){draggingWheel=idx;chooseWheel(idx)}else draggingWheel=-1}
-function correctionMove(e){if(draggingWheel<0)return;let p=activePlayer(),r=previewRect(),pt=correctionPoint(e),wh=p.wheels[draggingWheel];wh.x=clamp((pt.x-r.x)/r.w,.03,.97);wh.y=clamp((pt.y-r.y)/r.h,.1,.97);p.wheels.sort((a,b)=>a.x-b.x);chosenWheel=p.wheels.indexOf(wh);showWheelSlider();drawAll()}
+function correctionDown(e){const p=activePlayer();if(!canEdit(p))return;wheelCanvas.setPointerCapture(e.pointerId);let rect=previewRect(),point=correctionPoint(e);let distances=p.wheels.map(wh=>Math.hypot(point.x-(rect.x+wh.x*rect.w),point.y-(rect.y+wh.y*rect.h)));let idx=distances.indexOf(Math.min(...distances));if(distances[idx]<Math.max(25,rect.w*.085)){draggingWheel=idx;chooseWheel(idx)}else draggingWheel=-1}
+function correctionMove(e){if(draggingWheel<0||!canEdit())return;let p=activePlayer(),r=previewRect(),pt=correctionPoint(e),wh=p.wheels[draggingWheel];wh.x=clamp((pt.x-r.x)/r.w,.03,.97);wh.y=clamp((pt.y-r.y)/r.h,.1,.97);p.wheels.sort((a,b)=>a.x-b.x);chosenWheel=p.wheels.indexOf(wh);showWheelSlider();drawAll()}
 function correctionUp(){draggingWheel=-1}
-function imageLoad(file){if(!file)return;if(!file.type.startsWith('image/')){$('scanStatus').textContent='Choose an image';return}const reader=new FileReader();reader.onload=()=>{const img=new Image();img.onload=()=>{try{scanImage(img)}catch(err){$('scanStatus').textContent='Scan failed';console.error(err)}};img.src=reader.result};reader.readAsDataURL(file)}
+function imageLoad(file){if(!file||!canEdit())return;const target=activePlayer().id;if(!file.type.startsWith('image/')){$('scanStatus').textContent='Choose an image';return}const reader=new FileReader();reader.onload=()=>{const img=new Image();img.onload=()=>{if(!canEdit()||activePlayer().id!==target)return;try{scanImage(img)}catch(err){$('scanStatus').textContent='Scan failed';console.error(err)}};img.src=reader.result};reader.readAsDataURL(file)}
 // Adaptive contrast + chroma cleanup preserves dark strokes while making paper and soft shadows transparent.
 function transparentPhoto(source,strength=55){
  const maxDim=940,sw=source.naturalWidth||source.width,sh=source.naturalHeight||source.height;
@@ -298,47 +312,60 @@ function cropInk(cv){const w=cv.width,h=cv.height,d=cv.getContext('2d',{willRead
  const crop=document.createElement('canvas');crop.width=ex-sx;crop.height=ey-sy;crop.getContext('2d').drawImage(cv,sx,sy,crop.width,crop.height,0,0,crop.width,crop.height);
  return crop;
 }
-// Two-view paper: top above side in portrait, or top left / side right in landscape.
+// One photo can contain two sketches. Portrait paper: top panel = top view, bottom panel = side view.
+// Landscape paper: left panel = top view, right panel = side view.
 let scanView='sheet';
-function cropSheetPanel(src,view){
- const w=src.width,h=src.height,landscape=w/h>1.35,out=document.createElement('canvas');let x,y,cw,ch;
- if(landscape){x=Math.round(w*((view==='top'?0:.5)+.035));y=Math.round(h*.07);cw=Math.round(w*.43);ch=Math.round(h*.86)}
- else{x=Math.round(w*.075);y=Math.round(h*((view==='top'?0:.5)+.055));cw=Math.round(w*.85);ch=Math.round(h*.39)}
- out.width=Math.max(1,cw);out.height=Math.max(1,ch);out.getContext('2d').drawImage(src,x,y,cw,ch,0,0,cw,ch);return out;
+function cropSheetPanel(source,which){
+ const w=source.width,h=source.height,landscape=w/h>1.35,c=document.createElement('canvas');
+ let x,y,pw,ph;
+ if(landscape){const x0=which==='top'?0:.5;x=Math.round(w*(x0+.035));y=Math.round(h*.07);pw=Math.round(w*.43);ph=Math.round(h*.86)}
+ else{const y0=which==='top'?0:.5;x=Math.round(w*.075);y=Math.round(h*(y0+.055));pw=Math.round(w*.85);ph=Math.round(h*.39)}
+ c.width=Math.max(1,pw);c.height=Math.max(1,ph);c.getContext('2d').drawImage(source,x,y,pw,ph,0,0,pw,ph);return c;
 }
-function thickenInk(src,radius=1){
- const w=src.width,h=src.height,c=document.createElement('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(src,0,0);
- const data=ctx.getImageData(0,0,w,h),d=data.data,old=new Uint8ClampedArray(d);radius=Math.min(2,Math.max(0,radius));
+function thickenInk(source,radius=1){
+ const w=source.width,h=source.height,c=document.createElement('canvas');c.width=w;c.height=h;const cx=c.getContext('2d',{willReadFrequently:true});cx.drawImage(source,0,0);
+ const id=cx.getImageData(0,0,w,h),d=id.data,base=new Uint8ClampedArray(d);radius=clamp(Math.round(radius),0,2);
+ if(!radius)return c;
  for(let y=radius;y<h-radius;y++)for(let x=radius;x<w-radius;x++){
-  const i=(y*w+x)*4;if(old[i+3]<90||(.2126*old[i]+.7152*old[i+1]+.0722*old[i+2])>144)continue;
+  const i=(y*w+x)*4;if(base[i+3]<90)continue;
+  const lum=.2126*base[i]+.7152*base[i+1]+.0722*base[i+2];if(lum>144)continue;
   for(let dy=-radius;dy<=radius;dy++)for(let dx=-radius;dx<=radius;dx++){
-   if(dx*dx+dy*dy>radius*radius+.25)continue;
-   const j=((y+dy)*w+x+dx)*4;if(old[j+3]>135||d[j+3]>185)continue;
-   d[j]=old[i];d[j+1]=old[i+1];d[j+2]=old[i+2];d[j+3]=Math.max(d[j+3],Math.round(old[i+3]*.76))
+   if(dx*dx+dy*dy>radius*radius+0.25)continue;
+   const j=((y+dy)*w+(x+dx))*4;if(base[j+3]>135||d[j+3]>185)continue;
+   d[j]=base[i];d[j+1]=base[i+1];d[j+2]=base[i+2];d[j+3]=Math.max(d[j+3],Math.round(base[i+3]*.76));
   }
  }
- ctx.putImageData(data,0,0);return c;
+ cx.putImageData(id,0,0);return c;
 }
-function hasInk(src){if(!src)return false;const d=src.getContext('2d',{willReadFrequently:true}).getImageData(0,0,src.width,src.height).data;let count=0;for(let i=3;i<d.length;i+=4)if(d[i]>48&&++count>80)return true;return false}
+function hasInk(canvas){if(!canvas)return false;const d=canvas.getContext('2d',{willReadFrequently:true}).getImageData(0,0,canvas.width,canvas.height).data;let n=0;for(let i=3;i<d.length;i+=4)if(d[i]>48&&++n>80)return true;return false;}
 function updateDualViewStatus(){const p=activePlayer();if(!p)return;
- const side=$('sideStatus'),top=$('topStatus');side.textContent='SIDE · '+(p.sideSource==='photo'?'Scanned':p.sideSource==='drawn'?'Drawn':'Starter');top.textContent='TOP · '+(p.topSource==='photo'?'Scanned':p.topSource==='drawn'?'Drawn':'Auto');
+ const side=$('sideStatus'),top=$('topStatus');if(!side||!top)return;
+ side.textContent='SIDE · '+(p.sideSource==='photo'?'Scanned':p.sideSource==='drawn'?'Drawn':'Starter');
+ top.textContent='TOP · '+(p.topSource==='photo'?'Scanned':p.topSource==='drawn'?'Drawn':'Auto');
  side.classList.toggle('ready',p.sideSource!=='demo');top.classList.toggle('ready',!!p.topCanvas);
 }
-function applyViewArt(p,view,input){
- const cleaned=transparentPhoto(input,Number($('backgroundCleanup').value)),cropped=cropInk(cleaned);if(!cropped)return false;const image=thickenInk(cropped,2);
- if(view==='top'){p.topCanvas=image;p.topSource='photo';p.topSketch=null}
- else{p.canvas=image;p.sideSource='photo';p.source='photo';p.wheels=detectWheels(image);p.confidence=.5;p.sketch=null}
+function applyViewArt(p,view,original,kind){
+ const cleaned=transparentPhoto(original,Number($('backgroundCleanup').value)),cropped=cropInk(cleaned);
+ if(!cropped)return false;
+ const image=thickenInk(cropped,kind==='photo'?2:1);
+ if(view==='top'){p.topCanvas=image;p.topSource=kind;p.topSketch=null;}
+ else{p.canvas=image;p.sideSource=kind;p.source=kind;p.wheels=detectWheels(image);p.confidence=.5;p.sketch=null;}
  return true;
 }
 function scanImage(img,options={}){
- const p=activePlayer();if(!p)return;
+ const p=activePlayer();if(!canEdit(p))return;
  const sw=img.naturalWidth||img.width,sh=img.naturalHeight||img.height;if(!sw||!sh)return;
- const source=document.createElement('canvas'),scale=Math.min(1,1100/Math.max(sw,sh));source.width=Math.max(1,Math.round(sw*scale));source.height=Math.max(1,Math.round(sh*scale));source.getContext('2d').drawImage(img,0,0,source.width,source.height);
+ const original=document.createElement('canvas'),scale=Math.min(1,1100/Math.max(sw,sh));original.width=Math.max(1,Math.round(sw*scale));original.height=Math.max(1,Math.round(sh*scale));original.getContext('2d').drawImage(img,0,0,original.width,original.height);
  const view=options.view||scanView;let count=0;
- if(view==='sheet'){if(applyViewArt(p,'top',cropSheetPanel(source,'top')))count++;if(applyViewArt(p,'side',cropSheetPanel(source,'side')))count++}
- else if(applyViewArt(p,view,source))count++;
- if(!count){$('scanStatus').textContent='No drawing found';$('carsStatus').textContent='Try darker lines';return}
- p.rawScan=source;p.rawView=view;$('scanStatus').textContent=count===2?'Both views saved':view==='top'?'Top view saved':'Side view saved';$('carsStatus').textContent='Drawing saved';$('carUpload').value='';chosenWheel=1;refreshPlayers();drawAll();
+ if(view==='sheet'){
+  if(applyViewArt(p,'top',cropSheetPanel(original,'top'),'photo'))count++;
+  if(applyViewArt(p,'side',cropSheetPanel(original,'side'),'photo'))count++;
+ }else if(applyViewArt(p,view,original,'photo'))count++;
+ if(!count){$('scanStatus').textContent='No drawing found';$('carsStatus').textContent='Try darker lines or change scan mode.';return}
+ p.rawScan=original;p.rawView=view;
+ $('scanStatus').textContent=count===2?'Both views saved':(view==='top'?'Top view saved':'Side view saved');
+ $('carsStatus').textContent=count===2?'Side + top views registered.':'Drawing saved.';
+ $('carUpload').value='';chosenWheel=1;refreshPlayers();drawAll();
 }
 
 function detectWheels(cv){const n=cv.width,h=cv.height,c=cv.getContext('2d',{willReadFrequently:true}),d=c.getImageData(0,0,n,h).data;
@@ -376,24 +403,24 @@ if(players.every(p=>p.state.status!=='racing')){simulation='complete';$('startRa
 function refreshStandings(){if(page!=='race')return;const sorted=[...players].sort((a,b)=>{const sa=a.state,sb=b.state;if(sa?.status==='finished'&&sb?.status==='finished')return sa.finishTime-sb.finishTime;if(sa?.status==='finished')return -1;if(sb?.status==='finished')return 1;return (sb?.x||0)-(sa?.x||0)});const el=$('standings');el.textContent='';sorted.forEach((p,i)=>{const st=p.state||{x:START,status:'ready'},pro=Math.round(clamp(((st.x-START)/(FINISH-START))*100,0,100)),status=st.status==='finished'?`Finished · ${st.finishTime.toFixed(2)} s`:st.status==='racing'?`${pro}% of course`:st.status==='ready'?'Ready to race':st.status==='flipped'?'Rolled over':st.status==='timed out'?'Timed out':st.status==='stuck'?'Got stuck':st.status==='crashed'?'Crashed':st.status;let div=document.createElement('div');div.className='result';div.innerHTML=`<span class="rank">${i+1}</span><span class="player-icon" style="width:22px;height:22px;background:${p.color}"></span><span class="result-name"><b></b><small></small></span><span class="progress"><span class="fill" style="display:block;width:${pro}%"></span></span>`;div.querySelector('b').textContent=p.name;div.querySelector('small').textContent=status;el.appendChild(div)});$('stageCounter').textContent=elapsed.toFixed(1)+' s';$('phasePill').textContent=simulation==='complete'?'FINISHED':simulation==='running'?'RACING':simulation==='paused'?'PAUSED':'READY'}
 function toggleRace(){if(window.innerWidth<=770){document.querySelector('.stage').scrollIntoView({behavior:'smooth',block:'start'})}if(simulation==='running'){simulation='paused';$('startRace').textContent='▶ Resume race';return}if(simulation==='paused'){simulation='running';$('startRace').textContent='Ⅱ Pause race';return}initRacers()}
 function resetRace(){simulation='idle';elapsed=0;players.forEach(p=>p.state=null);camX=0;camY=0;$('startRace').textContent='▶ Start race';$('canvasTooltip').textContent='Ready! Press Start race';refreshStandings();drawAll()}
-function setPage(name){if(page==='race'&&name!=='race'&&simulation!=='idle')resetRace();page=name;document.querySelector('.app').classList.toggle('garage-view',name==='cars');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('active',p.id==='pane-'+name));let title={track:'HOST TRACK EDITOR',cars:'RACER GARAGE',race:'LIVE RACE'};let subtitle={track:'Draw hills or place obstacles on the course',cars:'Draw a car, scan a sketch, or watch the setup race preview',race:'Physics decides the finish — no driving controls'};$('stageTitle').textContent=title[name];$('stageSubtitle').textContent=subtitle[name];$('mainAction').textContent=name==='track'?'Next: Cars →':name==='cars'?'Next: Race →':'↻ Restart';$('phasePill').textContent=name==='track'?'COURSE':name==='cars'?'GARAGE':'READY';$('canvasTooltip').textContent=name==='track'?(mode==='draw'?'✎ Draw the road · preview cars are just a demo':mode==='rock'?'◆ Tap to place rocks':'⌫ Tap to erase rocks'):name==='cars'?'✎ Draw a car or scan a paper sketch · demo preview':'▶ Press Start race to begin';$('stageCounter').textContent=name==='race'?elapsed.toFixed(1)+' s':name==='cars'?players.length+' RACERS':'FULL COURSE';$('footerMessage').innerHTML=name==='track'?'<strong>HOST MODE</strong> · Build a track while demo cars animate.':name==='cars'?'<strong>CAR DESIGN</strong> · Draw or scan cars, then correct the wheel markers.':'<strong>AUTO-RACE</strong> · All cars use equal motor power. The fastest design wins.';$('previewToggle').classList.toggle('hidden',name==='race');$('previewToggle').textContent=previewEnabled?'Ⅱ Demo on':'▶ Demo off';$('previewToggle').setAttribute('aria-pressed',String(previewEnabled));$('mainAction').onclick=()=>name==='track'?setPage('cars'):name==='cars'?setPage('race'):resetRace();if(name==='race'){if(simulation==='idle'){players.forEach(p=>p.state=null)}refreshStandings()}if(name==='cars')refreshPlayers();requestAnimationFrame(drawAll)}
+function setPage(name){if(name==='race'&&!players.every(p=>p.turnState==='done'||p.turnState==='expired')){if(players.length){$('carsStatus').textContent='Each racer gets a 3:00 design turn. Finish all turns before racing.';if(page!=='cars')return setPage('cars');return}}if(page==='race'&&name!=='race'&&simulation!=='idle')resetRace();page=name;document.querySelector('.app').classList.toggle('garage-view',name==='cars');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('active',p.id==='pane-'+name));let title={track:'TRACK EDITOR',cars:'GARAGE',race:'RACE'};let subtitle={track:'Draw a track',cars:'Side + top drawings',race:'Automatic racing'};$('stageTitle').textContent=title[name];$('stageSubtitle').textContent=subtitle[name];$('mainAction').textContent=name==='track'?'Cars →':name==='cars'?'Race →':'↻ Restart';$('phasePill').textContent=name==='track'?'COURSE':name==='cars'?'GARAGE':'READY';$('canvasTooltip').textContent=name==='track'?(mode==='draw'?'✎ Draw the road · preview cars are just a demo':mode==='rock'?'◆ Tap to place rocks':'⌫ Tap to erase rocks'):name==='cars'?'✎ Draw a car or scan a paper sketch · demo preview':'▶ Press Start race to begin';$('stageCounter').textContent=name==='race'?elapsed.toFixed(1)+' s':name==='cars'?players.length+' RACERS':'FULL COURSE';$('footerMessage').innerHTML=name==='track'?'<strong>HOST MODE</strong> · Build a track while demo cars animate.':name==='cars'?'<strong>CAR DESIGN</strong> · Draw or scan cars, then correct the wheel markers.':'<strong>AUTO-RACE</strong> · All cars use equal motor power. The fastest design wins.';$('previewToggle').classList.toggle('hidden',name==='race');$('previewToggle').textContent=previewEnabled?'Ⅱ Demo on':'▶ Demo off';$('previewToggle').setAttribute('aria-pressed',String(previewEnabled));$('mainAction').onclick=()=>name==='track'?setPage('cars'):name==='cars'?setPage('race'):resetRace();if(name==='race'){if(simulation==='idle'){players.forEach(p=>p.state=null)}refreshStandings()}if(name==='cars')refreshPlayers();renderTurnControls();requestAnimationFrame(drawAll)}
 function drawAll(){drawScene();if(page==='cars')drawCorrection()}
 function loop(ts){if(!lastTime)lastTime=ts;let delta=Math.min(.05,(ts-lastTime)/1000);lastTime=ts;if(page!=='race'&&previewEnabled&&!document.hidden&&$('drawStudio').classList.contains('hidden'))previewTime+=delta;if(simulation==='running'){stepCarry+=delta*($('speedMode').checked?2:1);let cycles=0;while(stepCarry>=1/120&&cycles<24){simulate(1/120);stepCarry-=1/120;cycles++}if(Math.floor(ts/115)!==Math.floor((ts-delta*1000)/115))refreshStandings()}drawScene();requestAnimationFrame(loop)}
 // Built-in sketch studio: transparent strokes, touch/mouse/stylus input, undo, and wheel detection.
 function copyCanvas(source){const canvas=document.createElement('canvas');canvas.width=source.width;canvas.height=source.height;canvas.getContext('2d').drawImage(source,0,0);return canvas}
 let studioView='side',draftViews={side:null,top:null};
 function storeStudioView(){draftViews[studioView]=copyCanvas(drawCanvas)}
-function loadStudioView(view){
- studioView=view;dc.clearRect(0,0,drawCanvas.width,drawCanvas.height);
- if(draftViews[view])dc.drawImage(draftViews[view],0,0,drawCanvas.width,drawCanvas.height);
+function loadStudioView(view){studioView=view;dc.clearRect(0,0,drawCanvas.width,drawCanvas.height);if(draftViews[view])dc.drawImage(draftViews[view],0,0,drawCanvas.width,drawCanvas.height);
  undoSteps=[];penDown=false;inkPointer=null;lastDrawPoint=null;
- $('studioTitle').textContent=view==='side'?'Side-view car':'Top-view car';$('studioSubtitle').textContent=view==='side'?'Draw the body and wheels':'Draw the car from above';
- $('studioSide').classList.toggle('selected',view==='side');$('studioTop').classList.toggle('selected',view==='top');$('drawingStatus').textContent=view==='side'?'Side view':'Top view';
+ $('studioTitle').textContent=view==='side'?'Side-view car':'Top-view car';
+ $('studioSubtitle').textContent=view==='side'?'Draw the body and wheels':'Draw the roof and outline';
+ $('studioSide').classList.toggle('selected',view==='side');$('studioTop').classList.toggle('selected',view==='top');
+ $('drawingStatus').textContent=view==='side'?'Side view · include two wheels':'Top view · draw from above';
 }
-function switchStudioView(view){if(studioView===view)return;storeStudioView();loadStudioView(view)}
+function switchStudioView(view){if(!canEdit(players.find(p=>p.id===drawingRacerId)))return;if(studioView===view)return;storeStudioView();loadStudioView(view)}
 function openStudio(view='side'){
- const p=activePlayer();if(!p)return;drawingRacerId=p.id;
- draftViews={side:p.sketch?copyCanvas(p.sketch):null,top:p.topSketch?copyCanvas(p.topSketch):null};
+ const p=activePlayer();if(!canEdit(p))return;
+ drawingRacerId=p.id;draftViews={side:p.sketch?copyCanvas(p.sketch):null,top:p.topSketch?copyCanvas(p.topSketch):null};
  loadStudioView(view);chooseInk('#1a2e44');$('drawStudio').classList.remove('hidden');document.body.classList.add('studio-open');
 }
 function closeStudio(){penDown=false;inkPointer=null;$('drawStudio').classList.add('hidden');document.body.classList.remove('studio-open');drawingRacerId=null}
@@ -402,22 +429,25 @@ function markUndo(){undoSteps.push(dc.getImageData(0,0,drawCanvas.width,drawCanv
 function drawPoint(e){const r=drawCanvas.getBoundingClientRect();return{x:clamp((e.clientX-r.left)/r.width*drawCanvas.width,0,drawCanvas.width),y:clamp((e.clientY-r.top)/r.height*drawCanvas.height,0,drawCanvas.height)}}
 function drawStroke(from,to){dc.save();dc.lineWidth=Number($('brushSize').value);dc.lineJoin='round';dc.lineCap='round';dc.globalCompositeOperation=eraseInk?'destination-out':'source-over';dc.strokeStyle=eraseInk?'rgba(0,0,0,1)':ink;dc.beginPath();dc.moveTo(from.x,from.y);dc.lineTo(to.x,to.y);dc.stroke();dc.restore()}
 let lastDrawPoint=null;
-drawCanvas.addEventListener('pointerdown',e=>{if(!$('drawStudio').classList.contains('hidden')&&(!penDown)){e.preventDefault();penDown=true;inkPointer=e.pointerId;drawCanvas.setPointerCapture(e.pointerId);markUndo();lastDrawPoint=drawPoint(e);drawStroke(lastDrawPoint,{x:lastDrawPoint.x+.01,y:lastDrawPoint.y+.01})}});
-drawCanvas.addEventListener('pointermove',e=>{if(!penDown||e.pointerId!==inkPointer)return;e.preventDefault();const next=drawPoint(e);drawStroke(lastDrawPoint,next);lastDrawPoint=next});
+drawCanvas.addEventListener('pointerdown',e=>{if(canEdit(players.find(p=>p.id===drawingRacerId))&&!$('drawStudio').classList.contains('hidden')&&(!penDown)){e.preventDefault();penDown=true;inkPointer=e.pointerId;drawCanvas.setPointerCapture(e.pointerId);markUndo();lastDrawPoint=drawPoint(e);drawStroke(lastDrawPoint,{x:lastDrawPoint.x+.01,y:lastDrawPoint.y+.01})}});
+drawCanvas.addEventListener('pointermove',e=>{if(!penDown||e.pointerId!==inkPointer||!canEdit(players.find(p=>p.id===drawingRacerId)))return;e.preventDefault();const next=drawPoint(e);drawStroke(lastDrawPoint,next);lastDrawPoint=next});
 function endDrawingPointer(e){if(e.pointerId===inkPointer){penDown=false;inkPointer=null;lastDrawPoint=null}}
 drawCanvas.addEventListener('pointerup',endDrawingPointer);drawCanvas.addEventListener('pointercancel',endDrawingPointer);
-function useDrawing(){
- if(!drawingRacerId)return;storeStudioView();const p=players.find(r=>r.id===drawingRacerId);if(!p){closeStudio();return}
+function cropAndThickenStudio(raw){
+ const cropped=cropInk(raw);return cropped?thickenInk(cropped,1):null;
+}
+function useDrawing(force=false){
+ if(!drawingRacerId||(!force&&!canEdit(players.find(p=>p.id===drawingRacerId))))return;storeStudioView();const p=players.find(r=>r.id===drawingRacerId);if(!p){closeStudio();return}
  let saved=0;
  for(const view of ['side','top']){
   const raw=draftViews[view];if(!raw||!hasInk(raw))continue;
-  const crop=cropInk(raw);if(!crop)continue;const cleaned=thickenInk(crop,1);
-  if(view==='side'){p.sketch=copyCanvas(raw);p.canvas=cleaned;p.wheels=detectWheels(cleaned);p.source='drawn';p.sideSource='drawn';p.rawScan=null}
-  else{p.topSketch=copyCanvas(raw);p.topCanvas=cleaned;p.topSource='drawn'}
+  const cleaned=cropAndThickenStudio(raw);if(!cleaned)continue;
+  if(view==='side'){p.sketch=copyCanvas(raw);p.canvas=cleaned;p.wheels=detectWheels(cleaned);p.source='drawn';p.sideSource='drawn';p.rawScan=null;}
+  else{p.topSketch=copyCanvas(raw);p.topCanvas=cleaned;p.topSource='drawn';}
   saved++;
  }
- if(!saved){$('drawingStatus').textContent='Draw at least one view';return}
- selected=players.indexOf(p);chosenWheel=1;closeStudio();$('scanStatus').textContent='Drawing saved';$('carsStatus').textContent='Both views available when drawn';refreshPlayers();drawAll();
+ if(!saved){$('drawingStatus').textContent='Draw at least one view before saving';return}
+ selected=players.indexOf(p);chosenWheel=1;closeStudio();$('scanStatus').textContent='Drawing saved';$('carsStatus').textContent='Car views saved';refreshPlayers();drawAll();
 }
 $('openDrawing').addEventListener('click',()=>openStudio('side'));
 $('openTopDrawing').addEventListener('click',()=>openStudio('top'));
@@ -425,12 +455,12 @@ $('studioSide').addEventListener('click',()=>switchStudioView('side'));
 $('studioTop').addEventListener('click',()=>switchStudioView('top'));
 $('closeDrawing').addEventListener('click',closeStudio);
 $('cancelDrawing').addEventListener('click',closeStudio);
-$('saveDrawing').addEventListener('click',useDrawing);
-$('undoDrawing').addEventListener('click',()=>{const prev=undoSteps.pop();if(prev)dc.putImageData(prev,0,0)});
-$('clearDrawing').addEventListener('click',()=>{markUndo();dc.clearRect(0,0,drawCanvas.width,drawCanvas.height)});
-$('eraserBtn').addEventListener('click',()=>{eraseInk=!eraseInk;$('eraserBtn').classList.toggle('selected',eraseInk);$('eraserBtn').setAttribute('aria-pressed',String(eraseInk));document.querySelectorAll('[data-ink]').forEach(b=>b.classList.remove('selected'))});
-document.querySelectorAll('[data-ink]').forEach(b=>b.addEventListener('click',()=>chooseInk(b.dataset.ink)));
-document.addEventListener('keydown',e=>{if($('drawStudio').classList.contains('hidden'))return;if(e.key==='Escape')closeStudio();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();const prev=undoSteps.pop();if(prev)dc.putImageData(prev,0,0)}});
+$('saveDrawing').addEventListener('click',()=>useDrawing());
+$('undoDrawing').addEventListener('click',()=>{if(!canEdit(players.find(p=>p.id===drawingRacerId)))return;const prev=undoSteps.pop();if(prev)dc.putImageData(prev,0,0)});
+$('clearDrawing').addEventListener('click',()=>{if(!canEdit(players.find(p=>p.id===drawingRacerId)))return;markUndo();dc.clearRect(0,0,drawCanvas.width,drawCanvas.height)});
+$('eraserBtn').addEventListener('click',()=>{if(!canEdit(players.find(p=>p.id===drawingRacerId)))return;eraseInk=!eraseInk;$('eraserBtn').classList.toggle('selected',eraseInk);$('eraserBtn').setAttribute('aria-pressed',String(eraseInk));document.querySelectorAll('[data-ink]').forEach(b=>b.classList.remove('selected'))});
+document.querySelectorAll('[data-ink]').forEach(b=>b.addEventListener('click',()=>{if(canEdit(players.find(p=>p.id===drawingRacerId)))chooseInk(b.dataset.ink)}));
+document.addEventListener('keydown',e=>{if($('drawStudio').classList.contains('hidden'))return;if(e.key==='Escape')closeStudio();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'&&canEdit(players.find(p=>p.id===drawingRacerId))){e.preventDefault();const prev=undoSteps.pop();if(prev)dc.putImageData(prev,0,0)}});
 $('previewToggle').addEventListener('click',()=>{previewEnabled=!previewEnabled;$('previewToggle').textContent=previewEnabled?'Ⅱ Demo on':'▶ Demo off';$('previewToggle').setAttribute('aria-pressed',String(previewEnabled));if(previewEnabled){camX=0;camY=0;previewTime=0}drawAll()});
 
 // Smartboard host: pair a phone with an unpredictable eight-character code.
@@ -463,10 +493,10 @@ $('openPhonePair').addEventListener('click',pairPhone);
 $('changePhoneCode').addEventListener('click',pairPhone);
 $('copyPhoneLink').addEventListener('click',async ()=>{const url=$('cameraLink').textContent;try{await navigator.clipboard.writeText(url);$('phoneTip').textContent='Phone link copied. Open it on your phone.'}catch{$('phoneTip').textContent='Clipboard unavailable. Open this link on the phone: '+url}});
 $('discardPhonePhoto').addEventListener('click',()=>{pendingPhonePhoto=null;$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Room ready')});
-$('acceptPhonePhoto').addEventListener('click',()=>{if(!pendingPhonePhoto)return;
- const image=new Image();image.onload=()=>{if(pendingPhoneName&&pendingPhoneName.toLowerCase()!=='phone')activePlayer().name=pendingPhoneName;scanImage(image,{view:pendingPhoneView});pendingPhonePhoto=null;pendingPhoneName='';$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Photo imported');};image.onerror=()=>{$('phoneTip').textContent='Image could not be decoded. Please retake it.'};image.src=pendingPhonePhoto;
+$('acceptPhonePhoto').addEventListener('click',()=>{if(!pendingPhonePhoto||!canEdit())return;const target=activePlayer().id;
+ const image=new Image();image.onload=()=>{if(!canEdit()||activePlayer().id!==target)return;if(pendingPhoneName&&pendingPhoneName.toLowerCase()!=='phone')activePlayer().name=pendingPhoneName;scanImage(image,{view:pendingPhoneView});pendingPhonePhoto=null;pendingPhoneName='';$('phonePendingBox').classList.add('hidden');$('phonePendingImage').removeAttribute('src');phoneStatus('Photo imported');};image.onerror=()=>{$('phoneTip').textContent='Image could not be decoded. Please retake it.'};image.src=pendingPhonePhoto;
 });
-$('backgroundCleanup').addEventListener('input',()=>{$('cleanupValue').textContent=Number($('backgroundCleanup').value)<30?'Gentle':Number($('backgroundCleanup').value)>75?'Strong':'Balanced';const p=activePlayer();if(p?.rawScan)scanImage(p.rawScan,{view:p.rawView||scanView})});
+$('backgroundCleanup').addEventListener('input',()=>{if(!canEdit())return;$('cleanupValue').textContent=Number($('backgroundCleanup').value)<30?'Gentle':Number($('backgroundCleanup').value)>75?'Strong':'Balanced';const p=activePlayer();if(p?.rawScan)scanImage(p.rawScan,{view:p.rawView||scanView})});
 window.addEventListener('pagehide',()=>{if(phoneChannel&&realtimeClient)realtimeClient.removeChannel(phoneChannel)});
 
 // v0.4 — Two separately editable courses. Downhill is fully automatic.
@@ -566,7 +596,8 @@ function changeGameMode(next){
 function syncCourseUI(){
   if(!$('modeHills'))return;
   $('modeHills').classList.toggle('selected',gameMode==='hills');
-  $('modeDownhill').classList.toggle('selected',gameMode==='downhill');document.querySelectorAll('[data-home-mode]').forEach(b=>b.classList.toggle('chosen',b.dataset.homeMode===gameMode));
+  $('modeDownhill').classList.toggle('selected',gameMode==='downhill');
+  document.querySelectorAll('[data-home-mode]').forEach(b=>b.classList.toggle('active',b.dataset.homeMode===gameMode));
   const downhill=gameMode==='downhill';
   const labels=downhill?['↔ Straight sprint','↪ Hairpin pass','〰 S-bends','⤺ Switchbacks']:['↔ Drag race','⌁ Hill climb','◠ Rough road','⚑ Challenge'];
   document.querySelectorAll('[data-preset]').forEach((b,i)=>{b.textContent=labels[i];b.classList.toggle('selected',b.dataset.preset===(downhill?downhillPreset:preset))});
@@ -590,13 +621,10 @@ function downhillRoadPath(c,x0,x1){
 }
 function paintTopCar(c,p,heading=0){
   const ph=physical(p),length=clamp(ph.bodyW*.77,73,121),width=clamp(ph.bodyH*.62,36,66);
-  if(p.topCanvas){
-    c.save();c.rotate(heading);const img=p.topCanvas;c.fillStyle='rgba(13,31,43,.22)';
-    rounded(c,-length*.53+3,-width*.54+5,length*1.06,width*1.08,13);c.fill();
+  if(p.topCanvas){c.save();c.rotate(heading);const img=p.topCanvas;c.fillStyle='rgba(13,31,43,.22)';rounded(c,-length*.53+3,-width*.54+5,length*1.06,width*1.08,13);c.fill();
     if(img.height>img.width*1.2){c.rotate(Math.PI/2);c.drawImage(img,-width*.52,-length*.53,width*1.04,length*1.06)}
     else c.drawImage(img,-length*.53,-width*.52,length*1.06,width*1.04);
-    c.restore();return;
-  }
+    c.restore();return;}
   c.save();c.rotate(heading);c.fillStyle='#12283e';
   for(let ax of [-length*.30,length*.30])for(let side of [-1,1]){rounded(c,ax-10,side*(width*.55)-6,20,12,3);c.fill()}
   c.fillStyle=p.color;c.strokeStyle='#20374a';c.lineWidth=4;rounded(c,-length/2,-width/2,length,width,14);c.fill();c.stroke();
@@ -702,23 +730,83 @@ simulate=function(dt){if(gameMode==='downhill')simulateDownhill(dt);else origina
 $('modeHills').addEventListener('click',()=>changeGameMode('hills'));
 $('modeDownhill').addEventListener('click',()=>changeGameMode('downhill'));
 
+
+const DESIGN_LIMIT_MS=180000;
+function currentDesignTurn(){return players.find(p=>p.turnState==='active')||null}
+function rosterLocked(){return players.some(p=>p.turnState!=='waiting')}
+function secondsLeft(p){if(!p)return 180;return p.turnState==='waiting'?180:p.turnState==='active'?Math.max(0,Math.ceil((p.turnDeadline-Date.now())/1000)):0}
+function clockString(sec){return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}
+function canEdit(p=activePlayer()){return !!p&&p.turnState==='active'&&p.turnDeadline>Date.now()&&currentDesignTurn()===p}
+function playerTurnLabel(p){if(p.turnState==='active')return clockString(secondsLeft(p))+' remaining';if(p.turnState==='done')return '✓ Design submitted';if(p.turnState==='expired')return '⌛ Time up · saved';return 'Waiting · 3:00'}
+function renderTurnControls(){
+ const p=activePlayer();if(!p)return;
+ const active=currentDesignTurn(),remaining=secondsLeft(active||p),editable=canEdit(p),state=p.turnState;
+ $('turnWho').textContent=active?active.name.toUpperCase().slice(0,22)+' · DESIGN TIME':p.name.toUpperCase().slice(0,22)+' · DESIGN TIME';
+ $('turnClock').textContent=clockString(remaining);$('turnClock').classList.toggle('urgent',!!active&&remaining<=30);$('turnClock').classList.toggle('expired',!active&&state==='expired');
+ $('turnProgress').style.width=(active?remaining/180:state==='waiting'?1:0)*100+'%';
+ $('beginTurn').disabled=state!=='waiting'||!!active;
+ $('finishTurn').disabled=!editable;
+ $('turnStatus').textContent=active?(active===p?'Draw and adjust before time runs out.':'Another racer is designing.'):(state==='waiting'?'Ready to start · 3 minutes total':state==='expired'?'Time up · design locked':state==='done'?'Design saved · ready to race':'');
+ const editingIds=['playerName','openDrawing','openTopDrawing','carUpload','retryScan','rearWheelBtn','frontWheelBtn','wheelSize','backgroundCleanup','acceptPhonePhoto'];
+ editingIds.forEach(id=>{const node=$(id);if(node)node.disabled=!editable});
+ document.querySelectorAll('[data-scan-view]').forEach(node=>node.disabled=!editable);
+ const locked=rosterLocked();$('addPlayer').disabled=locked||players.length>=4;$('removePlayer').disabled=locked||players.length<=1;
+ $('turnStageClock').classList.toggle('hidden',page!=='cars'||!active);
+ $('turnStageClock').textContent=clockString(remaining);
+ $('studioClock').textContent=clockString(remaining);$('studioClock').classList.toggle('urgent',remaining<=30);
+ $('studioClock').setAttribute('aria-label',clockString(remaining)+' remaining for '+p.name);
+ // A newly drawn or scanned car is used in the race even if only one view is available.
+ const complete=players.every(r=>r.turnState==='done'||r.turnState==='expired');
+ $('carsNext').disabled=!complete;$('mainAction').disabled=page==='cars'&&!complete;
+ document.querySelectorAll('.player-row').forEach((btn,i)=>{btn.disabled=!!active&&players[i]!==active;const small=btn.querySelector('small');if(small)small.textContent=playerTurnLabel(players[i])});
+}
+function startDesignTurn(){const p=activePlayer();if(!p||p.turnState!=='waiting'||currentDesignTurn())return;
+ p.turnState='active';p.turnDeadline=Date.now()+DESIGN_LIMIT_MS;
+ $('carsStatus').textContent=p.name+' · Start drawing!';refreshPlayers();drawAll();}
+function finishDesignTurn(expired=false){
+ const p=currentDesignTurn();if(!p)return;expired=expired||Date.now()>=p.turnDeadline;
+ if(!$('drawStudio').classList.contains('hidden')&&drawingRacerId===p.id){
+   // Capture the current partial stroke and both draft views before locking editing.
+   if(penDown){penDown=false;inkPointer=null;lastDrawPoint=null}
+   useDrawing(true);
+   if(!$('drawStudio').classList.contains('hidden'))closeStudio();
+ }
+ p.turnState=expired?'expired':'done';p.turnDeadline=0;
+ draggingWheel=-1;
+ $('carUpload').value='';
+ if(expired){$('carsStatus').textContent=p.name+' · Time up. Latest sketch saved.';}
+ else $('carsStatus').textContent=p.name+' · Design submitted.';
+ const next=players.findIndex(r=>r.turnState==='waiting');if(next>=0){selected=next;chosenWheel=1}
+ refreshPlayers();drawAll();
+}
+function tickDesignTimer(){const active=currentDesignTurn();if(active&&Date.now()>=active.turnDeadline)finishDesignTurn(true);else renderTurnControls()}
+$('beginTurn').addEventListener('click',startDesignTurn);
+$('finishTurn').addEventListener('click',()=>finishDesignTurn(false));
+setInterval(tickDesignTimer,120);
+
 // UI events
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.tab)));
 document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{if(gameMode==='downhill')setDownhillPreset(b.dataset.preset);else presetTrack(b.dataset.preset);changeTool('draw');syncCourseUI()}));
 document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>changeTool(b.dataset.tool)));
 $('clearRocks').addEventListener('click',()=>{rocks=[];drawAll()});$('resetTrack').addEventListener('click',()=>{if(gameMode==='downhill')setDownhillPreset('hills');else presetTrack('hills');syncCourseUI()});$('trackNext').addEventListener('click',()=>setPage('cars'));
-$('addPlayer').addEventListener('click',addPlayer);$('removePlayer').addEventListener('click',removePlayer);$('playerName').addEventListener('input',e=>{activePlayer().name=e.target.value||'Racer';refreshPlayers();drawAll()});$('carUpload').addEventListener('change',e=>imageLoad(e.target.files[0]));$('retryScan').addEventListener('click',()=>{if(['photo','drawn'].includes(activePlayer().source)){activePlayer().wheels=detectWheels(activePlayer().canvas);$('scanStatus').textContent='Re-detected';showWheelSlider();drawAll()}});
-$('rearWheelBtn').addEventListener('click',()=>chooseWheel(0));$('frontWheelBtn').addEventListener('click',()=>chooseWheel(1));$('wheelSize').addEventListener('input',e=>{const p=activePlayer();p.wheels[chosenWheel].r=Number(e.target.value)/physical(p).bodyW;$('wheelSizeValue').textContent=e.target.value+' px';drawAll()});$('carsNext').addEventListener('click',()=>setPage('race'));
-function openMainMenu(){if(simulation!=='idle')resetRace();$('mainMenu').classList.remove('hidden');document.body.classList.add('menu-open')}
-function startFromMenu(){document.body.classList.remove('menu-open');$('mainMenu').classList.add('hidden');setPage('track');requestAnimationFrame(drawAll)}
-$('menuHome').addEventListener('click',openMainMenu);$('menuStart').addEventListener('click',startFromMenu);
-document.querySelectorAll('[data-home-mode]').forEach(b=>b.addEventListener('click',()=>{changeGameMode(b.dataset.homeMode);document.querySelectorAll('[data-home-mode]').forEach(x=>x.classList.toggle('chosen',x===b))}));
-document.querySelectorAll('[data-scan-view]').forEach(b=>b.addEventListener('click',()=>{scanView=b.dataset.scanView;document.querySelectorAll('[data-scan-view]').forEach(x=>x.classList.toggle('selected',x===b))}));
-$('fineTune').addEventListener('toggle',()=>requestAnimationFrame(drawAll));
+$('addPlayer').addEventListener('click',addPlayer);$('removePlayer').addEventListener('click',removePlayer);$('playerName').addEventListener('input',e=>{if(!canEdit())return;activePlayer().name=e.target.value||'Racer';refreshPlayers();drawAll()});$('carUpload').addEventListener('change',e=>imageLoad(e.target.files[0]));$('retryScan').addEventListener('click',()=>{if(!canEdit())return;if(['photo','drawn'].includes(activePlayer().source)){activePlayer().wheels=detectWheels(activePlayer().canvas);$('scanStatus').textContent='Re-detected';showWheelSlider();drawAll()}});
+$('rearWheelBtn').addEventListener('click',()=>{if(canEdit())chooseWheel(0)});$('frontWheelBtn').addEventListener('click',()=>{if(canEdit())chooseWheel(1)});$('wheelSize').addEventListener('input',e=>{if(!canEdit())return;const p=activePlayer();p.wheels[chosenWheel].r=Number(e.target.value)/physical(p).bodyW;$('wheelSizeValue').textContent=e.target.value+' px';drawAll()});$('carsNext').addEventListener('click',()=>setPage('race'));
+// Simple landing screen; preserves the host's current car/track when returning home.
+function openMainMenu(){if(simulation!=='idle')resetRace();$('mainMenu').classList.remove('hidden');document.body.classList.add('menu-open');}
+function startFromMenu(){document.body.classList.remove('menu-open');$('mainMenu').classList.add('hidden');setPage('track');requestAnimationFrame(drawAll);}
+$('menuHome').addEventListener('click',openMainMenu);
+$('menuStart').addEventListener('click',startFromMenu);
+document.querySelectorAll('[data-home-mode]').forEach(btn=>btn.addEventListener('click',()=>{
+ const next=btn.dataset.homeMode;changeGameMode(next);
+ document.querySelectorAll('[data-home-mode]').forEach(b=>b.classList.toggle('active',b===btn));
+}));
+document.querySelectorAll('[data-scan-view]').forEach(btn=>btn.addEventListener('click',()=>{
+ if(!canEdit())return;scanView=btn.dataset.scanView;document.querySelectorAll('[data-scan-view]').forEach(b=>b.classList.toggle('selected',b===btn));
+}));
 $('startRace').addEventListener('click',toggleRace);$('resetRace').addEventListener('click',resetRace);$('backToCars').addEventListener('click',()=>{resetRace();setPage('cars')});$('backToTrack').addEventListener('click',()=>{resetRace();setPage('track')});
 scene.addEventListener('pointerdown',pointerTrackDown);scene.addEventListener('pointermove',pointerTrackMove);scene.addEventListener('pointerup',pointerTrackUp);scene.addEventListener('pointercancel',pointerTrackUp);
 wheelCanvas.addEventListener('pointerdown',correctionDown);wheelCanvas.addEventListener('pointermove',correctionMove);wheelCanvas.addEventListener('pointerup',correctionUp);wheelCanvas.addEventListener('pointercancel',correctionUp);
-window.addEventListener('resize',drawAll);document.addEventListener('visibilitychange',()=>{if(document.hidden&&simulation==='running'){simulation='paused';$('startRace').textContent='▶ Resume race'}});
+window.addEventListener('resize',drawAll);document.addEventListener('visibilitychange',()=>{tickDesignTimer();if(document.hidden&&simulation==='running'){simulation='paused';$('startRace').textContent='▶ Resume race'}});
 presetTrack('hills');setDownhillPreset('hills');populate();setPage('track');requestAnimationFrame(loop);
 })();
 </script>
