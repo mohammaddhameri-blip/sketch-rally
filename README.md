@@ -1,27 +1,13 @@
-# Sketch Rally — v1.1
+# Sketch Rally v1.2
 
-Sketch Rally is a browser racing game for hand-drawn cars, with automatic Hill Climb and Downhill Race modes, up to 30 racers, and a paired host-phone camera.
+## Setup flow
 
-## What's new in v1.1
+**Smartboard:** The host now follows **1 · Cars → 2 · Track → 3 · Race**. From the main menu select **Design Cars**, draw or scan each sketch in the Garage, then choose **Next: Prepare Track**. Set road shape, hills/corners, obstacles and distance (up to 20 km), then choose **Next: Race**. The Race tab, up-to-30 car support, automatic racing, time limit and rematch remain.
 
-- **Double-tap a racer name** in the smartboard racer list to rename it inline. Enter saves, Escape cancels.
-- **Design your car:** One `Draw your design here!` button opens the drawing studio, where players can switch between Side and Top view.
-- **Scan drawings:** Separate `Take photo` and `Upload photo` controls open the scanner. Side view is selected by default, and a Side/Top switch is available before saving the photo.
-- **Fine-tune car:** Flip Side and Flip Top moved beneath the main game screen with the tyre correction controls.
-- **Host phone:** Pairing is accessed from `PAIR HOST PHONE` on the main menu, via a pairing dialog instead of a permanent Garage section. The mobile controller remains `phone.html`.
-- **One race-start button:** A leaf-green `🏁 BEGIN RACE! 🏁` button is centered over the game canvas during setup, with animated flags and jumping letters. It launches the full-auto race directly and disappears during racing. Race navigation and reset/rematch remain separate.
+**Host phone:** Connect with a room code or QR, then **take or upload a picture before naming anyone**. Crop/filter the photo and choose **Continue → Assign racer**. The registration dialog asks for a new racer's name or lets you select an existing racer, and allows Side / Top / Both view selection. Press **Register car** to send the sketch to the smartboard. A name is never required to enable the camera or open the editor.
 
-## Existing capabilities
+To update or remove an existing racer, expand **Manage existing racers** on the phone. The phone can also start the smartboard race remotely.
 
-- Side/top car drawings and scanning, automatic transparent-paper cleanup and outline thickening; monochrome sketches remain monochrome.
-- Host-controlled phone registration and remote race start.
-- Up to 30 car registrations, configurable tracks up to 20 km and two automatic race modes.
-- Optional 3-minute racer design turns, flip/tyre correction, synthesized engine volume and rematches.
+## Testing
 
-## Hosting
-
-Put `index.html` and `phone.html` at the root of the GitHub repository; enable GitHub Pages from `main` / `(root)`. Use HTTPS for phone camera permission. Host-phone pairing requires both devices to be online.
-
-## Verification
-
-JavaScript syntax and isolated browser checks passed for inline rename, timer settings, the drawing studio, scanner side/top photo import, transferred Flip controls and launching the auto race from the animated center button. Actual public Pages deployment timing and physical phone-smartboard pairing were not retested in this release.
+Chromium browser tests confirmed first-screen Cars, Next Track transition, distance setup, preserved timer race gate, photo upload without prior name, photo editor, post-photo name modal, required-name validation and registration with a simulated pairing channel. Real physical-device pairing has not been retested. Camera access needs HTTPS and internet access for pairing.
