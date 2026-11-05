@@ -825,7 +825,7 @@ window.addEventListener('pagehide',()=>{if(phoneChannel&&realtimeClient)realtime
 const MAX_RACERS=30;
 let remoteRosterStarted=false;
 const remoteRequestSeen=new Set();
-function rosterSummary(){return players.filter(p=>remoteRosterStarted||p.remoteId||p.turnState!=='waiting'||p.source!=='demo').map(p=>({id:p.remoteId||p.id,name:p.name,side:p.sideSource!=='demo',top:!!p.topCanvas,registered:!!p.remoteId}));}
+function rosterSummary(){return players.filter(p=>remoteRosterStarted||p.remoteId||p.turnState!=='waiting'||['photo','drawn'].includes(p.source)).map(p=>({id:p.remoteId||p.id,name:p.name,side:['photo','drawn'].includes(p.sideSource),top:!!p.topCanvas,registered:!!p.remoteId}));}
 async function remoteMessage(channel,event,payload){if(!channel||channel!==phoneChannel)return;try{await channel.send({type:'broadcast',event,payload})}catch(error){console.warn('Remote message error',error)}}
 function sendHostRoster(channel=phoneChannel){remoteMessage(channel,'roster-state',{racers:rosterSummary(),max:MAX_RACERS,racing:simulation==='running'||simulation==='paused',mode:gameMode});}
 function updateHostRibbon(){const bar=$('hostRosterRibbon'),names=$('hostRosterNames');if(!bar||!names)return;bar.classList.toggle('hidden',!remoteRosterStarted);$('hostRosterCount').textContent=players.length+' / '+MAX_RACERS+' RACERS';names.replaceChildren();for(const p of players){const tag=document.createElement('span');tag.className=p.remoteId?'ready':'';tag.textContent=p.name;names.append(tag)}}
@@ -888,7 +888,7 @@ async function handleRemoteRemove(payload,channel){
  const racerId=typeof payload?.racerId==='string'?payload.racerId:'';
  if(!requestId)return;
  const reply=(ok,message)=>remoteMessage(channel,'remove-result',{requestId,ok,message,racers:rosterSummary()});
- if(simulation==='running'||simulation==='paused'){reply(false,'Cannot remove while a race is active.');return}
+ if(simulation==='running'||simulation==='paused'||simulation==='between'||(gameMode==='challenge'&&challengeStarted)){reply(false,'Cannot remove during a challenge attempt.');return}
  const index=players.findIndex(p=>p.remoteId===racerId);
  if(index===-1){reply(false,'Racer not found. Refresh the roster.');return}
  if(currentDesignTurn()===players[index]){reply(false,'Finish this racer’s design timer first.');return}
@@ -905,7 +905,7 @@ async function handleRemoteStart(payload,channel){
  if(!requestId)return;
  if(!players.length){remoteMessage(channel,'race-result',{requestId,ok:false,message:'Register at least one car first.'});return}
  if(timeLimitEnabled&&(currentDesignTurn()||players.some(p=>p.turnState==='waiting'))){remoteMessage(channel,'race-result',{requestId,ok:false,message:'Finish manual 3-minute design turns first.'});return}
- if(simulation==='running'||simulation==='paused'){remoteMessage(channel,'race-result',{requestId,ok:false,message:'Race already underway.'});return}
+ if(simulation==='running'||simulation==='paused'||simulation==='between'){remoteMessage(channel,'race-result',{requestId,ok:false,message:'Race already underway.'});return}
  try{
   if(simulation==='complete')resetRace();
   if(!$('mainMenu').classList.contains('hidden')){$('mainMenu').classList.add('hidden');document.body.classList.remove('menu-open')}
@@ -1174,7 +1174,7 @@ function renderTurnControls(){
  $('studioClock').setAttribute('aria-label',clockString(remaining)+' remaining for '+p.name);
  // A newly drawn or scanned car is used in the race even if only one view is available.
  const complete=!timeLimitEnabled||players.every(r=>r.turnState==='done'||r.turnState==='expired');
- $('mainAction').disabled=false;syncBeginRaceButton();document.querySelectorAll('[data-wheel-nudge]').forEach(b=>b.disabled=!editable);$('rematchRace').classList.toggle('hidden',!timeLimitEnabled||simulation!=='complete');
+ $('mainAction').disabled=false;syncBeginRaceButton();document.querySelectorAll('[data-wheel-nudge]').forEach(b=>b.disabled=!editable);$('rematchRace').classList.toggle('hidden',gameMode==='challenge'||!timeLimitEnabled||simulation!=='complete');
  document.querySelectorAll('.player-row').forEach((btn,i)=>{btn.disabled=!!active&&players[i]!==active;const small=btn.querySelector('small');if(small)small.textContent=playerTurnLabel(players[i])});
 }
 function startDesignTurn(){const p=activePlayer();if(!timeLimitEnabled||!p||p.turnState!=='waiting'||currentDesignTurn())return;
@@ -1357,11 +1357,19 @@ function newChallengeCar(){
 $('newChallengeDesign').addEventListener('click',newChallengeCar);
 const originalCanEditV14=canEdit;
 canEdit=function(p=activePlayer()){return !p?.challengeLocked&&originalCanEditV14(p)};
+let savedNormalHillV14=null;
 const originalChangeModeV14=changeGameMode;
 changeGameMode=function(next){
- if(!['hills','downhill','challenge'].includes(next))return;
+ if(!['hills','downhill','challenge'].includes(next)||next===gameMode)return;
+ if(next==='challenge'&&!savedNormalHillV14){
+  savedNormalHillV14={ground:Float32Array.from(ground),rocks:rocks.map(r=>({...r})),preset};
+ }
  originalChangeModeV14(next);
- if(next==='challenge'&&gameMode==='challenge'){challengeLevel=1;loadChallengeLevel(1)}
+ if(next==='hills'&&savedNormalHillV14){
+  ground.set(savedNormalHillV14.ground);rocks=savedNormalHillV14.rocks;
+  preset=savedNormalHillV14.preset;savedNormalHillV14=null;
+ }
+ if(next==='challenge'){challengeLevel=1;loadChallengeLevel(1)}
  syncCourseUI();drawAll();
 };
 const originalSyncCourseV14=syncCourseUI;
@@ -1374,6 +1382,7 @@ syncCourseUI=function(){
  $('modeDownhill').classList.toggle('selected',gameMode==='downhill');
  $('challengeTrackInfo').classList.toggle('hidden',!isChallenge);
  $('newChallengeDesign').classList.toggle('hidden',!isChallenge);
+ $('resetRace').textContent=isChallenge?'End attempt':'↺ Restart race';
  document.querySelectorAll('[data-preset],[data-tool]').forEach(b=>b.disabled=isChallenge);
  ['clearRocks','resetTrack','trackDistance'].forEach(id=>$(id).disabled=isChallenge);
  if(isChallenge){
