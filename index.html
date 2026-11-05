@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#101827" />
-<title>Sketch Rally v1.3 — Draw. Scan. Race.</title>
+<title>Sketch Rally v1.4 — Draw. Scan. Race.</title>
 <style>
 :root{--bg:#0c1422;--panel:#152237;--panel2:#1c2b43;--border:#30425c;--text:#f2f7ff;--muted:#a1b0c8;--lime:#c4f26b;--blue:#6fc8fa;--orange:#ffb478;--danger:#ff8191;--radius:15px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}.app{max-width:1530px;margin:auto;min-height:100vh;padding:22px 26px 30px}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:13px}.logo{width:44px;height:44px;display:grid;place-items:center;background:var(--lime);color:var(--bg);border-radius:13px;box-shadow:0 0 0 4px rgba(196,242,107,.08);font-size:24px}.brand h1{margin:0;font-size:21px;letter-spacing:-.8px;line-height:1.1}.brand small{color:var(--muted);font-size:12px;font-weight:500}.chip{border:1px solid #4a6647;background:#223c30;border-radius:100px;color:var(--lime);font-size:11px;font-weight:800;letter-spacing:.09em;padding:9px 12px;text-transform:uppercase}.layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:19px;align-items:stretch}.sidebar,.stage{border:1px solid var(--border);border-radius:20px;background:var(--panel);overflow:hidden}.sidebar{display:flex;flex-direction:column}.tabs{display:grid;grid-template-columns:repeat(3,1fr);padding:12px;gap:6px;border-bottom:1px solid var(--border)}.tab{border:0;border-radius:10px;background:transparent;color:var(--muted);padding:12px 6px;font-size:12px;font-weight:800;letter-spacing:.02em}.tab.on{color:var(--bg);background:var(--lime)}.content{padding:20px;overflow-y:auto;max-height:calc(100vh - 160px);min-height:565px}.pane{display:none}.pane.active{display:block}h2{font-size:21px;margin:0 0 6px;letter-spacing:-.5px}h3{font-size:13px;font-weight:800;margin:18px 0 9px}.sub{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 19px}.section-label{display:block;color:#afc0d7;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin:16px 0 8px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:10px;min-height:39px;padding:10px 12px;font-size:12px;font-weight:700;transition:background .1s,border-color .1s}.btn:hover{border-color:#7189a8}.btn.selected{border-color:var(--lime);color:var(--lime);background:#273c30}.btn.primary{color:#0b1920;background:var(--lime);border-color:var(--lime)}.btn.primary:hover{background:#ddffa8}.btn.secondary{background:#294861;color:#dff5ff}.btn.warn{color:var(--danger)}.btn.full{width:100%;margin-top:12px}.btn.large{min-height:47px;font-size:14px}.help{font-size:12px;line-height:1.55;color:var(--muted);margin:11px 0 0}.note{font-size:12px;line-height:1.45;border:1px solid #405676;border-radius:12px;padding:11px 12px;color:#cbd9eb;background:rgba(108,166,238,.06);margin-top:15px}.rule{height:1px;background:var(--border);margin:18px 0}.player-list{display:grid;gap:7px}.player-row{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--border);background:var(--panel2);border-radius:10px;padding:8px 9px;color:var(--text)}.player-row.active{border-color:var(--lime);background:#293c34}.player-icon{width:31px;height:28px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:#0e1b26;font-weight:900;font-size:13px}.player-info{min-width:0;flex:1}.player-info b{display:block;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.player-info small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.player-row .tick{color:var(--lime);font-weight:900}.field{width:100%;padding:11px 12px;background:#0f1a2b;border:1px solid #49607a;color:white;border-radius:10px;outline:0;font-size:13px}.field:focus{border-color:var(--lime)}.upload{border:1px dashed #7890a8;border-radius:12px;min-height:70px;display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;color:#e2efff;font-weight:700;font-size:12px;text-align:center;padding:12px;background:#1a2e45}.upload input{display:none}.upload:hover{border-color:var(--lime)}.correction{position:relative;border:1px solid #426077;background:linear-gradient(45deg,#ebedf1 25%,#ffffff 25% 50%,#ebedf1 50% 75%,#ffffff 75%);background-size:18px 18px;border-radius:12px;overflow:hidden;margin-top:9px}.correction canvas{display:block;width:100%;height:184px;touch-action:none;cursor:grab}.correction canvas:active{cursor:grabbing}.minirow{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:10px 0 0}.minirow span{font-size:11px;color:var(--muted)}.minirow b{font-size:11px;color:var(--lime)}.range{width:100%;accent-color:var(--lime)}.standings{display:grid;gap:8px;margin-top:15px}.result{display:flex;gap:8px;align-items:center;background:#1d2e46;border:1px solid var(--border);padding:10px;border-radius:10px}.result .rank{font-size:11px;width:18px;color:var(--muted);font-weight:900}.result-name{min-width:0;flex:1}.result-name b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.result-name small{color:var(--muted);font-size:10px}.result .progress{width:70px;background:#0d1a2b;border-radius:10px;height:5px;overflow:hidden}.result .fill{height:100%;background:var(--lime);width:0}.stage{min-height:630px;display:flex;flex-direction:column;background:#101e32}.stage-top{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 20px;border-bottom:1px solid var(--border)}.stage-title{font-weight:900;font-size:17px;letter-spacing:-.3px}.stage-description{font-size:12px;color:var(--muted);margin-top:4px}.stage-counter{font-weight:900;font-size:15px;color:var(--lime);font-variant-numeric:tabular-nums;white-space:nowrap}.canvas-wrap{height:min(65vh,608px);min-height:455px;position:relative;overflow:hidden;background:#a6d8eb}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.canvas-tooltip{position:absolute;top:17px;left:17px;border-radius:10px;background:rgba(13,29,46,.78);color:#f7fcff;font-size:12px;font-weight:700;padding:10px 12px;pointer-events:none;max-width:70%;backdrop-filter:blur(5px)}.canvas-tooltip:empty{display:none}.footer{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 19px;background:#152237;border-top:1px solid var(--border)}.footer .message{color:var(--muted);font-size:12px;line-height:1.45}.footer .message strong{color:var(--text)}.footer-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.small-pill{font-size:11px;font-weight:800;display:inline-block;border-radius:20px;padding:5px 9px;background:#31435b;color:#e3eefd}.hidden{display:none!important}.muted{color:var(--muted)}.status{font-size:11px;margin-top:9px;color:var(--lime);min-height:16px}.checkbox{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin:12px 0}.checkbox input{accent-color:var(--lime)}@media(max-width:1000px){.layout{grid-template-columns:300px minmax(0,1fr)}.app{padding:15px}.content{padding:15px}.canvas-wrap{min-height:400px}}@media(max-width:770px){.app{padding:12px 12px 25px}.header{margin-bottom:12px}.layout{grid-template-columns:1fr;gap:11px}.sidebar{order:2}.stage{order:1;min-height:0}.content{max-height:none;min-height:0}.stage-top{min-height:61px;padding:12px 13px}.canvas-wrap{height:53vh;min-height:300px;max-height:530px}.canvas-tooltip{font-size:10px;top:10px;left:10px}.footer{padding:12px;min-height:60px;flex-wrap:wrap}.brand h1{font-size:17px}.logo{width:36px;height:36px;font-size:20px}.chip{font-size:9px;padding:7px 9px}.sidebar{border-radius:16px}.tabs{padding:8px}.content{padding:16px}.stage-title{font-size:15px}}@media(max-width:380px){.canvas-wrap{min-height:275px;height:43vh}.btn{padding:9px 8px}.header .chip{display:none}}
 /* In-game car drawing studio, transparent scan and phone-camera pairing */
@@ -116,6 +116,28 @@ body.race-immersive .race-hud{display:flex}
 .scan-rotate-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .scan-rotate label{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#c9dbea;font-weight:750}
 .scan-rotate input[type=range]{width:100%;accent-color:var(--lime)}
+.menu-byline{font-size:13px;color:#b6d1e0;letter-spacing:.06em;margin:4px auto 0;font-weight:600}
+.menu-modes{grid-template-columns:repeat(3,minmax(0,1fr));max-width:570px}
+.menu-mode{padding:7px 4px}.menu-mode strong{font-size:12px}
+.shape-tools{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:6px;border:1px solid #405a74;border-radius:9px}
+.shape-tools .btn{min-height:35px;padding:8px}.shape-tools label{font-size:11px;color:#d5e5f2}
+.shape-tools select{background:#12263b;color:white;border:1px solid #53718a;padding:5px;border-radius:6px}
+.challenge-info{padding:12px;border:1px solid #5c8072;border-radius:10px;background:#1c3843;margin-top:12px}
+.challenge-info strong{display:block;color:#d5fda1;font-size:12px}
+.challenge-info span{display:block;margin-top:5px;font-size:12px}
+.challenge-info p{font-size:11px;color:#b5cbd8;line-height:1.5;margin:7px 0 0}
+body.challenge-mode #pane-track [data-preset],body.challenge-mode #pane-track [data-tool],body.challenge-mode #clearRocks,body.challenge-mode #resetTrack,body.challenge-mode #trackDistance{opacity:.4;pointer-events:none}
+.best-dialog{position:fixed;inset:0;z-index:110;background:#071423ed;display:flex;align-items:center;justify-content:center;padding:13px}
+.best-panel{width:min(660px,100%);max-height:92dvh;overflow:auto;background:#1a2b40;border:1px solid #496781;border-radius:17px;padding:19px}
+.best-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.best-title h2{margin:0}
+.best-note{font-size:12px;color:#b4c7d8;line-height:1.5}
+.best-list{display:grid;gap:9px;margin:14px 0}
+.best-row{display:flex;align-items:center;gap:10px;background:#1f344a;border:1px solid #446078;border-radius:10px;padding:10px}
+.best-row .rank{font-weight:900;color:#ccef93;width:23px}
+.best-row img{width:85px;height:50px;object-fit:contain;background:#f4f5f7;border-radius:7px}
+.best-row .detail{flex:1;min-width:0}.best-row strong{font-size:13px;display:block;overflow-wrap:anywhere}
+.best-row small{font-size:11px;color:#b1c4d6}.best-row .time{white-space:nowrap;color:#d9faac;font-weight:900;font-size:13px}
+@media(max-width:500px){.menu-modes{gap:5px}.menu-mode{min-height:65px;padding:5px 2px}.menu-mode strong{font-size:10px}.menu-mode span{font-size:10px}.best-row img{width:61px;height:42px}}
 </style>
 </head>
 <body class="menu-open">
@@ -130,7 +152,7 @@ body.race-immersive .race-hud{display:flex}
 </div>
 <div class="menu-cover" id="mainMenu" role="region" aria-label="Sketch Rally main menu">
   <div class="menu-inner">
-    <div class="menu-eyebrow"><span class="menu-bullet"></span> SKETCH RALLY <span class="menu-inline-version">v1.3</span></div>
+    <div class="menu-eyebrow"><span class="menu-bullet"></span> SKETCH RALLY <span class="menu-inline-version">v1.4</span></div><div class="menu-byline">by MrDhameri</div>
     <div class="menu-art" aria-hidden="true">
       <svg viewBox="0 0 680 195" preserveAspectRatio="xMidYMid meet">
         <defs><linearGradient id="menuRoad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#587a6a"/><stop offset="1" stop-color="#284f58"/></linearGradient></defs>
@@ -143,17 +165,17 @@ body.race-immersive .race-hud{display:flex}
     <h1>DRAW.<br><span>RACE.</span> REPEAT.</h1>
     <div class="menu-modes" role="group" aria-label="Choose race mode">
       <button class="menu-mode active" type="button" data-home-mode="hills"><strong>⛰ HILL CLIMB</strong><span>Side view</span></button>
-      <button class="menu-mode" type="button" data-home-mode="downhill"><strong>↝ DOWNHILL</strong><span>Top view</span></button>
+      <button class="menu-mode" type="button" data-home-mode="downhill"><strong>↝ DOWNHILL</strong><span>Top view</span></button><button class="menu-mode" type="button" data-home-mode="challenge"><strong>🏆 CHALLENGE</strong><span>10 hill levels</span></button>
     </div>
     <button type="button" class="menu-start" id="menuStart">DESIGN CARS <span>→</span></button>
-    <button type="button" class="host-entry" id="menuHostPhone">📱 PAIR HOST PHONE</button>
+    <button type="button" class="host-entry" id="menuBestOverall">🏆 Best Overall</button><button type="button" class="host-entry" id="menuHostPhone">📱 PAIR HOST PHONE</button>
     <button type="button" class="menu-settings" id="menuSettings">⚙ Settings</button>
     <div class="menu-meta">Up to 30 racers <span>·</span> Full auto race</div>
   </div>
 </div>
 <div class="app">
   <header class="header">
-    <div class="brand"><button type="button" class="menu-home" id="menuHome" aria-label="Open main menu" title="Main menu">⌂</button><div class="logo">✎</div><div><h1>SKETCH RALLY <span class="header-version">v1.3</span></h1><small>Draw · Race</small></div></div>
+    <div class="brand"><button type="button" class="menu-home" id="menuHome" aria-label="Open main menu" title="Main menu">⌂</button><div class="logo">✎</div><div><h1>SKETCH RALLY <span class="header-version">v1.4</span></h1><small>Draw · Race</small></div></div>
     <div class="header-actions"><button type="button" class="btn gear-btn" id="settingsOpen" title="Settings" aria-label="Open game settings">⚙ Settings</button></div>
   </header>
   <main class="layout">
@@ -167,16 +189,16 @@ body.race-immersive .race-hud{display:flex}
         <section id="pane-track" class="pane">
           <h2>Track</h2>
           <span class="section-label">Race mode</span>
-          <div class="two-col"><button class="btn selected" type="button" id="modeHills">⛰ Hill Climb</button><button class="btn" type="button" id="modeDownhill">↪ Downhill Race</button></div>
+          <div class="two-col"><button class="btn selected" type="button" id="modeHills">⛰ Hill Climb</button><button class="btn" type="button" id="modeDownhill">↪ Downhill</button><button class="btn" type="button" id="modeChallenge">🏆 Challenge</button></div>
           <p class="help">Both races are fully automatic. Each mode has its own editable course.</p>
           <label class="section-label" for="trackDistance">Race distance</label>
           <select id="trackDistance" class="field"><option value="1">1 km · Sprint</option><option value="2">2 km</option><option value="5">5 km</option><option value="10">10 km</option><option value="20">20 km · Endurance</option></select>
           <span class="section-label">Quick courses</span>
           <div class="two-col">
             <button class="btn" data-preset="flat">↔ &nbsp; Drag race</button><button class="btn selected" data-preset="hills">⌁ &nbsp; Hill climb</button>
-            <button class="btn" data-preset="rough">◠ &nbsp; Rough road</button><button class="btn" data-preset="gauntlet">⚑ &nbsp; Challenge</button>
+            <button class="btn" data-preset="rough">◠ &nbsp; Rough road</button><button class="btn" data-preset="gauntlet">⚑ &nbsp; Obstacle course</button>
           </div>
-          <span class="section-label">Drawing tools</span>
+          <div id="challengeTrackInfo" class="challenge-info hidden"><strong>10-LEVEL CHALLENGE</strong><span id="challengePreviewLabel">Level 1 / 10</span><p>The official Hill Climb Race Level Blueprint is used. All courses are locked.</p></div><span class="section-label">Drawing tools</span>
           <div class="three-col"><button class="btn selected" data-tool="draw">✎ Draw</button><button class="btn" data-tool="rock" id="rockTool">◆ Rock</button><button class="btn" data-tool="erase" id="eraseTool">⌫ Erase</button></div>
           <p class="help" id="trackHelp">Draw in either direction, on any part of the track, to reshape the hills.</p>
           <div class="two-col" style="margin-top:13px"><button class="btn" id="clearRocks">Clear rocks</button><button class="btn" id="resetTrack">Reset track</button></div>
@@ -206,7 +228,7 @@ body.race-immersive .race-hud{display:flex}
         </section>
         <section id="pane-race" class="pane">
           <h2>Race</h2><p class="sub" id="raceDescription">Full auto</p>
-          <button class="btn full" id="resetRace">↺ Restart race</button>
+          <button class="btn full" id="resetRace">↺ Restart race</button><button type="button" class="btn full" id="showBestOverall">🏆 Best Overall</button><button type="button" class="btn full hidden" id="newChallengeDesign">✎ New car design · Restart Level 1</button>
           <button type="button" class="btn full hidden" id="rematchRace">↻ Rematch · 3 min to improve each car</button>
           <label class="checkbox"><input type="checkbox" id="speedMode"/> Speed up simulation ×2</label>
           <span class="section-label">Live standings</span>
@@ -250,7 +272,7 @@ body.race-immersive .race-hud{display:flex}
     </div>
   </main>
 </div>
-<div class="scan-backdrop hidden" id="scanDialog" role="dialog" aria-modal="true" aria-labelledby="scanTitle">
+<div class="best-dialog hidden" id="bestOverallDialog" role="dialog" aria-modal="true"><div class="best-panel"><div class="best-title"><h2>🏆 Best Overall</h2><button type="button" class="btn" id="closeBestOverall">✕ Close</button></div><p class="best-note">Fastest overall time after 10 levels ranks first. Incomplete runs rank lower by levels completed, then total time.</p><div id="bestOverallList" class="best-list"></div><p class="best-note">Results are saved on this device only.</p><button class="btn warn" type="button" id="clearBestOverall">Clear saved results</button></div></div><div class="scan-backdrop hidden" id="scanDialog" role="dialog" aria-modal="true" aria-labelledby="scanTitle">
   <section class="scan-window">
     <div class="scan-window-head"><h2 id="scanTitle">Scan car</h2><button type="button" class="btn" id="closeScan">✕ Close</button></div>
     <div class="scan-view-switch" role="group" aria-label="Sketch view to scan">
@@ -305,7 +327,7 @@ body.race-immersive .race-hud{display:flex}
         <button class="color-dot" data-ink="#f0b04b" style="--swatch:#f0b04b" aria-label="Yellow pen" title="Yellow pen"></button>
         <button class="color-dot" data-ink="#9b6fc3" style="--swatch:#9b6fc3" aria-label="Purple pen" title="Purple pen"></button>
       </div>
-      <button type="button" class="btn" id="eraserBtn" aria-pressed="false">⌫ Eraser</button>
+      <div class="shape-tools"><button type="button" class="btn selected" data-shape="pen">✎ Pen</button><button type="button" class="btn" data-shape="square">■ Square</button><button type="button" class="btn" data-shape="circle">● Circle</button><button type="button" class="btn" data-shape="polygon">⬟ Polygon</button><label>Sides <select id="polygonSides" aria-label="Polygon sides"><option>3</option><option>4</option><option selected>5</option><option>6</option><option>7</option><option>8</option></select></label></div><button type="button" class="btn" id="eraserBtn" aria-pressed="false">⌫ Eraser</button>
       <label class="brush-control">Size <input type="range" id="brushSize" min="3" max="30" value="8" aria-label="Brush size" /></label>
       <button type="button" class="btn" id="undoDrawing">↶ Undo</button>
       <button type="button" class="btn warn" id="clearDrawing">Clear</button>
@@ -332,7 +354,7 @@ const raceFinish=()=>START+SEGMENT*trackDistanceKm;
 // Longer courses traverse the drawn track multiple times. Alternate segments mirror to keep road height connected.
 function mappedX(x){if(x<=FINISH)return x;const dist=Math.max(0,x-START),index=Math.floor(dist/SEGMENT),portion=dist-index*SEGMENT;return index%2===0?START+portion:FINISH-portion}
 function currentKm(x){return Math.max(0,Math.min(trackDistanceKm,(x-START)/SEGMENT))}
-function maxRaceSeconds(){return trackDistanceKm*(gameMode==='downhill'?90:55)+30}
+function maxRaceSeconds(){return gameMode==='challenge'?CHALLENGE_LIMITS[challengeLevel-1]:trackDistanceKm*(gameMode==='downhill'?90:55)+30}
 
 // Ephemeral, room-code-based Realtime Broadcast: snapshots are not stored in a database.
 const SB_URL='https://qekcgsfeomjckctiubgm.supabase.co';
@@ -361,8 +383,8 @@ c.lineWidth=5;c.strokeStyle='#1a3952';c.beginPath();c.moveTo(30,110);c.lineTo(34
 const wheels=[v===2?89:83, v===1?279:292],radii=[v===2?32:24,v===3?18:26];wheels.forEach((x,i)=>{c.beginPath();c.arc(x,124,radii[i],0,Math.PI*2);c.fillStyle='#263344';c.fill();c.lineWidth=4;c.strokeStyle='#07151f';c.stroke();c.beginPath();c.arc(x,124,radii[i]*.55,0,Math.PI*2);c.fillStyle='#b6d5e3';c.fill();});
 c.fillStyle='rgba(255,255,255,.7)';c.font='bold 28px system-ui';c.fillText('0'+(seed+1),196,111);
 return {canvas:cv,wheels:[{x:wheels[0]/380,y:124/178,r:radii[0]/380},{x:wheels[1]/380,y:124/178,r:radii[1]/380}]};}
-function makePlayer(idx){let art=carShape(idx);return {turnState:'waiting',turnDeadline:0,id:Math.random().toString(36).slice(2),name:['Rocket','Sky Rider','Pink Comet','Grasshopper'][idx]||'Racer',color:racerColor(idx),canvas:art.canvas,wheels:art.wheels.map(wh=>({...wh,r:idx===0?.17:.14})),source:'demo',confidence:1,bodyW:120,bodyH:56,state:null,topCanvas:null,topSketch:null,topSource:'auto',sideSource:'demo',rawView:'side'}}
-function populate(){players=[makePlayer(0),makePlayer(1)];selected=0;refreshPlayers()}
+function makePlayer(idx){const canvas=document.createElement('canvas');canvas.width=380;canvas.height=178;return {turnState:'waiting',turnDeadline:0,id:Math.random().toString(36).slice(2),name:'Racer '+(idx+1),color:racerColor(idx),canvas,wheels:[{x:.22,y:.73,r:.14},{x:.78,y:.73,r:.14}],source:'blank',confidence:0,bodyW:120,bodyH:56,state:null,topCanvas:null,topSketch:null,topSource:'auto',sideSource:'blank',rawView:'side'}}
+function populate(){players=[];selected=0;refreshPlayers()}
 function activePlayer(){return players[selected]}
 function syncFineTuneRacer(){
  const target=$('tuneRacerSelect');if(!target)return;
@@ -407,12 +429,12 @@ function refreshPlayers(){
    selected=i;chosenWheel=1;refreshPlayers();drawAll();
   });list.appendChild(btn);
  });
- syncFineTuneRacer();$('addPlayer').disabled=players.length>=MAX_RACERS;$('removePlayer').disabled=players.length<=1;
+ syncFineTuneRacer();$('addPlayer').disabled=players.length>=MAX_RACERS;$('removePlayer').disabled=players.length===0;
  showWheelSlider();$('scanStatus').textContent=activePlayer()?.source==='photo'?'Paper removed · wheels estimated':activePlayer()?.source==='drawn'?'In-game drawing':'Demo wheels';
  drawCorrection();updateDualViewStatus();renderTurnControls();
 }
 function addPlayer(){if(players.length>=MAX_RACERS||rosterLocked())return;players.push(makePlayer(players.length));selected=players.length-1;chosenWheel=1;refreshPlayers();sendHostRoster();drawAll()}
-function removePlayer(){if(players.length<=1||rosterLocked())return;players.splice(selected,1);selected=clamp(selected,0,players.length-1);refreshPlayers();sendHostRoster();drawAll()}
+function removePlayer(){if(!players.length||rosterLocked())return;players.splice(selected,1);selected=clamp(selected,0,players.length-1);refreshPlayers();sendHostRoster();drawAll()}
 function resizeCanvas(c,obj){const r=c.getBoundingClientRect();if(!r.width||!r.height)return;const dpr=Math.min(window.devicePixelRatio||1,2);let W=Math.round(r.width*dpr),H=Math.round(r.height*dpr);if(c.width!==W||c.height!==H){c.width=W;c.height=H}obj.w=r.width;obj.h=r.height;obj.dpr=dpr}
 function rounded(c,x,y,w,h,r){r=Math.min(r,w/2,h/2);c.beginPath();c.roundRect(x,y,w,h,r)}
 function drawSky(ctx,w,h,background=true){const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'#80b8d8');g.addColorStop(.6,'#b3e2ee');g.addColorStop(1,'#f1e5c1');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.save();ctx.globalAlpha=.28;ctx.fillStyle='#f8fcff';for(const [xx,yy,size] of [[.16,.21,45],[.76,.15,35],[.94,.31,28]]){ctx.beginPath();ctx.ellipse(w*xx,h*yy,size*1.5,size*.35,0,0,7);ctx.ellipse(w*xx-20,h*yy-7,size*.7,size*.35,0,0,7);ctx.fill()}ctx.restore()}
@@ -423,7 +445,7 @@ else drawRaceWorld(sc,w,h,false)}
 function previewState(p,i){const ph=physical(p),progress=((previewTime*105+i*85)%(FINISH-START));const x=START+progress;const y=Math.min(...ph.wheels.map(wh=>sampleRoad(x+wh.ax)-(wh.ay+wh.r)))-3;return{x,y,angle:clamp(Math.atan(derivative(x))*.68,-.7,.7),status:'preview'}}
 function drawTrackPreview(c,w,h){const scale=Math.max(.43,Math.min(w/WORLD_W,h/WORLD_H));const ordered=players.slice(0,4);ordered.forEach((p,i)=>{const st=previewState(p,i);c.save();c.translate(st.x/WORLD_W*w,st.y/WORLD_H*h);c.scale(scale,scale);paintCar(c,p,st.angle,false,st.x);c.restore()});if(page!=='cars'){c.save();c.textAlign='right';c.font='bold 10px system-ui';c.fillStyle='rgba(16,44,59,.65)';c.fillText('DEMO CARS · NOT RACE RESULTS',w-13,h-12);c.restore()}}
 function drawEditor(c,w,h){const yMap=y=>y/WORLD_H*h,xMap=x=>x/WORLD_W*w;c.save();c.strokeStyle='rgba(255,255,255,.17)';c.lineWidth=1;c.setLineDash([4,5]);for(let i=1;i<8;i++){c.beginPath();c.moveTo(w*i/8,0);c.lineTo(w*i/8,h);c.stroke()}for(let i=1;i<5;i++){c.beginPath();c.moveTo(0,h*i/5);c.lineTo(w,h*i/5);c.stroke()}c.setLineDash([]);
-drawTerrain(c,xMap,yMap,w,h);rocks.forEach(r=>drawRock(c,xMap(r.x),yMap(sampleRoad(r.x)),r.r*(w/WORLD_W)));drawGate(c,xMap(START),yMap(sampleRoad(START)),h,'START');drawGate(c,xMap(FINISH),yMap(sampleRoad(FINISH)),h,'FINISH');
+drawTerrain(c,xMap,yMap,w,h);rocks.forEach(r=>(r.kind==='tyre'?drawTyreObstacle(c,xMap(r.x),yMap(sampleRoad(r.x)),r.r*(w/WORLD_W)):drawRock(c,xMap(r.x),yMap(sampleRoad(r.x)),r.r*(w/WORLD_W))));drawGate(c,xMap(START),yMap(sampleRoad(START)),h,'START');drawGate(c,xMap(FINISH),yMap(sampleRoad(FINISH)),h,'FINISH');
 if(roadStroke&&roadStroke.length>1){c.beginPath();roadStroke.forEach((p,i)=>i?c.lineTo(p.x*w,p.y*h):c.moveTo(p.x*w,p.y*h));c.lineWidth=4;c.strokeStyle='#ef5b6d';c.lineCap='round';c.setLineDash([7,5]);c.stroke();c.setLineDash([])}
 c.restore()}
 function drawTerrain(c,xMap,yMap,w,h){c.save();c.beginPath();for(let i=0;i<ground.length;i++){const x=xMap(i/(ground.length-1)*WORLD_W),y=yMap(ground[i]);if(i===0)c.moveTo(x,y);else c.lineTo(x,y)}c.lineTo(w,h+5);c.lineTo(0,h+5);c.closePath();let fill=c.createLinearGradient(0,h*.45,0,h);fill.addColorStop(0,'#648452');fill.addColorStop(.35,'#8a8555');fill.addColorStop(1,'#5c5243');c.fillStyle=fill;c.fill();c.beginPath();for(let i=0;i<ground.length;i++){let x=xMap(i/(ground.length-1)*WORLD_W),y=yMap(ground[i]);if(i===0)c.moveTo(x,y);else c.lineTo(x,y)}c.strokeStyle='#d1f98a';c.lineWidth=5;c.lineJoin='round';c.stroke();c.restore()}
@@ -443,7 +465,7 @@ c.save();c.fillStyle='rgba(84,127,131,.17)';c.beginPath();c.moveTo(left,660);for
 // Terrain polygons in world space.
 c.beginPath();for(let x=Math.max(0,left);x<=Math.min(page==='race'&&!preview?raceFinish()+75:WORLD_W,right);x+=6){let y=sampleRoad(x);x===Math.max(0,left)?c.moveTo(x,y):c.lineTo(x,y)}c.lineTo(Math.min(page==='race'&&!preview?raceFinish()+75:WORLD_W,right),WORLD_H+650);c.lineTo(Math.max(0,left),WORLD_H+650);c.closePath();let gg=c.createLinearGradient(0,300,0,950);gg.addColorStop(0,'#7d9163');gg.addColorStop(.3,'#7d7254');gg.addColorStop(1,'#38433a');c.fillStyle=gg;c.fill();
 c.beginPath();for(let x=Math.max(0,left);x<=Math.min(page==='race'&&!preview?raceFinish()+75:WORLD_W,right);x+=3){let y=sampleRoad(x);x===Math.max(0,left)?c.moveTo(x,y):c.lineTo(x,y)}c.lineWidth=8;c.strokeStyle='#c3ec86';c.lineJoin='round';c.stroke();
-for(const r of rocks){const first=Math.max(0,Math.floor((left-START)/SEGMENT)-1),last=Math.min(trackDistanceKm-1,Math.ceil((right-START)/SEGMENT)+1);for(let lap=first;lap<=last;lap++){const x=START+lap*SEGMENT+(lap%2===0?r.x-START:FINISH-r.x);if(x>left-70&&x<right+70)drawRock(c,x,sampleRoad(x)+2,r.r)}}
+for(const r of rocks){const first=Math.max(0,Math.floor((left-START)/SEGMENT)-1),last=Math.min(trackDistanceKm-1,Math.ceil((right-START)/SEGMENT)+1);for(let lap=first;lap<=last;lap++){const x=START+lap*SEGMENT+(lap%2===0?r.x-START:FINISH-r.x);if(x>left-70&&x<right+70)(r.kind==='tyre'?drawTyreObstacle(c,x,sampleRoad(x)+2,r.r):drawRock(c,x,sampleRoad(x)+2,r.r))}}
 drawRaceGate(c,START,'START');if(!preview)drawRaceGate(c,raceFinish(),'FINISH');
 const drawOrder=entries.sort((a,b)=>(a.st?.x||0)-(b.st?.x||0));
 const visibleLabels=new Set(drawOrder.slice(-Math.min(players.length,players.length>10?5:players.length)).map(e=>e.p));
@@ -488,6 +510,7 @@ $('scanRotateRight').addEventListener('click',()=>setScanRotation(pendingScanAng
 $('scanAngle').addEventListener('input',e=>setScanRotation(Number(e.target.value)));
 
 function openScanDialog(kind){
+ if(!players.length){addPlayer();if(timeLimitEnabled)startDesignTurn()}
  if(!canEdit()){$('carsStatus').textContent='Start your design turn before scanning';return}
  scanView='side';pendingScanImage=null;pendingScanOriginal=null;pendingScanAngle=0;setScanRotation(0);pendingScanRacerId=activePlayer().id;
  $('scanPreviewImage').classList.add('hidden');$('scanPreviewImage').removeAttribute('src');
@@ -672,7 +695,7 @@ function refreshStandings(){if(page!=='race')return;const sorted=[...players].so
 function enterRaceView(gesture=false){
  if(simulation!=='running'&&simulation!=='paused')return;
  document.body.classList.add('race-immersive');
- $('hudRaceLabel').textContent=(gameMode==='downhill'?'DOWNHILL':'HILL CLIMB')+' · '+players.length+' RACERS';
+ $('hudRaceLabel').textContent=(gameMode==='challenge'?'CHALLENGE · LEVEL '+challengeLevel+'/10':gameMode==='downhill'?'DOWNHILL':'HILL CLIMB')+' · '+players.length+' RACERS';
  // Browser-native fullscreen requires a direct user gesture. Remote starts use immersive CSS.
  if(gesture&&!document.fullscreenElement&&document.documentElement.requestFullscreen){
   try{const result=document.documentElement.requestFullscreen();if(result?.catch)result.catch(()=>{});}catch{}
@@ -707,6 +730,7 @@ function loadStudioView(view){studioView=view;dc.clearRect(0,0,drawCanvas.width,
 }
 function switchStudioView(view){if(!canEdit(players.find(p=>p.id===drawingRacerId)))return;if(studioView===view)return;storeStudioView();loadStudioView(view)}
 function openStudio(view='side'){
+ if(!players.length){addPlayer();if(timeLimitEnabled)startDesignTurn()}
  const p=activePlayer();if(!canEdit(p))return;
  drawingRacerId=p.id;draftViews={side:p.sketch?copyCanvas(p.sketch):null,top:p.topSketch?copyCanvas(p.topSketch):null};
  loadStudioView(view);chooseInk('#1a2e44');$('drawStudio').classList.remove('hidden');document.body.classList.add('studio-open');
@@ -811,6 +835,7 @@ async function handleRemoteRegister(payload,channel){
  if(channel!==phoneChannel)return;
  const requestId=typeof payload?.requestId==='string'?payload.requestId.slice(0,64):'';
  if(!requestId||remoteRequestSeen.has(requestId))return;
+  if(gameMode==='challenge'&&challengeStarted){registerResult(channel,requestId,false,'Current challenge car is locked. Start a new design first.');return}
  remoteRequestSeen.add(requestId);if(remoteRequestSeen.size>400)remoteRequestSeen.clear();
  if(simulation==='running'||simulation==='paused'){registerResult(channel,requestId,false,'Race in progress. Register after the race.');return}
  if(typeof payload?.image!=='string'||!/^data:image\/(jpeg|png);base64,/.test(payload.image)||payload.image.length>235000){registerResult(channel,requestId,false,'Invalid or oversized photo.');return}
@@ -819,6 +844,7 @@ async function handleRemoteRegister(payload,channel){
  const remoteId=typeof payload.racerId==='string'&&/^[A-Za-z0-9_-]{8,64}$/.test(payload.racerId)?payload.racerId:null;
  if(!remoteId){registerResult(channel,requestId,false,'Racer ID unavailable. Try again.');return}
  let player=players.find(p=>p.remoteId===remoteId);
+  if(player?.challengeLocked){registerResult(channel,requestId,false,'Car design locked. Make a new design.');return}
  const sampleOnly=!remoteRosterStarted&&players.length===2&&players.every(p=>p.source==='demo'&&p.turnState==='waiting');
  const countAfterReset=sampleOnly?0:players.length;
  if(!player&&countAfterReset>=MAX_RACERS){registerResult(channel,requestId,false,'Garage full ('+MAX_RACERS+' racers).');return}
@@ -915,7 +941,7 @@ function setDownhillPreset(kind){
 function applyTerrainStroke(stroke){
   if(!stroke||stroke.length<1)return false;
   const points=stroke.map(p=>({x:clamp(p.x,0,1),y:clamp(p.y,.13,.87)})).sort((a,b)=>a.x-b.x);
-  const target=gameMode==='hills'?ground:downhillTrack,original=Float32Array.from(target);
+  const target=gameMode!=='downhill'?ground:downhillTrack,original=Float32Array.from(target);
   const first=points[0],last=points[points.length-1],width=last.x-first.x;
   if(width<.016){
     const cx=first.x,radius=.033;
@@ -988,7 +1014,7 @@ function syncCourseUI(){
   $('modeDownhill').classList.toggle('selected',gameMode==='downhill');
   document.querySelectorAll('[data-home-mode]').forEach(b=>b.classList.toggle('active',b.dataset.homeMode===gameMode));
   const downhill=gameMode==='downhill';
-  const labels=downhill?['↔ Straight sprint','↪ Hairpin pass','〰 S-bends','⤺ Switchbacks']:['↔ Drag race','⌁ Hill climb','◠ Rough road','⚑ Challenge'];
+  const labels=downhill?['↔ Straight sprint','↪ Hairpin pass','〰 S-bends','⤺ Switchbacks']:['↔ Drag race','⌁ Hill climb','◠ Rough road','⚑ Obstacle course'];
   document.querySelectorAll('[data-preset]').forEach((b,i)=>{b.textContent=labels[i];b.classList.toggle('selected',b.dataset.preset===(downhill?downhillPreset:preset))});
   $('rockTool').classList.toggle('hidden',downhill);$('eraseTool').classList.toggle('hidden',downhill);
   $('clearRocks').classList.toggle('hidden',downhill);
@@ -1078,7 +1104,7 @@ function drawDownhillWorld(c,w,h,preview=false){
 }
 const originalDrawScene=drawScene;
 drawScene=function(){
-  if(gameMode==='hills')return originalDrawScene();
+  if(gameMode!=='downhill')return originalDrawScene();
   resizeCanvas(scene,sceneSize);const {w,h,dpr}=sceneSize;if(!w||!h)return;
   sc.setTransform(dpr,0,0,dpr,0,0);sc.clearRect(0,0,w,h);
   if(page==='track')drawDownhillEditor(sc,w,h);
@@ -1087,7 +1113,7 @@ drawScene=function(){
 };
 const originalInitRacers=initRacers;
 initRacers=function(){
-  if(gameMode==='hills')return originalInitRacers();
+  if(gameMode!=='downhill')return originalInitRacers();
   players.forEach((p,i)=>{p.state={x:START,y:sampleDownhill(START)+((i%5)-2)*12,vx:72+i*1.5,vy:0,angle:0,finishTime:0,status:'racing',topSpeed:0,offroad:0}});
   camX=0;camY=0;elapsed=0;stepCarry=0;simulation='running';syncBeginRaceButton();$('canvasTooltip').textContent='▶ Automatic downhill race · cars steer and brake themselves';refreshStandings();
 };
@@ -1141,7 +1167,7 @@ function renderTurnControls(){
  const editingIds=['openDrawing','takeCarPhoto','uploadCarPhoto','carCamera','carUpload','saveScan','retryScan','rearWheelBtn','frontWheelBtn','wheelSize','backgroundCleanup','acceptPhonePhoto','flipSide','flipTop'];
  editingIds.forEach(id=>{const node=$(id);if(node)node.disabled=!editable});
  document.querySelectorAll('[data-scan-view]').forEach(node=>node.disabled=!editable);
- const locked=rosterLocked();$('addPlayer').disabled=locked||players.length>=MAX_RACERS;$('removePlayer').disabled=locked||players.length<=1;
+ const locked=rosterLocked();$('addPlayer').disabled=locked||players.length>=MAX_RACERS;$('removePlayer').disabled=locked||players.length===0;
  $('turnStageClock').classList.toggle('hidden',page!=='cars'||!active);
  $('turnStageClock').textContent=clockString(remaining);
  $('studioClock').textContent=clockString(remaining);$('studioClock').classList.toggle('urgent',remaining<=30);
