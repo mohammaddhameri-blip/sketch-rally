@@ -217,7 +217,7 @@ body.challenge-mode #pane-track [data-preset],body.challenge-mode #pane-track [d
           <button type="button" class="btn full" id="addPlayer">+ Add racer <span class="muted">(max 30)</span></button>
           <div class="rule"></div>
           <span class="section-label">Design your car</span>
-          <button type="button" class="btn primary full design-btn" id="openDrawing">✎ Draw your design here!</button>
+          <button type="button" class="btn primary full design-btn" id="openDrawing">✎ Draw your car here</button>
           <span class="section-label">Scan drawings</span>
           <div class="two-col scan-entry">
             <button type="button" class="btn secondary" id="takeCarPhoto">📷 Take photo</button>
@@ -1480,8 +1480,14 @@ function drawFilledShape(a,b){
  const x=Math.min(a.x,b.x),y=Math.min(a.y,b.y),w=Math.abs(b.x-a.x),h=Math.abs(b.y-a.y);
  if(w<2||h<2)return;
  dc.save();dc.fillStyle=ink;
- if(shapeTool==='square')dc.fillRect(x,y,w,h);
- else if(shapeTool==='circle'){dc.beginPath();dc.ellipse(x+w/2,y+h/2,w/2,h/2,0,0,Math.PI*2);dc.fill()}
+ if(shapeTool==='square'){
+  const size=Math.min(w,h),left=a.x+(b.x<a.x?-size:0),top=a.y+(b.y<a.y?-size:0);
+  dc.fillRect(left,top,size,size);
+ }
+ else if(shapeTool==='circle'){
+  const radius=Math.min(w,h)/2,cx=a.x+(b.x<a.x?-radius:radius),cy=a.y+(b.y<a.y?-radius:radius);
+  dc.beginPath();dc.arc(cx,cy,radius,0,Math.PI*2);dc.fill();
+ }
  else if(shapeTool==='polygon'){
   const sides=clamp(Number($('polygonSides').value)||5,3,8);dc.beginPath();
   for(let i=0;i<sides;i++){
